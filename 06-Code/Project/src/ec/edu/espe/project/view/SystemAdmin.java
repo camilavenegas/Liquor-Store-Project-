@@ -18,7 +18,7 @@ public class SystemAdmin {
         
         System.out.println("Section of price of Liquor Store");
         
-        showMenu.ValidateMenu();
+     
     }
     
 }

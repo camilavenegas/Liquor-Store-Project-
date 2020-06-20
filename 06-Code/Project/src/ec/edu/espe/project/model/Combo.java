@@ -10,7 +10,7 @@ package ec.edu.espe.project.model;
  * @author hp
  */
 public class Combo {
-    Beverage beverage= new Beverage();
+   
     private float price;
     private String name;
     Snack snack= new Snack();

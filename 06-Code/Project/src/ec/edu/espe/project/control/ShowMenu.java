@@ -5,7 +5,7 @@
  */
 package ec.edu.espe.project.control;
 
-import ec.edu.espe.project.model.Menu;
+import ec.edu.espe.project.model.ProductMenu;
 import java.util.Scanner;
 
 /**
@@ -13,8 +13,9 @@ import java.util.Scanner;
  * @author Wilson Toapanta 6382
  */
 public class ShowMenu {
+    /*
     Scanner dataEntry = new Scanner(System.in);
-    Menu menu = new Menu();
+    ProductMenu menu = new ProductMenu();
     int option;
     int orderOption;
     public int ValidateMenu(){
@@ -59,4 +60,5 @@ public class ShowMenu {
         }      
         return 0;
     }
+*/
 }

@@ -5,13 +5,41 @@
  */
 package ec.edu.espe.project.model;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 /**
  *
  * @author Wilson Toapanta 6382
  */
-public class Menu {
+public class ProductMenu {
+    
+    
+    Beverage beverage= new Beverage();
+    Collection <Beverage> beverages= new ArrayList<>();
+    
+    
+    public Beverage choose(){
+        
+     
+     beverages.add(new Beverage("unkonwn", 1.5, "Switch", 4.0, (1) ));
+     beverages.add(new Beverage("Agua Ardiente", 1.5, "Paisa", 6.0, 2));
+     beverages.add(new Beverage("Agua Ardiente", 1, "Cristal", 8.5, 3));
+     
+     
+     
+     
+     
+    
+        
+      
+    
+}
+   
+    
+
     //private int DIM = 9;
-    double priceSection1[] = {4.00, 6.00, 8.50, 8.50, 4.50, 8.00, 8.50, 11.00, 12.50}; 
+    /*double priceSection1[] = {4.00, 6.00, 8.50, 8.50, 4.50, 8.00, 8.50, 11.00, 12.50}; 
     double priceSection2[] = {8.00, 12.00, 14.00, 13.50, 19.00, 34.00, 15.00, 23.00, 15.00, 15.50};
     double priceSection3[] = {8.00, 9.00, 12.00, 13.00, 14.00, 15.00, 16.00, 16.00, 22.00, 25.00};
     double priceSection4[] = {4.00, 6.50, 7.50, 11.00, 11.00, 14.00, 26.00};
@@ -35,7 +63,7 @@ public class Menu {
     public int DIM4(){
         DIM4 = priceSection4.length;
         return DIM4;
-    }*/
+    }
     
     public int priceSectionA(int i){
         System.out.println("Switch                  $" + priceSection1[i]);
@@ -87,5 +115,6 @@ public class Menu {
         System.out.println("Ron abuelo              $" + priceSection4[i+5]);
         System.out.println("Garrafa Abuelo          $" + priceSection4[i+6]);
         return 0;
-    }
+    }*/
+    
 }

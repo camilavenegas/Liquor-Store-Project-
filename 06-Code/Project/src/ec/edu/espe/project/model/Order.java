@@ -11,7 +11,7 @@ package ec.edu.espe.project.model;
  */
 public class Order {
     Combo combo= new Combo();
-    Beverage beverage= new Beverage();
+
     
 
     
