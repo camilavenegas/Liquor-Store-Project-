@@ -5,7 +5,8 @@
  */
 package ec.edu.espe.project.view;
 
-import ec.edu.espe.project.control.ShowMenu;
+
+import ec.edu.espe.project.model.ProductMenu;
 
 /**
  *
@@ -14,9 +15,9 @@ import ec.edu.espe.project.control.ShowMenu;
 public class SystemAdmin {
     
     public static void main(String[] args) {
-        ShowMenu showMenu = new ShowMenu();
+        ProductMenu productMenu = new ProductMenu();
         
-        System.out.println("Section of price of Liquor Store");
+        productMenu.showBeverage();
         
      
     }

@@ -5,17 +5,23 @@
  */
 package ec.edu.espe.project.model;
 
+import java.util.Collection;
+
 /**
  *
  * @author hp
  */
 public class Combo {
    
-    private float price;
+    private float priceCombo;
     private String name;
     Snack snack= new Snack();
-    
-    //agregar metodos con matriz 
-    
+    Collection combo1;
+
+    public void show(){
+        combo1.add(new Beverage("Clasic", 1.5, "Switch", 4.0, 1));
+        combo1.add(new Snack(1, 1, 1));
+        
+    }
     
 }

@@ -1,6 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this license header, showBeverage License Headers in Project Properties.
+ * To change this template file, showBeverage Tools | Templates
  * and open the template in the editor.
  */
 package ec.edu.espe.project.model;
@@ -15,26 +15,67 @@ import java.util.Collection;
 public class ProductMenu {
     
     
-    Beverage beverage= new Beverage();
+    Beverage beverage= new Beverage(); 
     Collection <Beverage> beverages= new ArrayList<>();
     
+    Snack snack = new Snack();
+    Collection <Snack> snacks = new ArrayList<>();
     
-    public Beverage choose(){
+    public Beverage showBeverage(){
         
-     
-     beverages.add(new Beverage("unkonwn", 1.5, "Switch", 4.0, (1) ));
-     beverages.add(new Beverage("Agua Ardiente", 1.5, "Paisa", 6.0, 2));
-     beverages.add(new Beverage("Agua Ardiente", 1, "Cristal", 8.5, 3));
-     
-     
-     
-     
-     
+    beverages.add(new Beverage("Clasic", 1.5, "Switch", 4.0, 1));
+    beverages.add(new Beverage("Clasic", 1.5, "Paisa", 6.0, 2));
+    beverages.add(new Beverage("Clasic", 1, "Cristal", 8.5, 3));   
+    beverages.add(new Beverage("Clasic", 0.75, "Trópico", 8.5, 4));
+    beverages.add(new Beverage("Clasic", 3.75, "1/2 Norteño", 4.5, 5));
+    beverages.add(new Beverage("Agua Ardiente", 1.5, "Zhumir", 8.5, 6));
+    beverages.add(new Beverage("Clasic", 1, "Norteño", 8.5, 7));
+    beverages.add(new Beverage("Agua Ardiente", 1, "Zhumir Pink", 11.0, 8));
+    beverages.add(new Beverage("Agua Ardiente", 1, "Zhumir piña colada", 12.50, 9));
+    beverages.add(new Beverage("Clasic", 1, "Mira flores", 8.0, 10));
+    beverages.add(new Beverage("Clasic", 1, "3 medalla paras", 12.5, 11));
+    beverages.add(new Beverage("Wine", 1, "Vino reservado", 14.00, 12));
+    beverages.add(new Beverage("Clasic", 1, "Green mate", 13.5, 13));
+    beverages.add(new Beverage("Agua Ardiente", 1, "Charro", 19.0, 14));
+    beverages.add(new Beverage("Clasic", 1, "Jager Meister", 34.0, 15));
+    beverages.add(new Beverage("Vodka", 1, "Smirnof", 15.0, 16));
+    beverages.add(new Beverage("Vodka", 1, "Absolute", 23.0, 17));
+    beverages.add(new Beverage("Clasic", 1, "Gim", 15.0, 18));
+    beverages.add(new Beverage("Clasic", 1, "Under", 15.0, 19));
+    beverages.add(new Beverage("Whisky", 1, "1/2 old times rojo ", 8.0, 20));
+    beverages.add(new Beverage("Whisky", 1, "1/2 old times negro", 9.0, 21));
+    beverages.add(new Beverage("Whisky", 1, "Whisky Lenget", 12.0, 22));
+    beverages.add(new Beverage("Whisky", 1, "Old times rojo", 13.0, 23));
+    beverages.add(new Beverage("Whisky", 1, "Black Castell", 14.0, 24));
+    beverages.add(new Beverage("Whisky", 1, "Old times negro", 15.00, 25));
+    beverages.add(new Beverage("Whisky", 1, "Jhon Morris negro", 16.00, 26));
+    beverages.add(new Beverage("Whisky", 1, "Bellows", 16.00, 27));
+    beverages.add(new Beverage("Whisky", 1, "Grants", 22.00, 28));
+    beverages.add(new Beverage("Whisky", 1, "Jhonny rojo", 25.0, 29));
+    beverages.add(new Beverage("Ron", 1, "1/2 Ron pon pon", 4.00, 30));
+    beverages.add(new Beverage("Ron", 1, "1/2 Ron abuelo", 6.50, 31));
+    beverages.add(new Beverage("Ron", 1, "Ron pon pon", 7.50, 32));
+    beverages.add(new Beverage("Ron", 1, "San Miguel oro y plata", 11.00, 33));
+    beverages.add(new Beverage("Whisky", 1, "Castillo blanco", 11.0, 34));
+    beverages.add(new Beverage("Ron", 1, "Ron abuelo", 14.0, 35));
+    beverages.add(new Beverage("Ron", 1, "Garrafa abuelo", 26.00, 36));
+    beverages.add(new Beverage("Whisky", 1, "Jack Daniels", 68.0, 37));
     
-        
-      
+    beverages.forEach((bev)->{
+            System.out.println("Beverage: " + bev);
+        });
     
+    
+    return null;
 }
+    public Snack showSnack(){
+        System.out.println("Snacks avalibles");
+        System.out.println("1.- Chips           $1.0");
+        System.out.println("2.- Peanut          $1.0");
+        System.out.println("3.- Bubblegum       $1.0");
+
+        return null;
+    }
    
     
 

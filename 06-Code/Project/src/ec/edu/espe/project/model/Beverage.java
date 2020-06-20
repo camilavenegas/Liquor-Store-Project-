@@ -5,8 +5,6 @@
  */
 package ec.edu.espe.project.model;
 
-import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  *
@@ -27,23 +25,25 @@ public class Beverage {
         this.price = price;
         this.code = code;
     }
-
-    Beverage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Beverage(){
+        this.type = "";
+        this.brand = "";
+        this.size = 0;
+        this.code = 0;
+        this.price = 0;
     }
-    
-
    
 
     @Override
     public String toString() {
-        return "Beverage{" + "type=" + type + ", size=" + size + ", brand=" + brand + ", price=" + price + ", code=" + code + '}';
+        return "Beverage{" + "type=" + type + ", size=" + size + ", brand=" + brand + ", price=" + price + ", CODE=" + code + '}';
     }
 
-    public int choose(){
+    /*public int choose(){
         Collection<Beverage> beverages=new ArrayList<>();
+         return 0;
     
-}
+    }*/
      
      
     
