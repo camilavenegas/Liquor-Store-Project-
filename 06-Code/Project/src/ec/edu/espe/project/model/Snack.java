@@ -15,9 +15,9 @@ public class Snack {
      private int bubblegum;
      
      public int select( int chip, int peanut, int bubblegum){
-         int requierement[3];
+         //int requierement[3];
          //return requirement[];
-         
+         return 0;
      }
     
 }

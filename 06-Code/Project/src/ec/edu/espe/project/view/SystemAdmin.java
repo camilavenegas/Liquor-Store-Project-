@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.project.view;
 
+import ec.edu.espe.project.control.ShowMenu;
+
 /**
  *
  * @author hp
@@ -12,7 +14,11 @@ package ec.edu.espe.project.view;
 public class SystemAdmin {
     
     public static void main(String[] args) {
+        ShowMenu showMenu = new ShowMenu();
         
+        System.out.println("Section of price of Liquor Store");
+        
+        showMenu.ValidateMenu();
     }
     
 }
