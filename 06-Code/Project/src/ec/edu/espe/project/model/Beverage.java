@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.project.model;
 
+import java.util.Scanner;
+
 
 /**
  *
@@ -17,7 +19,8 @@ public class Beverage {
      private String brand;
      private double price;
      private int code;
-
+     
+     Scanner codeBeverage = new Scanner(System.in);
     public Beverage(String type, double size, String brand, double price, int code) {
         this.type = type;
         this.size = size;
@@ -38,12 +41,15 @@ public class Beverage {
     public String toString() {
         return "Beverage{" + "type=" + type + ", size=" + size + ", brand=" + brand + ", price=" + price + ", CODE=" + code + '}';
     }
-
-    /*public int choose(){
-        Collection<Beverage> beverages=new ArrayList<>();
-         return 0;
     
-    }*/
+    public int choose(){
+        System.out.println("Select the beverage by the CODE: ");
+        int copyCode;
+        copyCode = codeBeverage.nextInt();
+
+        return copyCode;
+    } 
+
      
      
     
