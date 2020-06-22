@@ -17,9 +17,11 @@ public class Combo {
     private String name;
     Snack snack= new Snack();
     Collection combo1;
+    Collection combo2;
 
     public void show(){
         combo1.add(new Beverage("Clasic", 1.5, "Switch", 4.0, 1));
+        combo1.add(new Beverage("Clasic", 3.75, "1/2 Norteño", 4.5, 5));
         combo1.add(new Snack(1, 1, 1));
         
     }
