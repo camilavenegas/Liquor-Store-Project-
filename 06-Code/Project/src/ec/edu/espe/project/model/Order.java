@@ -20,6 +20,8 @@ public class Order {
     Snack snack = new Snack();
     ProductMenu productMenu = new ProductMenu();
 
+    private double orderTotalPrice;
+
     //double[] priceVector = {4.0, 8.5, 8.5, 8.5, 8.5, 11.0, 12.5, 14.0, 13.5, 34.0, 15.0, 23.0,
     //15.0, 15.0, 13.0, 15.0, 16.0, 25.0, 7.5, 14.0, 26.0, 68.0};
     public double getBeverage() {
@@ -33,19 +35,51 @@ public class Order {
         System.out.println("How many beverages of this type do you want");
         beverageQuantity = dataEntry.nextInt();
         totalPrice += (beverageQuantity * priceCopy);
-        
+
         return totalPrice;
     }
-    
-    public double getSnack( ){
-      double  totalPrice= snack.select();
-      
+
+    public double getSnack() {
+        productMenu.showSnack();
+        double totalPrice = snack.select();
+
         return totalPrice;
     }
-    
-    public double getCombo(){
-        
-        return 0.0;
+
+    public double getCombo() {
+        combo.show();
+        double comboPrice = combo.select();
+        return comboPrice;
+    }
+
+    public double create() {
+        int optionSubMenu;
+        double totalBeverage = 0.0F;
+        double totalSnacks = 0.0F;
+        double totalCombo = 0.0F;
+        int confirmOrder = -1;
+
+        System.out.println("Choose the following options for your order");
+        System.out.println("1. Beverage\n2. Snacks\n3. Combo\n4.Exit");
+        optionSubMenu = dataEntry.nextInt();
+        switch (optionSubMenu) {
+            case 1:
+                totalBeverage += getBeverage();
+                do {
+
+                    System.out.println("Would you like to add more beverages to the "
+                            + "order");
+                    System.out.println("To confirm the order press 1  or to decline "
+                            + "press 0");
+
+                    confirmOrder = dataEntry.nextInt();
+                    if (confirmOrder == 1) {
+                        totalBeverage += getBeverage();
+                    } else {
+
+                    }
+                } while (confirmOrder != 1);
+
+        }
     }
 }
-    

@@ -12,21 +12,21 @@ import java.util.Scanner;
  * @author hp
  */
 public class Snack {
+
     private double snackPrice;
     private int chip;
     private int peanut;
     private int bubblegum;
-    private int chipPrice=1;
-    private int peanutPrice=1;
-    private int bubblegumPrice=1;
-    
-     
+    private int chipPrice = 1;
+    private int peanutPrice = 1;
+    private int bubblegumPrice = 1;
+
     /*public int select( int chip, int peanut, int bubblegum){
          //int requierement[3];
          //return requirement[];
          return 0;
     }*/
-    Scanner dataEntry= new Scanner(System.in);
+    Scanner dataEntry = new Scanner(System.in);
 
     public Snack(int chip, int peanut, int bubblegum) {
         this.chip = chip;
@@ -34,11 +34,12 @@ public class Snack {
         this.bubblegum = bubblegum;
     }
 
-    public Snack(){
+    public Snack() {
         this.chip = 0;
         this.peanut = 0;
         this.bubblegum = 0;
     }
+
     public int getChip() {
         return chip;
     }
@@ -62,28 +63,26 @@ public class Snack {
     public void setBubblegum(int bubblegum) {
         this.bubblegum = bubblegum;
     }
-    
+
     @Override
     public String toString() {
         return "Snack{" + "chip=" + chip + ", peanut=" + peanut + ", bubblegum=" + bubblegum + '}';
     }
-    
-    public double select(){
+
+    public double select() {
         System.out.println("How many chips do you want?");
-        chip= dataEntry.nextInt();
-        chipPrice=chip;
+        chip = dataEntry.nextInt();
+        chipPrice = chip;
         System.out.println("How many peanuts do you want");
-        peanut= dataEntry.nextInt();
-        peanutPrice= peanut;
+        peanut = dataEntry.nextInt();
+        peanutPrice = peanut;
         System.out.println("How many bubble gums do you want");
-        bubblegum= dataEntry.nextInt();
-        bubblegumPrice=bubblegum;
-        snackPrice= chipPrice+ peanutPrice+bubblegumPrice;
-        
-        
+        bubblegum = dataEntry.nextInt();
+        bubblegumPrice = bubblegum;
+        snackPrice = chipPrice + peanutPrice + bubblegumPrice;
+
         return snackPrice;
-        
+
     }
-    
-    
+
 }
