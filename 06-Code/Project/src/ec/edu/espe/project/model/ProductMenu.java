@@ -14,7 +14,7 @@ import java.util.Collection;
  */
 public class ProductMenu {
     
-     Beverage beverage = new Beverage();
+    Beverage beverage = new Beverage();
     ArrayList<Beverage> beverages = new ArrayList<>();
 
     Snack snack = new Snack();
