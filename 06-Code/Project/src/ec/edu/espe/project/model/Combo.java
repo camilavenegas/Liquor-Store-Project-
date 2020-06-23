@@ -13,17 +13,33 @@ import java.util.Collection;
  */
 public class Combo {
    
-    private float priceCombo;
+    private double priceCombo1;
+    private double priceCombo2;
+    private double priceCombo3;
+    private double priceCombo4;
     private String name;
     Snack snack= new Snack();
     Collection combo1;
     Collection combo2;
+    
+    public double calculateCombo1Price(){
+         priceCombo1=4.0+4.5+3;
+        
+        return priceCombo1;
+    }
 
     public void show(){
         combo1.add(new Beverage("Clasic", 1.5, "Switch", 4.0, 1));
         combo1.add(new Beverage("Clasic", 3.75, "1/2 Norteño", 4.5, 5));
         combo1.add(new Snack(1, 1, 1));
+        double totalPriceCombo1= calculateCombo1Price();
+        System.out.println("The price is-->"+totalPriceCombo1);
+        
+        combo2.add(new Beverage("Vodka", 1, "Smirnof", 15.0, 11));
+        
+        combo
         
     }
+    
     
 }

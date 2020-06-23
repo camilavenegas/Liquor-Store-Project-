@@ -5,21 +5,28 @@
  */
 package ec.edu.espe.project.model;
 
+import java.util.Scanner;
+
 /**
  *
  * @author hp
  */
 public class Snack {
-    private double priceSnack;
+    private double snackPrice;
     private int chip;
     private int peanut;
     private int bubblegum;
+    private int chipPrice=1;
+    private int peanutPrice=1;
+    private int bubblegumPrice=1;
+    
      
     /*public int select( int chip, int peanut, int bubblegum){
          //int requierement[3];
          //return requirement[];
          return 0;
     }*/
+    Scanner dataEntry= new Scanner(System.in);
 
     public Snack(int chip, int peanut, int bubblegum) {
         this.chip = chip;
@@ -59,6 +66,23 @@ public class Snack {
     @Override
     public String toString() {
         return "Snack{" + "chip=" + chip + ", peanut=" + peanut + ", bubblegum=" + bubblegum + '}';
+    }
+    
+    public double select(){
+        System.out.println("How many chips do you want?");
+        chip= dataEntry.nextInt();
+        chipPrice=chip;
+        System.out.println("How many peanuts do you want");
+        peanut= dataEntry.nextInt();
+        peanutPrice= peanut;
+        System.out.println("How many bubble gums do you want");
+        bubblegum= dataEntry.nextInt();
+        bubblegumPrice=bubblegum;
+        snackPrice= chipPrice+ peanutPrice+bubblegumPrice;
+        
+        
+        return snackPrice;
+        
     }
     
     

@@ -16,12 +16,12 @@ public class ProductMenu {
     
     
     Beverage beverage= new Beverage(); 
-    Collection <Beverage> beverages= new ArrayList<>();
+    ArrayList <Beverage> beverages= new ArrayList<>();
     
     Snack snack = new Snack();
-    Collection <Snack> snacks = new ArrayList<>();
+    ArrayList <Snack> snacks = new ArrayList<>();
     
-    public Beverage showBeverage(){
+    public double showBeverage(){
         
     beverages.add(new Beverage("Clasic", 1.5, "Switch", 4.0, 1));   
     beverages.add(new Beverage("Clasic", 1, "Cristal", 8.5, 2));   
@@ -46,12 +46,16 @@ public class ProductMenu {
     beverages.add(new Beverage("Ron", 1, "Garrafa abuelo", 26.00, 21));
     beverages.add(new Beverage("Whisky", 1, "Jack Daniels", 68.0, 22));
     
+    
     beverages.forEach((bev)->{
             System.out.println("Beverage: " + bev);
         });
+    int copyCode= beverage.choose();
+    
+        double copyPrice= beverages.get(copyCode).getPrice();
     
     
-    return null;
+    return copyPrice;
 }
     public Snack showSnack(){
         System.out.println("Snacks avalibles");

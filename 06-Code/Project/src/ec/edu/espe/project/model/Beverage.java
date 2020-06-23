@@ -35,6 +35,55 @@ public class Beverage {
         this.code = 0;
         this.price = 0;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public double getSize() {
+        return size;
+    }
+
+    public void setSize(double size) {
+        this.size = size;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public Scanner getCodeBeverage() {
+        return codeBeverage;
+    }
+
+    public void setCodeBeverage(Scanner codeBeverage) {
+        this.codeBeverage = codeBeverage;
+    }
+    
    
 
     @Override
