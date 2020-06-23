@@ -13,14 +13,17 @@ import java.util.Collection;
  * @author Wilson Toapanta 6382
  */
 public class ProductMenu {
-
-    Beverage beverage = new Beverage();
+    
+     Beverage beverage = new Beverage();
     ArrayList<Beverage> beverages = new ArrayList<>();
 
     Snack snack = new Snack();
     ArrayList<Snack> snacks = new ArrayList<>();
+    
+    
 
-    public double showBeverage() {
+
+    public void showBeverage() {
 
         beverages.add(new Beverage("Clasic", 1.5, "Switch", 4.0, 1));
         beverages.add(new Beverage("Clasic", 1, "Cristal", 8.5, 2));
@@ -48,11 +51,11 @@ public class ProductMenu {
         beverages.forEach((bev) -> {
             System.out.println("Beverage: " + bev);
         });
-        int copyCode = beverage.choose();
+        
 
-        double copyPrice = beverages.get(copyCode).getPrice();
-
-        return copyPrice;
+        //double copyPrice = beverages.get(copyCode).getPrice();
+        //System.out.println("The beverage selected -->"+writeBeverage());
+        
     }
 
     public Snack showSnack() {
@@ -62,6 +65,21 @@ public class ProductMenu {
         System.out.println("3.- Bubblegum       $1.0");
 
         return null;
+    }
+    
+     public double getBeveragePrice(){
+         int copyBeverageCode= beverage.choose();
+         double copyPrice= beverages.get(copyBeverageCode).getPrice();
+          return(copyPrice);
+     }
+    
+    public Beverage writeBeverage(){
+        int copyBeverageCode= beverage.choose();
+         Beverage beverageSelected= beverages.get(copyBeverageCode);
+       
+       return beverageSelected; 
+       
+        
     }
 
 }

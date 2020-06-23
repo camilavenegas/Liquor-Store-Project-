@@ -6,6 +6,7 @@
 package ec.edu.espe.project.view;
 
 
+import ec.edu.espe.project.model.Order;
 import ec.edu.espe.project.model.ProductMenu;
 
 /**
@@ -15,11 +16,14 @@ import ec.edu.espe.project.model.ProductMenu;
 public class SystemAdmin {
     
     public static void main(String[] args) {
-        /*
-        ProductMenu productMenu = new ProductMenu();
         
-        productMenu.showBeverage();
-        */
+        //ProductMenu productMenu = new ProductMenu();
+        Order order = new Order();
+        
+        order.create();
+        
+        
+        
      
     }
     
