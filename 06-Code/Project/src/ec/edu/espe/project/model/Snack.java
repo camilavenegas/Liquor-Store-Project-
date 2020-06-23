@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author hp
+ * @author camilavenegas
  */
 public class Snack {
 
@@ -40,6 +40,14 @@ public class Snack {
         this.bubblegum = 0;
     }
 
+    public double getSnackPrice() {
+        return snackPrice;
+    }
+
+    public void setSnackPrice(double snackPrice) {
+        this.snackPrice = snackPrice;
+    }
+
     public int getChip() {
         return chip;
     }
@@ -64,10 +72,45 @@ public class Snack {
         this.bubblegum = bubblegum;
     }
 
+    public int getChipPrice() {
+        return chipPrice;
+    }
+
+    public void setChipPrice(int chipPrice) {
+        this.chipPrice = chipPrice;
+    }
+
+    public int getPeanutPrice() {
+        return peanutPrice;
+    }
+
+    public void setPeanutPrice(int peanutPrice) {
+        this.peanutPrice = peanutPrice;
+    }
+
+    public int getBubblegumPrice() {
+        return bubblegumPrice;
+    }
+
+    public void setBubblegumPrice(int bubblegumPrice) {
+        this.bubblegumPrice = bubblegumPrice;
+    }
+
+    public Scanner getDataEntry() {
+        return dataEntry;
+    }
+
+    public void setDataEntry(Scanner dataEntry) {
+        this.dataEntry = dataEntry;
+    }
+
+   
     @Override
     public String toString() {
         return "Snack{" + "chip=" + chip + ", peanut=" + peanut + ", bubblegum=" + bubblegum + '}';
     }
+    
+    
 
     public double select() {
         System.out.println("How many chips do you want?");
@@ -76,7 +119,7 @@ public class Snack {
         System.out.println("How many peanuts do you want");
         peanut = dataEntry.nextInt();
         peanutPrice = peanut;
-        System.out.println("How many bubble gums do you want");
+        System.out.println("How many bubblegums do you want");
         bubblegum = dataEntry.nextInt();
         bubblegumPrice = bubblegum;
         snackPrice = chipPrice + peanutPrice + bubblegumPrice;
@@ -86,3 +129,4 @@ public class Snack {
     }
 
 }
+

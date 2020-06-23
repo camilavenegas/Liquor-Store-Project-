@@ -20,9 +20,6 @@ public class ProductMenu {
     Snack snack = new Snack();
     ArrayList<Snack> snacks = new ArrayList<>();
     
-    
-
-
     public void showBeverage() {
 
         beverages.add(new Beverage("Clasic", 1.5, "Switch", 4.0, 1));
@@ -47,39 +44,37 @@ public class ProductMenu {
         beverages.add(new Beverage("Ron", 1, "Ron abuelo", 14.0, 20));
         beverages.add(new Beverage("Ron", 1, "Garrafa abuelo", 26.00, 21));
         beverages.add(new Beverage("Whisky", 1, "Jack Daniels", 68.0, 22));
+        
+       
 
         beverages.forEach((bev) -> {
             System.out.println("Beverage: " + bev);
         });
         
-
-        //double copyPrice = beverages.get(copyCode).getPrice();
-        //System.out.println("The beverage selected -->"+writeBeverage());
-        
     }
 
-    public Snack showSnack() {
+    public void showSnack() {
         System.out.println("Snacks avalibles");
         System.out.println("1.- Chips           $1.0");
         System.out.println("2.- Peanut          $1.0");
         System.out.println("3.- Bubblegum       $1.0");
 
-        return null;
+        
     }
     
-     public double getBeveragePrice(){
+     public int getBeverage(){
          int copyBeverageCode= beverage.choose();
-         double copyPrice= beverages.get(copyBeverageCode).getPrice();
-          return(copyPrice);
+         
+         //double copyPrice= beverages.get(copyBeverageCode).getPrice();
+          return(copyBeverageCode);
      }
-    
+    /*
     public Beverage writeBeverage(){
         int copyBeverageCode= beverage.choose();
          Beverage beverageSelected= beverages.get(copyBeverageCode);
        
-       return beverageSelected; 
-       
-        
-    }
-
+       return beverageSelected;    
+    }*/
+    
+   
 }

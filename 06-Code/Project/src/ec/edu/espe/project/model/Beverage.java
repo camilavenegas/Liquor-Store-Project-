@@ -96,7 +96,7 @@ public class Beverage {
         int copyCode;
         copyCode = codeBeverage.nextInt();
 
-        return copyCode;
+        return copyCode-1;
     } 
     
     
