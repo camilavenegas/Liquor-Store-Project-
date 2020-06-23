@@ -14,50 +14,51 @@ import java.util.Collection;
  */
 public class ProductMenu {
     
-    
-    Beverage beverage= new Beverage(); 
-    ArrayList <Beverage> beverages= new ArrayList<>();
-    
+     Beverage beverage = new Beverage();
+    ArrayList<Beverage> beverages = new ArrayList<>();
+
     Snack snack = new Snack();
-    ArrayList <Snack> snacks = new ArrayList<>();
-    
-    public double showBeverage(){
-        
-    beverages.add(new Beverage("Clasic", 1.5, "Switch", 4.0, 1));   
-    beverages.add(new Beverage("Clasic", 1, "Cristal", 8.5, 2));   
-    beverages.add(new Beverage("Clasic", 0.75, "Trópico", 8.5, 3));
-    beverages.add(new Beverage("Agua Ardiente", 1.5, "Zhumir", 8.5, 4));
-    beverages.add(new Beverage("Clasic", 1, "Norteño", 8.5, 5));
-    beverages.add(new Beverage("Agua Ardiente", 1, "Zhumir Pink", 11.0, 6));
-    beverages.add(new Beverage("Agua Ardiente", 1, "Zhumir Piña Colada", 12.50, 7));
-    beverages.add(new Beverage("Wine", 1, "Vino Reservado", 14.00, 8));
-    beverages.add(new Beverage("Clasic", 1, "Green mate", 13.5, 9));
-    beverages.add(new Beverage("Clasic", 1, "Jager Meister", 34.0, 10));
-    beverages.add(new Beverage("Vodka", 1, "Smirnof", 15.0, 11));
-    beverages.add(new Beverage("Vodka", 1, "Absolute", 23.0, 12));
-    beverages.add(new Beverage("Beer", 1, "Pilsener", 15.0, 13));
-    beverages.add(new Beverage("Beer", 1, "Club", 15.0, 14));
-    beverages.add(new Beverage("Whisky", 1, "Old times red", 13.0, 15));
-    beverages.add(new Beverage("Whisky", 1, "Old times black", 15.00, 16));
-    beverages.add(new Beverage("Whisky", 1, "Bellows", 16.00, 17));
-    beverages.add(new Beverage("Whisky", 1, "Jhonny Red Label", 25.0, 18));
-    beverages.add(new Beverage("Ron", 1, "Ron pon pon", 7.50, 19));
-    beverages.add(new Beverage("Ron", 1, "Ron abuelo", 14.0, 20));
-    beverages.add(new Beverage("Ron", 1, "Garrafa abuelo", 26.00, 21));
-    beverages.add(new Beverage("Whisky", 1, "Jack Daniels", 68.0, 22));
+    ArrayList<Snack> snacks = new ArrayList<>();
     
     
-    beverages.forEach((bev)->{
+
+
+    public void showBeverage() {
+
+        beverages.add(new Beverage("Clasic", 1.5, "Switch", 4.0, 1));
+        beverages.add(new Beverage("Clasic", 1, "Cristal", 8.5, 2));
+        beverages.add(new Beverage("Clasic", 0.75, "Trópico", 8.5, 3));
+        beverages.add(new Beverage("Agua Ardiente", 1.5, "Zhumir", 8.5, 4));
+        beverages.add(new Beverage("Clasic", 1, "Norteño", 8.5, 5));
+        beverages.add(new Beverage("Agua Ardiente", 1, "Zhumir Pink", 11.0, 6));
+        beverages.add(new Beverage("Agua Ardiente", 1, "Zhumir Piña Colada", 12.50, 7));
+        beverages.add(new Beverage("Wine", 1, "Vino Reservado", 14.00, 8));
+        beverages.add(new Beverage("Clasic", 1, "Green mate", 13.5, 9));
+        beverages.add(new Beverage("Clasic", 1, "Jager Meister", 34.0, 10));
+        beverages.add(new Beverage("Vodka", 1, "Smirnof", 15.0, 11));
+        beverages.add(new Beverage("Vodka", 1, "Absolute", 23.0, 12));
+        beverages.add(new Beverage("Beer", 1, "Pilsener", 15.0, 13));
+        beverages.add(new Beverage("Beer", 1, "Club", 15.0, 14));
+        beverages.add(new Beverage("Whisky", 1, "Old times red", 13.0, 15));
+        beverages.add(new Beverage("Whisky", 1, "Old times black", 15.00, 16));
+        beverages.add(new Beverage("Whisky", 1, "Bellows", 16.00, 17));
+        beverages.add(new Beverage("Whisky", 1, "Jhonny Red Label", 25.0, 18));
+        beverages.add(new Beverage("Ron", 1, "Ron pon pon", 7.50, 19));
+        beverages.add(new Beverage("Ron", 1, "Ron abuelo", 14.0, 20));
+        beverages.add(new Beverage("Ron", 1, "Garrafa abuelo", 26.00, 21));
+        beverages.add(new Beverage("Whisky", 1, "Jack Daniels", 68.0, 22));
+
+        beverages.forEach((bev) -> {
             System.out.println("Beverage: " + bev);
         });
-    int copyCode= beverage.choose();
-    
-        double copyPrice= beverages.get(copyCode).getPrice();
-    
-    
-    return copyPrice;
-}
-    public Snack showSnack(){
+        
+
+        //double copyPrice = beverages.get(copyCode).getPrice();
+        //System.out.println("The beverage selected -->"+writeBeverage());
+        
+    }
+
+    public Snack showSnack() {
         System.out.println("Snacks avalibles");
         System.out.println("1.- Chips           $1.0");
         System.out.println("2.- Peanut          $1.0");
@@ -65,6 +66,20 @@ public class ProductMenu {
 
         return null;
     }
-   
- 
+    
+     public double getBeveragePrice(){
+         int copyBeverageCode= beverage.choose();
+         double copyPrice= beverages.get(copyBeverageCode).getPrice();
+          return(copyPrice);
+     }
+    
+    public Beverage writeBeverage(){
+        int copyBeverageCode= beverage.choose();
+         Beverage beverageSelected= beverages.get(copyBeverageCode);
+       
+       return beverageSelected; 
+       
+        
+    }
+
 }
