@@ -21,6 +21,11 @@ public class CardDate {
         this.month = month;
         this.year = year;
     }
+    
+    public CardDate(){
+        this.month=0;
+        this.year=0;
+    }
 
     public int getMonth() {
         return month;

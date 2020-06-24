@@ -5,11 +5,15 @@
  */
 package ec.edu.espe.project.control;
 
+import java.util.Scanner;
+
 /**
  *
  * @author hp
  */
 public class Review {
+
+    Scanner dataEntry = new Scanner(System.in);
 
     public int validateNegative(int theVariable) {
         if (theVariable < -1) {
@@ -30,4 +34,20 @@ public class Review {
         return copyVariable;
     }
 
+    public int validateDate(int year) {
+        int actualMonth = 6;
+        int actualYear = 2020;
+        if (year < actualYear) {
+            System.out.println("Your card has expired.");
+        } else if (year == actualYear) {
+            System.out.println("Please entry the month of your card");
+            int copyMonth = dataEntry.nextInt();
+            if (copyMonth < actualMonth) {
+                System.out.println("Your card has expired.");
+            } else {
+                return year;
+            }
+        }
+        return year;
+    }
 }
