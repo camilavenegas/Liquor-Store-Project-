@@ -25,6 +25,12 @@ public class ConsumerAdress {
         this.houseNumber = houseNumber;
         this.crossingStreet = crossingStreet;
     }
+    public ConsumerAdress(){
+        this.principalStreet = "";
+        this.houseNumber = "";
+        this.crossingStreet = "";
+    }
+            
     
     
 

@@ -10,14 +10,24 @@ package ec.edu.espe.project.control;
  * @author hp
  */
 public class Review {
-    
-    public int validateNegative(int theVariable){
-        if(theVariable<-1){
+
+    public int validateNegative(int theVariable) {
+        if (theVariable < -1) {
             System.out.println("The number written is incorrect");
-            System.out.println("please try aga");
+            System.out.println("Please try again");
         }
-        
+
         return 0;
     }
-    
+
+    public String validateLongData(String variable) {
+        String copyVariable = "";
+        if (variable.length() < 10 || variable.length() > 10) {
+            System.out.println("Enter a valid Card");
+        } else {
+            copyVariable = variable;
+        }
+        return copyVariable;
+    }
+
 }

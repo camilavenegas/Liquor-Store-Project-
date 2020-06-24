@@ -10,18 +10,19 @@ package ec.edu.espe.project.model;
  * @author hp
  */
 public class Payment {
-    
+
     private float cash;
-   
-    
-    public float payWithCard ( Card card ){
-         float totalPrice=0;
-         return totalPrice;
-            
+
+    public float payWithCard(Card card) {
+        
+        float totalPrice = 0;
+        return totalPrice;
+
     }
-    
-    public float payWithCash( float cash ){
-        float totalPrice=0;
+
+    public float payWithCash(float cash) {
+        float totalPrice = 0;
         return totalPrice;
     }
+
 }
