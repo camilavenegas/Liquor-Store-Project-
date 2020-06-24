@@ -12,8 +12,15 @@ package ec.edu.espe.project.model;
 public class Card {
     private String name;
     private long id;
-    CardDate cardDate= new CardDate();
-    private int code;
+   private int code;
+
+    public Card(String name, long id, int code) {
+        this.name = name;
+        this.id = id;
+        this.code = code;
+    }
+    
+    
 
     public String getName() {
         return name;
@@ -31,13 +38,13 @@ public class Card {
         this.id = id;
     }
 
-    public CardDate getCardDate() {
+    /*public CardDate getCardDate() {
         return cardDate;
     }
 
     public void setCardDate(CardDate cardDate) {
         this.cardDate = cardDate;
-    }
+    }*/
 
     public int getCode() {
         return code;

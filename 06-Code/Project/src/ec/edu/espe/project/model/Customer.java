@@ -8,6 +8,7 @@ package ec.edu.espe.project.model;
 import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.function.Consumer;
 import jdk.nashorn.internal.objects.NativeArray;
 
 
@@ -20,12 +21,13 @@ public class Customer {
      private long id;
      private int age;
      private String mail;
-     private long phoneNumber;
-     Adress adress= new Adress();
+     private String Adress;
+     
+     ConsumerAdress consumerAdress = new ConsumerAdress();
      
      Scanner entryData = new Scanner(System.in);
 
-    public Customer(String fullName, long id, int age, String mail ) {
+    public Customer(String fullName, long id, int age, String mail, String Adress ) {
         this.fullName = fullName;
         this.id = id;
         this.age = age;
@@ -39,10 +41,21 @@ public class Customer {
     }
      ArrayList <Customer> customers = new ArrayList<>();
      
-     public void enterCustomer(){
+     public String getAdress(){
+         String principalStreet;
+         String houseNumber;
+         String crossingStreet;
          
-        customers.add(new Customer(setFullName(), setId(), setAge(), setMail()));
-        
+         principalStreet = consumerAdress.getPrincipalStreet();
+         houseNumber = consumerAdress.getHouseNumber();
+         crossingStreet = consumerAdress.getCrossingStreet();
+         
+         return principalStreet + houseNumber + crossingStreet;
+     }
+     
+     
+     public void enterCustomer(){         
+        customers.add(new Customer(setFullName(), setId(), setAge(), setMail(), getAdress())); 
         //return customers;
      }
      
@@ -67,12 +80,10 @@ public class Customer {
             }else{
                 if(op==0){
                     System.out.println("Register of new clients: ");
-                    System.out.println(""+customers);
-                    customers.forEach((custom) -> {
+                    //System.out.println(""+customers);
+                    customers.forEach((Customer custom) -> {
                         System.out.println("New Clients: " + custom);
                     });
-                        
-                    
                     break;
                 }
             }
@@ -119,19 +130,5 @@ public class Customer {
         this.mail = entryData.nextLine();
         return mail;
     }
-
-    public Adress getAdress() {
-        return adress;
-    }
-
-    public void setAdress(Adress adress) {
-        this.adress = adress;
-    }
-     
-     
-     
-     
-     
-    
     
 }
