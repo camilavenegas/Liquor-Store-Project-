@@ -15,8 +15,6 @@ import java.util.Scanner;
  */
 public class Combo {
     
-   
-
     private double priceCombo1;
     private double priceCombo2;
     private double priceCombo3;

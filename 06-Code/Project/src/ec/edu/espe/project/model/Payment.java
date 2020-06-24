@@ -10,7 +10,7 @@ package ec.edu.espe.project.model;
  * @author hp
  */
 public class Payment {
-    Card card= new Card();
+    
     private float cash;
    
     

@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-<<<<<<< HEAD
-=======
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-        <group/>
-=======
         <group>
-            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Project-Gropu4/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Beverage.java</file>
-            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Project-Gropu4/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Snack.java</file>
-            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Project-Gropu4/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Order.java</file>
-            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Project-Gropu4/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/view/SystemAdmin.java</file>
-            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Project-Gropu4/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Combo.java</file>
-            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Project-Gropu4/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/ProductMenu.java</file>
+            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Project-Gropu4/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Customer.java</file>
+            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Project-Gropu4/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/ConsumerAdress.java</file>
+            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Project-Gropu4/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/control/Review.java</file>
+            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Project-Gropu4/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Payment.java</file>
+            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Project-Gropu4/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/CardDate.java</file>
         </group>
->>>>>>> 9af98bf3eb0fab10b63992cf5fbba1ccb5a14f7f
     </open-files>
->>>>>>> 3c6b33d4a704a8857b0b80114e683c962b6cb78a
 </project-private>

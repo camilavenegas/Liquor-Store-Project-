@@ -21,7 +21,7 @@ public class Customer {
      private int age;
      private String mail;
      private long phoneNumber;
-     Adress adress= new Adress();
+     ConsumerAdress adress= new ConsumerAdress();
      
      Scanner entryData = new Scanner(System.in);
 
@@ -120,11 +120,11 @@ public class Customer {
         return mail;
     }
 
-    public Adress getAdress() {
+    public ConsumerAdress getAdress() {
         return adress;
     }
 
-    public void setAdress(Adress adress) {
+    public void setAdress(ConsumerAdress adress) {
         this.adress = adress;
     }
      
