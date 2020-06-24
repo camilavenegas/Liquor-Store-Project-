@@ -8,6 +8,7 @@ package ec.edu.espe.project.model;
 import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.function.Consumer;
 import jdk.nashorn.internal.objects.NativeArray;
 
 
@@ -67,12 +68,10 @@ public class Customer {
             }else{
                 if(op==0){
                     System.out.println("Register of new clients: ");
-                    System.out.println(""+customers);
-                    customers.forEach((custom) -> {
+                    //System.out.println(""+customers);
+                    customers.forEach((Customer custom) -> {
                         System.out.println("New Clients: " + custom);
                     });
-                        
-                    
                     break;
                 }
             }
@@ -127,11 +126,5 @@ public class Customer {
     public void setAdress(Adress adress) {
         this.adress = adress;
     }
-     
-     
-     
-     
-     
-    
-    
+
 }
