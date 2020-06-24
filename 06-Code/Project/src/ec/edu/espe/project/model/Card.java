@@ -5,14 +5,22 @@
  */
 package ec.edu.espe.project.model;
 
+import java.util.Scanner;
+
 /**
  *
  * @author hp
  */
 public class Card {
+
     private String name;
     private long id;
-   private int code;
+    private int code;
+    
+    CardDate cardDate = new CardDate();
+
+    Scanner entryData = new Scanner(System.in);
+    
 
     public Card(String name, long id, int code) {
         this.name = name;
@@ -20,8 +28,14 @@ public class Card {
         this.code = code;
     }
     
-    
+    public Card(){
+        this.name = "";
+        this.id = 0;
+        this.code = 0;
+    }
 
+    
+    
     public String getName() {
         return name;
     }
@@ -45,7 +59,6 @@ public class Card {
     public void setCardDate(CardDate cardDate) {
         this.cardDate = cardDate;
     }*/
-
     public int getCode() {
         return code;
     }
@@ -53,6 +66,5 @@ public class Card {
     public void setCode(int code) {
         this.code = code;
     }
-    
-    
+
 }

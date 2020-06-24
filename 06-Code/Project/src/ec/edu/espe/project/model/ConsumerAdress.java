@@ -12,8 +12,6 @@ import java.util.Scanner;
  * @author camilavenegas
  */
 public class ConsumerAdress {
-    
-    
     private String principalStreet;
     private String houseNumber;
     private String crossingStreet;
@@ -25,8 +23,11 @@ public class ConsumerAdress {
         this.houseNumber = houseNumber;
         this.crossingStreet = crossingStreet;
     }
-    
-    
+    public ConsumerAdress(){
+        this.principalStreet = "";
+        this.houseNumber = "";
+        this.crossingStreet = "";
+    }
 
     public String getPrincipalStreet() {
         return principalStreet;
