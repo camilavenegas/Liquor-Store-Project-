@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+<<<<<<< HEAD
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/LENOVO%20Core%20i7/Desktop/Ing.Software/2do%20SEMESTRE/Prog.Orientada%20a%20Obj/Githubs/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Beverage.java</file>
+            <file>file:/C:/Users/LENOVO%20Core%20i7/Desktop/Ing.Software/2do%20SEMESTRE/Prog.Orientada%20a%20Obj/Githubs/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Customer.java</file>
+=======
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+<<<<<<< HEAD
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Order.java</file>
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/control/Review.java</file>
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Payment.java</file>
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Beverage.java</file>
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Customer.java</file>
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/CardDate.java</file>
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Bill.java</file>
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Card.java</file>
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/ConsumerAdress.java</file>
+=======
+            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Project-Gropu4/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Customer.java</file>
+            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Project-Gropu4/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/ConsumerAdress.java</file>
+            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Project-Gropu4/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/control/Review.java</file>
+            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Project-Gropu4/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Payment.java</file>
+            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Project-Gropu4/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/CardDate.java</file>
+>>>>>>> b5e177311fa64e66f26d97042e6cb30db5c22163
+>>>>>>> 9c42b598eddd57b191249ca30dff2f2c547a3677
+        </group>
+>>>>>>> 43dd1a2a3047a421bf8c52c6621a2c17fe032270
     </open-files>
 </project-private>
