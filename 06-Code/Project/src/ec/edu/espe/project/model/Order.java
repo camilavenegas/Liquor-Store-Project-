@@ -7,6 +7,7 @@ package ec.edu.espe.project.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -15,95 +16,60 @@ import java.util.Scanner;
  */
 public class Order {
 
-    private Beverage beverage;
-    private Snack snack;
-    private double orderTotalPrice;
-
-    Collection order;
-
+    ProductMenu menu = new ProductMenu();
+    Beverage beverage = new Beverage();
+    Snack snack = new Snack();
     Combo combo = new Combo();
 
-    ProductMenu productMenu = new ProductMenu();
-    Scanner dataEntry = new Scanner(System.in);
-
     public Beverage getBeverage() {
+        beverage = menu.chooseBeverage();
 
-        double totalPrice = 0;
-        double priceCopy = 0;
-        int beverageCode;
-        Beverage beverageSelected;
-        productMenu.showBeverage();
-        beverageCode = productMenu.getBeverage();
-        beverageSelected = productMenu.beverages.get(beverageCode);
-
-        return beverageSelected;
+        return beverage;
     }
 
-    public double getSnack() {
-        productMenu.showSnack();
-        double totalPrice = snack.select();
+    public double calculateBeveragePrice(Beverage beverage) {
+        double price = beverage.getPrice();
+        System.out.println("$" + price);
+
+        return price;
+    }
+
+    public Snack getSnack() {
+        snack.setChip(snack.selectChips());
+        snack.setPeanut(snack.selectPeanut());
+        snack.setBubblegum(snack.selectBubblegum());
+        System.out.println("The order is" + snack.toString());
+
+        return snack;
+    }
+
+    public int calculateSnackPrice(Snack snack) {
+        int chips = snack.getChip();
+        int peanut = snack.getPeanut();
+        int bubblegum = snack.getBubblegum();
+        int totalPrice = chips + peanut + bubblegum;
+        System.out.println("The total price of your Snack order is-->" + totalPrice);
 
         return totalPrice;
     }
 
-    public double getCombo() {
-        combo.show();
-        double comboPrice = combo.select();
-        return comboPrice;
-    }
+    public double getComboPrice() {
+        //combo.show();
+        double price = combo.select();
+        if (price == 11.5) {
+            System.out.println("Yoy have choose the Univesity Combo");
+            System.out.println("And the price is-->$" + price);
+        } else if (price == 30) {
+            System.out.println("You have choosen the Friends Party Combo");
+            System.out.println("And the price is-->$" + price);
+        } else if (price == 43.5) {
+            System.out.println("You have choosen the Combo 'SI NO ME ACUERDO NO PASO'");
+            System.out.println("And the price is-->$" + price);
 
-    public int confirm() {
-        int confirmOption = -1;
-        System.out.println("Please to confirm the order press 1 or declines press 0");
-        confirmOption = dataEntry.nextInt();
-        return confirmOption;
-    }
+        }else 
+            System.out.println("You have choosen the Combo 'BORRACHOS PERO ESTUDIOSOS");
+            System.out.println("And the price is-->$"+price);
 
-    public Order create() {
-        int optionSubMenu;
-        double totalBeverage = 0.0F;
-        double totalSnacks = 0.0F;
-        double totalCombo = 0.0F;
-        int confirmBeverageOrder = -1;
-      
-        do {
-
-            System.out.println("Choose the following options for your order");
-            System.out.println("1. Beverage\n2. Snacks\n3. Combo\n4. Show order price\n5. Confirm Order\n6. Exit");
-            optionSubMenu = dataEntry.nextInt();
-            switch (optionSubMenu) {
-
-                case 1:
-                   Beverage beverageSelected=new Beverage();
-                 
-                     order.add(beverageSelected);
-                     
-  
-                case 2:
-                    totalSnacks = getSnack();
-                    orderTotalPrice += totalSnacks;
-
-                case 3:
-                    totalCombo = getCombo();
-                    orderTotalPrice += totalCombo;
-
-                case 4:
-                    System.out.println("The total price of your Order is: ");
-                    System.out.println("--> $" + orderTotalPrice);
-
-                case 5:
-                    int confirmOption = confirm();
-                    if (confirmOption == 0) {
-                        orderTotalPrice = 0;
-                    } else {
-                        System.out.println("Your order has been acomplished");
-                    }
-                    break;
-            }
-
-        } while (optionSubMenu < -1 || optionSubMenu > 6);
-        
-        return null;
-
+        return price;
     }
 }

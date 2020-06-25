@@ -22,9 +22,17 @@ public class SystemAdmin {
         //Order order = new Order();
         
         //order.create();
-        Customer custom = new Customer();
+        //Customer custom = new Customer();
         
-        custom.cicle();
+        Order order= new Order();
+        /*order.getBeverage();
+        order.calculateBeveragePrice(order.getBeverage());
+        //order.getSnack();
+        order.calculateSnackPrice(order.getSnack());*/
+        order.getComboPrice();
+        
+        //custom.cicle();
+        
      
     }
     

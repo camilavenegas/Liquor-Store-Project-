@@ -13,19 +13,11 @@ import java.util.Scanner;
  */
 public class Snack {
 
-    private double snackPrice;
+    
     private int chip;
     private int peanut;
     private int bubblegum;
-    private int chipPrice = 1;
-    private int peanutPrice = 1;
-    private int bubblegumPrice = 1;
-
-    /*public int select( int chip, int peanut, int bubblegum){
-         //int requierement[3];
-         //return requirement[];
-         return 0;
-    }*/
+   
     Scanner dataEntry = new Scanner(System.in);
 
     public Snack(int chip, int peanut, int bubblegum) {
@@ -39,14 +31,7 @@ public class Snack {
         this.peanut = 0;
         this.bubblegum = 0;
     }
-
-    public double getSnackPrice() {
-        return snackPrice;
-    }
-
-    public void setSnackPrice(double snackPrice) {
-        this.snackPrice = snackPrice;
-    }
+    
 
     public int getChip() {
         return chip;
@@ -72,29 +57,7 @@ public class Snack {
         this.bubblegum = bubblegum;
     }
 
-    public int getChipPrice() {
-        return chipPrice;
-    }
-
-    public void setChipPrice(int chipPrice) {
-        this.chipPrice = chipPrice;
-    }
-
-    public int getPeanutPrice() {
-        return peanutPrice;
-    }
-
-    public void setPeanutPrice(int peanutPrice) {
-        this.peanutPrice = peanutPrice;
-    }
-
-    public int getBubblegumPrice() {
-        return bubblegumPrice;
-    }
-
-    public void setBubblegumPrice(int bubblegumPrice) {
-        this.bubblegumPrice = bubblegumPrice;
-    }
+    
 
     public Scanner getDataEntry() {
         return dataEntry;
@@ -112,20 +75,25 @@ public class Snack {
     
     
 
-    public double select() {
+    public int selectChips() {
         System.out.println("How many chips do you want?");
         chip = dataEntry.nextInt();
-        chipPrice = chip;
+        return(chip);
+    }
+    
+    public int selectPeanut(){
         System.out.println("How many peanuts do you want");
         peanut = dataEntry.nextInt();
-        peanutPrice = peanut;
+        return (peanut);
+    }
+    
+    public int selectBubblegum(){
+        
         System.out.println("How many bubblegums do you want");
         bubblegum = dataEntry.nextInt();
-        bubblegumPrice = bubblegum;
-        snackPrice = chipPrice + peanutPrice + bubblegumPrice;
-
-        return snackPrice;
-
+        
+        return (bubblegum);
+        
     }
 
 }
