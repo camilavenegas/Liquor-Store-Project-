@@ -2,7 +2,21 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Project-Gropu4/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Order.java</file>
+=======
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Combo.java</file>
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/ProductMenu.java</file>
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Order.java</file>
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Payment.java</file>
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Beverage.java</file>
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Customer.java</file>
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Snack.java</file>
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/CardDate.java</file>
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Bill.java</file>
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/Card.java</file>
+            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Project/src/ec/edu/espe/project/model/ConsumerAdress.java</file>
+>>>>>>> 00caf7a29c97002c86a0fa25403a2a42d5898cf1
         </group>
     </open-files>
 </project-private>
