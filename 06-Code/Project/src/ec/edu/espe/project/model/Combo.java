@@ -58,6 +58,9 @@ public class Combo {
         combo1.add(new Beverage("Clasic", 3.75, "1/2 Norteño", 4.5, 5));
         combo1.add(new Snack(1, 1, 1));
         double totalPriceCombo1 = calculateCombo1Price();
+        combo1.forEach((bev) -> {
+            System.out.println("UNIVERSITY COMBO: " + bev);
+            });
         System.out.println("The price is-->" + totalPriceCombo1);
 
         combo2.add(new Beverage("Whisky", 1, "Old times red", 13.0, 15));
@@ -80,6 +83,8 @@ public class Combo {
         combo4.add(new Snack(3, 0, 2));
         double totalPriceCombo4 = calculateCombo4Price();
         System.out.println("The price is-->" + totalPriceCombo4);
+        
+        
 
     }
 

@@ -20,7 +20,7 @@ public class ProductMenu {
     Snack snack = new Snack();
     ArrayList<Snack> snacks = new ArrayList<>();
     
-    public void showBeverage() {
+    public Beverage chooseBeverage() {
 
         beverages.add(new Beverage("Clasic", 1.5, "Switch", 4.0, 1));
         beverages.add(new Beverage("Clasic", 1, "Cristal", 8.5, 2));
@@ -45,11 +45,18 @@ public class ProductMenu {
         beverages.add(new Beverage("Ron", 1, "Garrafa abuelo", 26.00, 21));
         beverages.add(new Beverage("Whisky", 1, "Jack Daniels", 68.0, 22));
         
-       
-
-        beverages.forEach((bev) -> {
+       beverages.forEach((bev) -> {
             System.out.println("Beverage: " + bev);
-        });
+            });
+            int copyCode= beverage.choose();
+            for(int i=0; i<beverages.size();i++){
+                if(beverages.get(i).getCode()==copyCode){
+                    System.out.println("The BEVERAGE choosen"+beverages.get(i));
+                }
+            }
+            return beverages.get(copyCode);
+            
+        
         
     }
 
