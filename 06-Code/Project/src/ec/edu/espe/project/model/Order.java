@@ -26,6 +26,7 @@ public class Order {
 
         return beverage;
     }
+    
 
     public double calculateBeveragePrice(Beverage beverage) {
         double price = beverage.getPrice();
@@ -71,5 +72,12 @@ public class Order {
             System.out.println("And the price is-->$"+price);
 
         return price;
+    }
+    Scanner dataEntry= new Scanner(System.in);
+    public int confirm() {
+        int confirmOption = -1;
+        System.out.println("Please to confirm the order press 1 or declines press 0");
+        confirmOption = dataEntry.nextInt();
+        return confirmOption;
     }
 }
