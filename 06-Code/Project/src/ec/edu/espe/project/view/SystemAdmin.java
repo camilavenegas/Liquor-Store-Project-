@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.project.view;
 
+import ec.edu.espe.project.control.Review;
 import ec.edu.espe.project.model.Bill;
 import ec.edu.espe.project.model.Customer;
 import ec.edu.espe.project.model.Order;
@@ -22,6 +23,7 @@ public class SystemAdmin {
         Scanner in = new Scanner(System.in);
         Bill bill = new Bill();
         Customer custom = new Customer();
+        Review review= new Review();
         do {
             System.out.println("THE LIQUOR STORE AUTOMATION");  
             System.out.println("\t\tGROUP 4");
@@ -35,6 +37,8 @@ public class SystemAdmin {
             System.out.println("2.- Register data client");
             System.out.println("3.- EXIT");
             op = in.nextInt();
+            op= review.validateNegative(op);
+                    
             switch (op) {
                 case 1:
                     bill.generateBillAmount();
