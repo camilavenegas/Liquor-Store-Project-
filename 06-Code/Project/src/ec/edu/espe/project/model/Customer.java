@@ -25,7 +25,7 @@ public class Customer {
      
      ConsumerAdress consumerAdress = new ConsumerAdress();
      
-     Scanner entryData = new Scanner(System.in);
+     Scanner dataEntry = new Scanner(System.in);
 
     public Customer(String fullName, long id, int age, String mail, String Adress ) {
         this.fullName = fullName;
@@ -33,12 +33,26 @@ public class Customer {
         this.age = age;
         this.mail = mail;
     }
-    public Customer(){
+    /*public Customer(){
         this.fullName = "";
         this.id = 0;
         this.age = 0;
         this.mail = "";
+    }*/
+    public Customer() {
     }
+    
+    public void customerData(Customer custom){   
+            System.out.println("Enter your full name:");
+            custom.setFullName(dataEntry.nextLine());
+            System.out.println("Enter yout Id: ");
+            custom.setId(dataEntry.nextLong());
+            System.out.println("Enter your age: ");
+            custom.setAge(dataEntry.nextInt());
+            System.out.println("Enter your e-mail: ");
+            custom.setMail(dataEntry.nextLine());            
+    }
+
      ArrayList <Customer> customers = new ArrayList<>();
      
      public String getAdress(){
@@ -53,12 +67,6 @@ public class Customer {
          return principalStreet + houseNumber + crossingStreet;
      }
      
-     
-     public void enterCustomer(){         
-        customers.add(new Customer(setFullName(), setId(), setAge(), setMail(), getAdress())); 
-        //return customers;
-     }
-     
      public void newClient(){
          System.out.println("New Client: ");
          System.out.println("" + getFullName());
@@ -67,68 +75,71 @@ public class Customer {
          System.out.println("" + getMail());
      }
      
-     public void cicle() {
+     public String getCustomerData() {
         int op;
         Customer customer = new Customer();
         do {
             System.out.println("Enter new client?");
             System.out.println("YES -> 1 or NO -> 0");
-            op = entryData.nextInt();
+            op = dataEntry.nextInt();
             if (op == 1) {                
-                   customer.enterCustomer();
-                //customer.newClient();
+                   customer.customerData(customer);
+
             }else{
                 if(op==0){
                     System.out.println("Register of new clients: ");
-                    //System.out.println(""+customers);
                     customers.forEach((Customer custom) -> {
                         System.out.println("New Clients: " + custom);
                     });
                     break;
                 }
             }
-        } while (op != 0 || op != 1);    
+        } while (op != 0 || op != 1);  
+        return customer.toString();
      }
-    
 
     public String getFullName() {
         return fullName;
     }
 
-    public String setFullName() {
-        System.out.println("Enter your name: ");
-        this.fullName = entryData.nextLine();
-        return fullName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
-
     public long getId() {
         return id;
     }
-
-    public long setId() {
-        System.out.println("Enter yout id: ");
-        this.id = entryData.nextInt();
-        return id;
+    public void setId(long id) {
+        this.id = id;
     }
-
     public int getAge() {
         return age;
     }
-
-    public int setAge() {
-        System.out.println("Enter your age: ");
-        this.age = entryData.nextInt();
-        return age;
+    public void setAge(int age) {
+        this.age = age;
     }
-
     public String getMail() {
         return mail;
     }
-
-    public String setMail() {
-        System.out.println("Enter your e-mail");       
-        this.mail = entryData.nextLine();
-        return mail;
+    public void setMail(String mail) {
+        this.mail = mail;
     }
-    
+    public ConsumerAdress getConsumerAdress() {
+        return consumerAdress;
+    }
+    public void setConsumerAdress(ConsumerAdress consumerAdress) {
+        this.consumerAdress = consumerAdress;
+    }
+    public Scanner getDataEntry() {
+        return dataEntry;
+    }
+    public void setDataEntry(Scanner dataEntry) {
+        this.dataEntry = dataEntry;
+    }
+    public ArrayList<Customer> getCustomers() {
+        return customers;
+    }
+    public void setCustomers(ArrayList<Customer> customers) {
+        this.customers = customers;
+    }
+
 }

@@ -17,19 +17,25 @@ public class Bill {
 
     private long number;
     private String name;
+    
+    FileManager file = new FileManager("Bills.txt");
+    Order order = new Order();
+    Customer customer = new Customer();
+    
 
     public Bill(long number, String name) {
         this.number = 1;
         this.name = "LIQUOR STORE AUTOMATION";
 
     }
- public Bill() {
+
+    public Bill() {
         this.number = 0;
         this.name = "";
 
     }
-    Scanner dataEntry= new Scanner(System.in);
-    
+    Scanner dataEntry = new Scanner(System.in);
+
     public long getNumber() {
         return number;
     }
@@ -45,21 +51,18 @@ public class Bill {
     public void setName(String name) {
         this.name = name;
     }
-
-    FileManager file = new FileManager("Bills.txt");
-
-    Order order = new Order();
-
+   
     public double generateBillAmount() {
         double orderTotalPrice = 0;
         int option = 0;
-        System.out.println("WELCOME TO THE LIQUOR STORE ");
-        System.out.println("1.Create Order\n2.ConfirmOrder\n3.CancelOrder\n4.Exit");
-        System.out.println("Please enter your option");
-        option=dataEntry.nextInt();
+        do{
+            System.out.println("WELCOME TO THE LIQUOR STORE ");
+            System.out.println("1.Create Order\n2.ConfirmOrder\n3.CancelOrder\n4.Exit");
+            System.out.println("Please enter your option");
+            option = dataEntry.nextInt();
         switch (option) {
             case 1:
-                
+
                 double beveragePrice = order.calculateBeveragePrice(order.getBeverage());
                 orderTotalPrice += beveragePrice;
                 int snackPrice = order.calculateSnackPrice(order.getSnack());
@@ -71,7 +74,7 @@ public class Bill {
             case 2:
                 int optionConfirm;
                 optionConfirm = order.confirm();
-                if(orderTotalPrice==0){
+                if (orderTotalPrice == 0) {
                     System.out.println("You still have not done your order");
                     System.out.println("Please try again");
                 }
@@ -85,15 +88,27 @@ public class Bill {
                 int validateOption = order.confirm();
                 if (validateOption == 1) {
                     orderTotalPrice = 0;
-
-                }else
+                } else {
                     break;
+                }
             case 4:
                 System.out.println("Thanks for your purchase");
                 break;
-
         }
+        }while(option<0||option>4 || option != 4);
         return orderTotalPrice;
     }
+    
+    
+    public String getClientData(){
+        String client;
+        client = customer.getCustomerData();        
+        return client;
+    }
+    
+    public void createInTheFileManager(){
+        file.writeDataRecord(getClientData());
+    }
+    
 
 }

@@ -92,19 +92,20 @@ public class Combo {
 
         System.out.println("Please put the number of the combo that you want");
         int comboOption = 0;
+        do{
         comboOption = selectCombo.nextInt();
-        if (comboOption == 1) {
-            return calculateCombo1Price();
-        } else if (comboOption == 2) {
-            return calculateCombo2Price();
-        } else if (comboOption == 3) {
-            return calculateCombo3Price();
-        } else if (comboOption == 4) {
-
-            return calculateCombo4Price();
-
-        } else {
-            return 0.0;
+        }while(comboOption<=0||comboOption>4);
+        switch (comboOption) {
+            case 1:
+                return calculateCombo1Price();
+            case 2:
+                return calculateCombo2Price();
+            case 3:
+                return calculateCombo3Price();
+            case 4:
+                return calculateCombo4Price();
+            default:
+                return 0.0;
         }
 
     }

@@ -16,17 +16,12 @@ public class Payment {
     public Card payWithCard(Card card) {
      
         float totalPrice = 0;
-        
-        
-        
         return null;
 
     }
 
     public float payWithCash(float cash) {
-        float totalPrice = 0;
-        
-        
+        float totalPrice = 0; 
         return totalPrice;
     }
 
