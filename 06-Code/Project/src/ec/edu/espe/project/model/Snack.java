@@ -76,22 +76,29 @@ public class Snack {
     
 
     public int selectChips() {
+        System.out.println("Dont choose more of 10 chips");
         System.out.println("How many chips do you want?");
+        do{
         chip = dataEntry.nextInt();
+        }while(chip<=0||chip>10);
         return(chip);
     }
     
     public int selectPeanut(){
+        System.out.println("Dont choose more of 10 peanuts");
         System.out.println("How many peanuts do you want");
+        do{
         peanut = dataEntry.nextInt();
+        }while(peanut<=0||peanut>10);
         return (peanut);
     }
     
     public int selectBubblegum(){
-        
+        System.out.println("Dont choose more of 10 bubblegum");
         System.out.println("How many bubblegums do you want");
+        do{
         bubblegum = dataEntry.nextInt();
-        
+        }while(bubblegum<=0||bubblegum>10);
         return (bubblegum);
         
     }
