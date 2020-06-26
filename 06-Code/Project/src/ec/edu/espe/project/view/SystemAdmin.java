@@ -11,6 +11,7 @@ import ec.edu.espe.project.model.Bill;
 import ec.edu.espe.project.model.Customer;
 import ec.edu.espe.project.model.FileBill;
 import ec.edu.espe.project.model.Order;
+import ec.edu.espe.project.model.Payment;
 import ec.edu.espe.project.model.ProductMenu;
 import java.io.IOException;
 import java.util.List;
@@ -23,19 +24,15 @@ import java.util.Scanner;
 public class SystemAdmin {
 
     public static void main(String[] args) throws IOException {
-        //double totalCost;
+        
         FileManager fileManager = new FileManager();
-
-
-       // FileBill bill = new FileBill();
-        //totalCost=data.generateBillAmount();
-        //bill.saveBill(data.getBillData());
                 
         int op = 0;
         Scanner in = new Scanner(System.in);
         Customer custom = new Customer();
         Bill bill = new Bill();
         Review review= new Review();
+        Payment pay= new Payment();
         do {
             System.out.println("THE LIQUOR STORE AUTOMATION");  
             System.out.println("\t\tGROUP 4");
@@ -48,6 +45,7 @@ public class SystemAdmin {
             System.out.println("1.- Explore the liquor store");
             System.out.println("2.- Register data client");
             System.out.println("3.- EXIT");
+<<<<<<< HEAD
             
             do{
             try{
@@ -70,8 +68,19 @@ public class SystemAdmin {
             
                     
             switch (op) {
+=======
+            op = in.nextInt();
+            
+                     switch (op) {
+>>>>>>> 4ed4aaa45616567a0d0a6229807ffbd4ece4df1d
                 case 1:
-                    bill.generateBillAmount();
+                    double totalValue=bill.generateBillAmount();
+                    System.out.println("Thaks for your purchase ☻");
+                    System.out.println("The total cost for your order is "+totalValue);
+                    
+                    System.out.println("Go to the pay method");
+                    pay.pay(totalValue);
+                    
                     break;
                 case 2:
                     fileManager.register();

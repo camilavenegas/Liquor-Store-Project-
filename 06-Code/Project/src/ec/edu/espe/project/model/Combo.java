@@ -53,6 +53,7 @@ public class Combo {
     }
 
     public void show() {
+<<<<<<< HEAD
 
         combo1.add(new Beverage("Clasic", 1.5, "Switch", 4.0, 1));
         combo1.add(new Beverage("Clasic", 3.75, "1/2 Norteño", 4.5, 5));
@@ -84,11 +85,47 @@ public class Combo {
         double totalPriceCombo4 = calculateCombo4Price();
         System.out.println("The price is-->" + totalPriceCombo4);
 
+=======
+        
+        
+        System.out.println("-----------------COMBO 1-------------------------------- ");
+        System.out.println("|              UNIVERSITY COMBO                         |");
+        System.out.println("|       Beverage-->Clasic, 1.5, Switch, 4.0, 1          |");
+        System.out.println("|       Beverage-->Clasic, 3.75, Switch, 4.5, 5         |");
+        System.out.println("|       Snack--> chips=1, peanut=1, bubblegum=1         |");
+        System.out.println("|       PRICE= $11.5                                    |");
+        System.out.println("\n\n");
+        System.out.println("-----------------COMBO 2-------------------------------- ");
+        System.out.println("|              FRIENDS PARTY COMBO                      |");
+        System.out.println("|       Beverage-->Whisky, 1, Old times red, 13.0, 15   |");
+        System.out.println("|       Beverage-->Whisky, 1, Old times black, 15.0, 16 |");
+        System.out.println("|       Snack--> chips=2, peanut=4, bubblegum=0         |");
+        System.out.println("|       PRICE= $34                                      |");
+        System.out.println("\n\n");
+        System.out.println("-----------------COMBO 3---------------------------------");
+        System.out.println("|              SI NO ME ACUERDO NO PASÓ                 |");
+        System.out.println("|       Beverage-->Beer, 1, Pilsener, 15.0, 13          |");
+        System.out.println("|       Beverage-->Beer, 1, Club, 15.0, 14              |");
+        System.out.println("|       Beverage-->Ron, 1, Ron pon pon, 7.50, 19        |");
+        System.out.println("|       Snack--> chips=1, peanut=2, bubblegum=3         |");
+        System.out.println("|       PRICE= $43.5                                    |");
+        System.out.println("\n\n");
+        System.out.println("-----------------------------COMBO 4---------------------------------");
+        System.out.println("|              BORRACHOS PERO ESTUDIOSOS                            |");
+        System.out.println("|       Beverage-->Wine, 1, Vino Reservado, 14.00, 8                |");
+        System.out.println("|       Beverage-->Agua Ardiente, 1,Zhumir Piña Colada, 12.50, 7    |");
+        System.out.println("|       Beverage-->Whisky, 1,Jhonny Red Label, 25.0, 18             |");
+        System.out.println("|       Beverage-->Clasic, 1, Green mate, 13.5, 9                   |");
+        System.out.println("|       Snack--> chips=3, peanut=0, bubblegum=2                     |");
+        System.out.println("|       PRICE= $70                                                  |");
+        
+>>>>>>> 4ed4aaa45616567a0d0a6229807ffbd4ece4df1d
     }
 
     public double select() {
 
         System.out.println("Please put the number of the combo that you want");
+<<<<<<< HEAD
         int comboOption = 0;
         do {
             do {
@@ -101,15 +138,25 @@ public class Combo {
                 break;
             } while (true);
         } while (comboOption <= 0 || comboOption > 4);
+=======
+        System.out.println("If you dont need a combo press -->0");
+        int comboOption = -1;
+        do{
+        comboOption = selectCombo.nextInt();
+        }while(comboOption<0||comboOption>4);
+>>>>>>> 4ed4aaa45616567a0d0a6229807ffbd4ece4df1d
         switch (comboOption) {
             case 1:
                 return calculateCombo1Price();
+                
             case 2:
                 return calculateCombo2Price();
             case 3:
                 return calculateCombo3Price();
             case 4:
                 return calculateCombo4Price();
+            case 5:
+                return 0;
             default:
                 return 0.0;
         }

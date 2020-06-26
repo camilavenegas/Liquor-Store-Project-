@@ -21,13 +21,13 @@ public class Customer {
     private long id;
     private int age;
     private String mail;
-    private ConsumerAdress adress;
+    private CustomerAdress adress;
 
-    ConsumerAdress consumerAdress = new ConsumerAdress();
+    CustomerAdress consumerAdress = new CustomerAdress();
     Scanner dataEntry = new Scanner(System.in);
     
     
-    public Customer(String fullName, long id, int age, String mail, ConsumerAdress adress) {
+    public Customer(String fullName, long id, int age, String mail, CustomerAdress adress) {
         this.fullName = fullName;
         this.id = id;
         this.age = age;
@@ -44,7 +44,7 @@ public class Customer {
     }
 
     public Customer customerData() {
-        Customer custom=null;
+        Customer custom = null;
         System.out.println("Enter your full name:");
         custom.setFullName(dataEntry.nextLine());
         System.out.println("Enter yout Id: ");
@@ -60,7 +60,7 @@ public class Customer {
         return custom;
     }
 
-    public ConsumerAdress getAdress() {
+    public CustomerAdress getAdress() {
         consumerAdress.setPrincipalStreet(consumerAdress.writePrincipalStreet());
         consumerAdress.setCrossingStreet(consumerAdress.writeCrossingStreet());
         consumerAdress.setHouseNumber(consumerAdress.writeHouseNumber());
@@ -101,11 +101,11 @@ public class Customer {
         this.mail = mail;
     }
 
-    public ConsumerAdress getConsumerAdress() {
+    public CustomerAdress getConsumerAdress() {
         return consumerAdress;
     }
 
-    public void setConsumerAdress(ConsumerAdress consumerAdress) {
+    public void setConsumerAdress(CustomerAdress consumerAdress) {
         this.consumerAdress = consumerAdress;
     }
 

@@ -5,7 +5,7 @@
  */
 package ec.edu.espe.project.control;
 
-import ec.edu.espe.project.model.ConsumerAdress;
+import ec.edu.espe.project.model.CustomerAdress;
 import ec.edu.espe.project.model.Customer;
 import java.io.File;
 import java.io.FileWriter;
@@ -23,7 +23,7 @@ public class FileManager {
 
     Customer customer = new Customer();
     Scanner in = new Scanner(System.in);
-    ConsumerAdress adress = new ConsumerAdress();
+    CustomerAdress adress = new CustomerAdress();
 
     
     public Customer register() {
