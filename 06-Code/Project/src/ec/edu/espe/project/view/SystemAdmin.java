@@ -48,8 +48,26 @@ public class SystemAdmin {
             System.out.println("1.- Explore the liquor store");
             System.out.println("2.- Register data client");
             System.out.println("3.- EXIT");
-            op = in.nextInt();
-            op= review.validateNegative(op);
+            
+            do{
+            try{
+                op = Integer.parseInt(in.nextLine());               
+            }catch (Exception exception) {
+                System.out.println("Invalidate option, enter a correct option");
+                continue;
+            }
+            break;
+        }while(true);
+            /*do{
+            try{
+                op = in.nextInt();
+                in.nextLine();
+            }catch(NumberFormatException exception){
+                continue;
+            }
+            break;
+        }while(true);*/
+            
                     
             switch (op) {
                 case 1:

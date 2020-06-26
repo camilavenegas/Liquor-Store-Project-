@@ -7,20 +7,20 @@ package ec.edu.espe.project.model;
 
 import java.util.Scanner;
 
-
 /**
  *
  * @author hp
  */
 public class Beverage {
-    
-     private String type;
-     private double size;
-     private String brand;
-     private double price;
-     private int code;
-     
-     Scanner codeBeverage = new Scanner(System.in);
+
+    private String type;
+    private double size;
+    private String brand;
+    private double price;
+    private int code;
+
+    Scanner codeBeverage = new Scanner(System.in);
+
     public Beverage(String type, double size, String brand, double price, int code) {
         this.type = type;
         this.size = size;
@@ -28,7 +28,8 @@ public class Beverage {
         this.price = price;
         this.code = code;
     }
-    public Beverage(){
+
+    public Beverage() {
         this.type = "";
         this.brand = "";
         this.size = 0;
@@ -83,25 +84,22 @@ public class Beverage {
     public void setCodeBeverage(Scanner codeBeverage) {
         this.codeBeverage = codeBeverage;
     }
-    
-   
 
     @Override
     public String toString() {
         return "Beverage{" + "type=" + type + ", size=" + size + ", brand=" + brand + ", price=" + price + ", CODE=" + code + '}';
     }
-    
-    public int choose(){
+
+    public int choose() {
         System.out.println("Select the beverage by the CODE: ");
         int copyCode;
-        copyCode = codeBeverage.nextInt();
-
+        do {
+            copyCode = codeBeverage.nextInt();
+            if (copyCode <= 0 || copyCode > 22) {
+                System.out.println("Enter a valid number");
+            }
+        } while (copyCode <= 0 || copyCode > 22);
         return copyCode;
-    } 
-    
-    
+    }
 
-     
-     
-    
 }

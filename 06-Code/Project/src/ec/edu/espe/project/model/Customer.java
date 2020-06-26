@@ -50,6 +50,7 @@ public class Customer {
         System.out.println("Enter yout Id: ");
         custom.setId(dataEntry.nextLong());
         System.out.println("Enter your age: ");
+        
         custom.setAge(dataEntry.nextInt());
         System.out.println("Enter your e-mail: ");
         custom.setMail(dataEntry.nextLine());

@@ -76,7 +76,17 @@ public class Order {
     public int confirm() {
         int confirmOption = -1;
         System.out.println("Please to confirm the order press 1 or declines press 0");
-        confirmOption = dataEntry.nextInt();
+        do{
+            try{
+                confirmOption = Integer.parseInt(dataEntry.nextLine());               
+            }catch (Exception exception) {
+                System.out.println("Invalidate option, enter a correct option");
+                continue;
+            }
+            break;
+        }while(true);
+        
+        
         return confirmOption;
     }
 }

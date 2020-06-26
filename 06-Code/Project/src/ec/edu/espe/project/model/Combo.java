@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @author camilavenegas
  */
 public class Combo {
-    
+
     private double priceCombo1;
     private double priceCombo2;
     private double priceCombo3;
@@ -53,14 +53,14 @@ public class Combo {
     }
 
     public void show() {
-        
+
         combo1.add(new Beverage("Clasic", 1.5, "Switch", 4.0, 1));
         combo1.add(new Beverage("Clasic", 3.75, "1/2 Norteño", 4.5, 5));
         combo1.add(new Snack(1, 1, 1));
         double totalPriceCombo1 = calculateCombo1Price();
         combo1.forEach((bev) -> {
             System.out.println("UNIVERSITY COMBO: " + bev);
-            });
+        });
         System.out.println("The price is-->" + totalPriceCombo1);
 
         combo2.add(new Beverage("Whisky", 1, "Old times red", 13.0, 15));
@@ -83,8 +83,6 @@ public class Combo {
         combo4.add(new Snack(3, 0, 2));
         double totalPriceCombo4 = calculateCombo4Price();
         System.out.println("The price is-->" + totalPriceCombo4);
-        
-        
 
     }
 
@@ -92,9 +90,17 @@ public class Combo {
 
         System.out.println("Please put the number of the combo that you want");
         int comboOption = 0;
-        do{
-        comboOption = selectCombo.nextInt();
-        }while(comboOption<=0||comboOption>4);
+        do {
+            do {
+                try {
+                    comboOption = Integer.parseInt(selectCombo.nextLine());
+                } catch (Exception exception) {
+                    System.out.println("Invalidate option, enter a correct option");
+                    continue;
+                }
+                break;
+            } while (true);
+        } while (comboOption <= 0 || comboOption > 4);
         switch (comboOption) {
             case 1:
                 return calculateCombo1Price();

@@ -47,7 +47,15 @@ public class Bill {
             System.out.println("WELCOME TO THE LIQUOR STORE ");
             System.out.println("1.Create Order\n2.ConfirmOrder\n3.CancelOrder\n4.Exit");
             System.out.println("Please enter your option");
-            option = dataEntry.nextInt();
+            do{
+            try{
+                option = Integer.parseInt(dataEntry.nextLine());               
+            }catch (Exception exception) {
+                System.out.println("Invalidate option, enter a correct option");
+                continue;
+            }
+            break;
+        }while(true);
 
             switch (option) {
 

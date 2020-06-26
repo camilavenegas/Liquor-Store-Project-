@@ -14,20 +14,9 @@ import java.util.Scanner;
 public class Review {
 
     Scanner dataEntry = new Scanner(System.in);
-/*
-    public int validateNegative(int theVariable) {
-        if (theVariable < -1) {
-            System.out.println("The number written is incorrect");
-            System.out.println("Please try again");
-        }
 
-        return 0;
-    }
-*/   
     public String validateString(){
-        
-        
-        return null;
+   return null;
     }
 
     public String validateLongData(String variable) {
