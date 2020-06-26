@@ -57,12 +57,12 @@ public class Customer {
         return custom;
     }
 
-    public ConsumerAdress getAdress() {
+   public ConsumerAdress getAdress() {
         consumerAdress.setPrincipalStreet(consumerAdress.writePrincipalStreet());
         consumerAdress.setCrossingStreet(consumerAdress.writeCrossingStreet());
         consumerAdress.setHouseNumber(consumerAdress.writeHouseNumber());
 
-        return consumerAdress;
+       return consumerAdress;
 
     }
 
@@ -104,6 +104,10 @@ public class Customer {
 
     public void setConsumerAdress(ConsumerAdress consumerAdress) {
         this.consumerAdress = consumerAdress;
+    }
+    
+    public String serialize(){
+        return fullName + ";" + id + ";" + age + ";" + mail + ";" + adress;
     }
 
     @Override
