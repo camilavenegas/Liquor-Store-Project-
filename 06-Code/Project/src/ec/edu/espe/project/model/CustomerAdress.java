@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author camilavenegas
  */
-public class ConsumerAdress {
+public class CustomerAdress {
 
     private String principalStreet;
     private String crossingStreet;
@@ -19,13 +19,13 @@ public class ConsumerAdress {
 
     Scanner dataEntry = new Scanner(System.in);
 
-    public ConsumerAdress(String principalStreet, String houseNumber, String crossingStreet) {
+    public CustomerAdress(String principalStreet, String houseNumber, String crossingStreet) {
         this.principalStreet = principalStreet;
         this.houseNumber = houseNumber;
         this.crossingStreet = crossingStreet;
     }
 
-    public ConsumerAdress() {
+    public CustomerAdress() {
         this.principalStreet = "";
         this.houseNumber = "";
         this.crossingStreet = "";

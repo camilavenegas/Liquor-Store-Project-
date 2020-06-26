@@ -19,7 +19,7 @@ public class Bill {
     private Beverage copyBeverage;
     private Snack snack;
     private double totalCost;
-    //FileManager file = new FileManager("Bills.txt");
+  
     FileManager file;
     Order order = new Order();
     Customer customer = new Customer();
@@ -32,11 +32,9 @@ public class Bill {
         this.name = "LIQUOR STORE AUTOMATION";
 
     }
-
     public Bill() {
         this.number = 0;
         this.name = "";
-
     }
 
     public double generateBillAmount() {
@@ -45,7 +43,7 @@ public class Bill {
         int option = 0;
         do {
             System.out.println("WELCOME TO THE LIQUOR STORE ");
-            System.out.println("1.Create Order\n2.ConfirmOrder\n3.CancelOrder\n4.Exit");
+            System.out.println("1.Create Order\n2.Get Client Data for the Bill\n3.Cancel Order\n4.Exit");
             System.out.println("Please enter your option");
             option = dataEntry.nextInt();
 
@@ -59,6 +57,7 @@ public class Bill {
                     orderTotalPrice += snackPrice;
                     double comboPrice = order.getComboPrice();
                     orderTotalPrice += comboPrice;
+                    System.out.println("the order is done now please go to create the data for the bill");
                     break;
 
                 case 2:

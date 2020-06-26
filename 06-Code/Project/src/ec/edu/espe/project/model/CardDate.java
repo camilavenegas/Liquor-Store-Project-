@@ -21,33 +21,47 @@ public class CardDate {
         this.month = month;
         this.year = year;
     }
-    
-    public CardDate(){
-        this.month=0;
-        this.year=0;
+    public CardDate() {
+        this.month = 0;
+        this.year = 0;
     }
 
     public int getMonth() {
         return month;
     }
 
-    public int setMonth() {
-        System.out.println("Write the month in which your card is validate");
-        this.month = dataEntry.nextInt();
-        return month;
+    public void setMonth(int month) {
+        this.month = month;
     }
 
     public int getYear() {
         return year;
     }
 
-    public int setYear() {
-        System.out.println("Write the year in which your card is validate");
-        this.year = dataEntry.nextInt();
-        return year;
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public Scanner getDataEntry() {
+        return dataEntry;
+    }
+
+    public void setDataEntry(Scanner dataEntry) {
+        this.dataEntry = dataEntry;
     }
     
+    public int writeMonth(){
+        System.out.println("Please write the the month date, that your card has---> PUT THE MONTH NUMBER");
+        month= dataEntry.nextInt();
+        
+        return month;
+    }
     
+    public int writeYear(){
+        System.out.println("Please write the yaer date, that your card has");
+        year= dataEntry.nextInt();
+         return year;
+    }
 
     @Override
     public String toString() {

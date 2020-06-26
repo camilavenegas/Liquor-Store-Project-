@@ -54,7 +54,7 @@ public class Order {
     }
 
     public double getComboPrice() {
-        //combo.show();
+        combo.show();
         double price = combo.select();
         if (price == 11.5) {
             System.out.println("Yoy have choose the Univesity Combo");
@@ -66,9 +66,11 @@ public class Order {
             System.out.println("You have choosen the Combo 'SI NO ME ACUERDO NO PASO'");
             System.out.println("And the price is-->$" + price);
 
-        }else 
+        }else if(price==70){
             System.out.println("You have choosen the Combo 'BORRACHOS PERO ESTUDIOSOS");
             System.out.println("And the price is-->$"+price);
+        }else
+            System.out.println("You have not add a combo to your order");
 
         return price;
     }
