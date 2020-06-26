@@ -22,6 +22,18 @@ public class FileManager {
     public FileManager(String fileName) {
         this.fileName= fileName;
     }
+
+    public FileManager() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public FileManager() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public FileManager() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     public void writeDataRecord( String data ){

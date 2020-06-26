@@ -25,6 +25,7 @@ public class FileManager {
     Scanner in = new Scanner(System.in);
     ConsumerAdress adress = new ConsumerAdress();
 
+    
     public Customer register() {
         String name;
         long id;

@@ -70,8 +70,7 @@ public class ProductMenu {
     }
     
      public int getBeverage(){
-         int copyBeverageCode= beverage.choose();
-         
+         int copyBeverageCode= beverage.choose();     
          //double copyPrice= beverages.get(copyBeverageCode).getPrice();
           return(copyBeverageCode);
      }

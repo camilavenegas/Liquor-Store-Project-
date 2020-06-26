@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Review {
 
     Scanner dataEntry = new Scanner(System.in);
-
+/*
     public int validateNegative(int theVariable) {
         if (theVariable < -1) {
             System.out.println("The number written is incorrect");
@@ -23,8 +23,8 @@ public class Review {
 
         return 0;
     }
-    
-    public String validateString(int option){
+*/   
+    public String validateString(){
         
         
         return null;
