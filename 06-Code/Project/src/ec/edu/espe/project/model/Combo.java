@@ -53,41 +53,7 @@ public class Combo {
     }
 
     public void show() {
-<<<<<<< HEAD
 
-        combo1.add(new Beverage("Clasic", 1.5, "Switch", 4.0, 1));
-        combo1.add(new Beverage("Clasic", 3.75, "1/2 Norteño", 4.5, 5));
-        combo1.add(new Snack(1, 1, 1));
-        double totalPriceCombo1 = calculateCombo1Price();
-        combo1.forEach((bev) -> {
-            System.out.println("UNIVERSITY COMBO: " + bev);
-        });
-        System.out.println("The price is-->" + totalPriceCombo1);
-
-        combo2.add(new Beverage("Whisky", 1, "Old times red", 13.0, 15));
-        combo2.add(new Beverage("Whisky", 1, "Old times black", 15.0, 16));
-        combo2.add(new Snack(2, 4, 0));
-        double totalPriceCombo2 = calculateCombo2Price();
-        System.out.println("The price is-->" + totalPriceCombo2);
-
-        combo3.add(new Beverage("Beer", 1, "Pilsener", 15.0, 13));
-        combo3.add(new Beverage("Beer", 1, "Club", 15.0, 14));
-        combo3.add(new Beverage("Ron", 1, "Ron pon pon", 7.50, 19));
-        combo3.add(new Snack(1, 2, 3));
-        double totalPriceCombo3 = calculateCombo3Price();
-        System.out.println("The price is-->" + totalPriceCombo3);
-
-        combo4.add(new Beverage("Wine", 1, "Vino Reservado", 14.00, 8));
-        combo4.add(new Beverage("Agua Ardiente", 1, "Zhumir Piña Colada", 12.50, 7));
-        combo4.add(new Beverage("Whisky", 1, "Jhonny Red Label", 25.0, 18));
-        combo4.add(new Beverage("Clasic", 1, "Green mate", 13.5, 9));
-        combo4.add(new Snack(3, 0, 2));
-        double totalPriceCombo4 = calculateCombo4Price();
-        System.out.println("The price is-->" + totalPriceCombo4);
-
-=======
-        
-        
         System.out.println("-----------------COMBO 1-------------------------------- ");
         System.out.println("|              UNIVERSITY COMBO                         |");
         System.out.println("|       Beverage-->Clasic, 1.5, Switch, 4.0, 1          |");
@@ -119,13 +85,13 @@ public class Combo {
         System.out.println("|       Snack--> chips=3, peanut=0, bubblegum=2                     |");
         System.out.println("|       PRICE= $70                                                  |");
         
->>>>>>> 4ed4aaa45616567a0d0a6229807ffbd4ece4df1d
+
     }
 
     public double select() {
 
         System.out.println("Please put the number of the combo that you want");
-<<<<<<< HEAD
+
         int comboOption = 0;
         do {
             do {
@@ -138,13 +104,14 @@ public class Combo {
                 break;
             } while (true);
         } while (comboOption <= 0 || comboOption > 4);
-=======
+
         System.out.println("If you dont need a combo press -->0");
-        int comboOption = -1;
+        //int comboOption = -1;
+        comboOption = -1;
         do{
         comboOption = selectCombo.nextInt();
         }while(comboOption<0||comboOption>4);
->>>>>>> 4ed4aaa45616567a0d0a6229807ffbd4ece4df1d
+
         switch (comboOption) {
             case 1:
                 return calculateCombo1Price();
