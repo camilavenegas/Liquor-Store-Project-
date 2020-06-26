@@ -44,7 +44,7 @@ public class Customer {
     }
 
     public Customer customerData() {
-        Customer custom = null;
+        Customer custom = new Customer();
         System.out.println("Enter your full name:");
         custom.setFullName(dataEntry.nextLine());
         System.out.println("Enter yout Id: ");
