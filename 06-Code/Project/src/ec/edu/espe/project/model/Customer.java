@@ -25,7 +25,8 @@ public class Customer {
 
     ConsumerAdress consumerAdress = new ConsumerAdress();
     Scanner dataEntry = new Scanner(System.in);
-
+    
+    
     public Customer(String fullName, long id, int age, String mail, ConsumerAdress adress) {
         this.fullName = fullName;
         this.id = id;
@@ -33,14 +34,15 @@ public class Customer {
         this.mail = mail;
         this.adress = adress;
     }
-     public Customer() {
+
+    public Customer() {
         this.fullName = "";
         this.id = 0;
         this.age = 0;
         this.mail = "";
         this.adress = null;
     }
-    
+
     public Customer customerData() {
         Customer custom=null;
         System.out.println("Enter your full name:");
@@ -57,12 +59,12 @@ public class Customer {
         return custom;
     }
 
-   public ConsumerAdress getAdress() {
+    public ConsumerAdress getAdress() {
         consumerAdress.setPrincipalStreet(consumerAdress.writePrincipalStreet());
         consumerAdress.setCrossingStreet(consumerAdress.writeCrossingStreet());
         consumerAdress.setHouseNumber(consumerAdress.writeHouseNumber());
 
-       return consumerAdress;
+        return consumerAdress;
 
     }
 
@@ -105,15 +107,14 @@ public class Customer {
     public void setConsumerAdress(ConsumerAdress consumerAdress) {
         this.consumerAdress = consumerAdress;
     }
-    
-    public String serialize(){
+
+    public String serialize() {
         return fullName + ";" + id + ";" + age + ";" + mail + ";" + adress;
     }
 
     @Override
     public String toString() {
-        return "{" + fullName + id  + age   + mail  + adress  + consumerAdress +  '}';
+        return "{" + fullName + id + age + mail + adress + consumerAdress + '}';
     }
 
-    
 }
