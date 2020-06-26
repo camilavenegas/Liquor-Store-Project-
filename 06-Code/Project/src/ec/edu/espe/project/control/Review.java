@@ -23,6 +23,12 @@ public class Review {
 
         return 0;
     }
+    
+    public String validateString(int option){
+        
+        
+        return null;
+    }
 
     public String validateLongData(String variable) {
         String copyVariable = "";

@@ -100,7 +100,7 @@ public class Bill {
     }
     
     
-    public String getClientData(){
+   /* public String getClientData(){
         String client;
         client = customer.getCustomerData();        
         return client;
@@ -108,7 +108,7 @@ public class Bill {
     
     public void createInTheFileManager(){
         file.writeDataRecord(getClientData());
-    }
+    }*/
     
 
 }

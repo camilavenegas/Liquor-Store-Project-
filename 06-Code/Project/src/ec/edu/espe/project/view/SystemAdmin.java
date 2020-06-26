@@ -5,10 +5,14 @@
  */
 package ec.edu.espe.project.view;
 
+import ec.edu.espe.project.control.FileManager;
+import ec.edu.espe.project.control.Review;
 import ec.edu.espe.project.model.Bill;
 import ec.edu.espe.project.model.Customer;
 import ec.edu.espe.project.model.Order;
 import ec.edu.espe.project.model.ProductMenu;
+import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -17,11 +21,15 @@ import java.util.Scanner;
  */
 public class SystemAdmin {
 
-    public static void main(String[] args) {
-        int op = 0;
+    public static void main(String[] args) throws IOException {
+        FileManager fileManager = new FileManager();
+       // List<Customer> customers = fileManager.getAllCustomers();
+        fileManager.register();
+        /*int op = 0;
         Scanner in = new Scanner(System.in);
         Bill bill = new Bill();
         Customer custom = new Customer();
+        Review review= new Review();
         do {
             System.out.println("THE LIQUOR STORE AUTOMATION");  
             System.out.println("\t\tGROUP 4");
@@ -35,6 +43,8 @@ public class SystemAdmin {
             System.out.println("2.- Register data client");
             System.out.println("3.- EXIT");
             op = in.nextInt();
+            op= review.validateNegative(op);
+                    
             switch (op) {
                 case 1:
                     bill.generateBillAmount();
@@ -51,6 +61,6 @@ public class SystemAdmin {
 
         } while (op <= 0 || op > 3 || op != 3);
 
+    }*/
     }
-
 }
