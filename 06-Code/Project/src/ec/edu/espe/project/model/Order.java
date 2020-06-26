@@ -26,8 +26,7 @@ public class Order {
 
         return beverage;
     }
-    
-
+   
     public double calculateBeveragePrice(Beverage beverage) {
         double price = beverage.getPrice();
         System.out.println("$" + price);

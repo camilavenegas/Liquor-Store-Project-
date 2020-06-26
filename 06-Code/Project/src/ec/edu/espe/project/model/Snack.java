@@ -76,7 +76,7 @@ public class Snack {
     
 
     public int selectChips() {
-        System.out.println("Dont choose more of 10 chips");
+        System.out.println("Remeber that the maximun quantity that you can get is 10 ");
         System.out.println("How many chips do you want?");
         do{
         chip = dataEntry.nextInt();

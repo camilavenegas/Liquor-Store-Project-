@@ -12,18 +12,20 @@ import java.util.Scanner;
  * @author camilavenegas
  */
 public class ConsumerAdress {
+
     private String principalStreet;
-    private String houseNumber;
     private String crossingStreet;
-    
-    Scanner dataEntry= new Scanner(System.in);
+    private String houseNumber;
+
+    Scanner dataEntry = new Scanner(System.in);
 
     public ConsumerAdress(String principalStreet, String houseNumber, String crossingStreet) {
         this.principalStreet = principalStreet;
         this.houseNumber = houseNumber;
         this.crossingStreet = crossingStreet;
     }
-    public ConsumerAdress(){
+
+    public ConsumerAdress() {
         this.principalStreet = "";
         this.houseNumber = "";
         this.crossingStreet = "";
@@ -33,32 +35,50 @@ public class ConsumerAdress {
         return principalStreet;
     }
 
-    public String setPrincipalStreet() {
-        System.out.println("Write the princpial Street of your Adress");
-        this.principalStreet = dataEntry.nextLine();
-        return principalStreet;
+    public void setPrincipalStreet(String principalStreet) {
+        this.principalStreet = principalStreet;
     }
 
     public String getHouseNumber() {
         return houseNumber;
     }
 
-    public String setHouseNumber() {
-        System.out.println("Write your house number--> E7-120");
-        this.houseNumber = dataEntry.nextLine();
-        return houseNumber;
+    public void setHouseNumber(String houseNumber) {
+        this.houseNumber = houseNumber;
     }
 
     public String getCrossingStreet() {
         return crossingStreet;
     }
 
-    public String setCrossingStreet() {
-        System.out.println("Write the crossing street of your Adress");
-        this.crossingStreet = dataEntry.nextLine();
+    public void setCrossingStreet(String crossingStreet) {
+        this.crossingStreet = crossingStreet;
+    }
+
+    public String writePrincipalStreet() {
+        System.out.println("Please write the Principal Street of your adress");
+        principalStreet = dataEntry.nextLine();
+        return principalStreet;
+
+    }
+
+    public String writeCrossingStreet() {
+        System.out.println("Please write the crossing street of your adress");
+        crossingStreet = dataEntry.nextLine();
         return crossingStreet;
+    }
+
+    public String writeHouseNumber() {
+        System.out.println("Please write the number of your house--> Ex: E7-120");
+        houseNumber= dataEntry.nextLine();
+        return houseNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "ConsumerAdress{" + principalStreet  + crossingStreet  + houseNumber  + dataEntry + '}';
     }
     
     
-}
 
+}
