@@ -1,4 +1,2 @@
-/06-Code/Project/build/
-/06-Code/Project/dist/
-/04-UMLDiagrams/02-ClassDiagram/*.vpp.bak*
+*.vpp.bak*
 *.class
