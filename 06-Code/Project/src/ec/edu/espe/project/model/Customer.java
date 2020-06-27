@@ -44,12 +44,25 @@ public class Customer {
     }
 
     public Customer customerData() {
-        Customer custom = null;
+        Customer custom = new Customer();
+<<<<<<< HEAD
+        
+=======
+>>>>>>> 754e4cac63da54fcf6b6af59ccafb064bdc2cbf4
         System.out.println("Enter your full name:");
         custom.setFullName(dataEntry.nextLine());
         System.out.println("Enter yout Id: ");
-        custom.setId(dataEntry.nextLong());
-        System.out.println("Enter your age: ");
+        do{
+        try {
+                custom.setId(Integer.parseInt(dataEntry.nextLine())); 
+                } catch (Exception exception) {
+                    System.out.println("Invalidate option, enter a correct option");
+                    continue;
+                }
+        break;
+        }while (true);
+        
+        System.out.println("Write your age ");
         
         custom.setAge(dataEntry.nextInt());
         System.out.println("Enter your e-mail: ");

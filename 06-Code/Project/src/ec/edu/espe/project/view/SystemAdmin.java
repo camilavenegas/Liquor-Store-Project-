@@ -6,7 +6,6 @@
 package ec.edu.espe.project.view;
 
 import ec.edu.espe.project.control.FileManager;
-import ec.edu.espe.project.control.Review;
 import ec.edu.espe.project.model.Bill;
 import ec.edu.espe.project.model.Customer;
 import ec.edu.espe.project.model.FileBill;
@@ -19,7 +18,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author hp
+ * @author camilavenegas
  */
 public class SystemAdmin {
 
@@ -31,19 +30,19 @@ public class SystemAdmin {
         Scanner in = new Scanner(System.in);
         Customer custom = new Customer();
         Bill bill = new Bill();
-        Review review = new Review();
         Payment pay = new Payment();
+        System.out.println("-------------THE LIQUOR STORE AUTOMATION----------");
+        System.out.println("\t\t\tGROUP 4\t\t\t\t\t\t\t\t\t\t\t\t");
+        System.out.println("|          The legion of software developers            |");
+        System.out.println("|           Venegas Camila (L)                          |");
+        System.out.println("|           Velasteguí Alex                             |");
+        System.out.println("|           Toapanta Wilson                             |");
+        System.out.println("|           Paredes Fernando                            |");
+        System.out.println("\n\n");
         do {
-            System.out.println("THE LIQUOR STORE AUTOMATION");
-            System.out.println("\t\tGROUP 4");
-            System.out.println("The legion of software developers");
-            System.out.println("Venegas Camila (L)");
-            System.out.println("Velasteguí Alex");
-            System.out.println("Toapanta Wilson");
-            System.out.println("Paredes Fernando");
-            System.out.println("\n\n");
-            System.out.println("1.- Explore the liquor store");
-            System.out.println("2.- Register data client");
+
+            System.out.println("1.- Explore the Liquor Store  ");
+            System.out.println("2.- Add A Client to the DataBase ");
             System.out.println("3.- EXIT");
 
             do {
@@ -59,13 +58,9 @@ public class SystemAdmin {
 
                 case 1:
                     double totalValue = bill.generateBillAmount();
-                    System.out.println("Thaks for your purchase ☻");
-                    System.out.println("The total cost for your order is " + totalValue);
-
-                    System.out.println("Go to the pay method");
-                    pay.pay(totalValue);
 
                     break;
+
                 case 2:
                     fileManager.register();
                     break;
