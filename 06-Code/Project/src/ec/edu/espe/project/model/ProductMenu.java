@@ -13,15 +13,17 @@ import java.util.Collection;
  * @author Wilson Toapanta 6382
  */
 public class ProductMenu {
-    
+
     Beverage beverage = new Beverage();
     ArrayList<Beverage> beverages = new ArrayList<>();
 
     Snack snack = new Snack();
     ArrayList<Snack> snacks = new ArrayList<>();
-    
+
     public Beverage chooseBeverage() {
 
+        System.out.println("---------BENDITO ALCOHOL MENU-----------\n\n");
+        
         beverages.add(new Beverage("Clasic", 1.5, "Switch", 4.0, 1));
         beverages.add(new Beverage("Clasic", 1, "Cristal", 8.5, 2));
         beverages.add(new Beverage("Clasic", 0.75, "Trópico", 8.5, 3));
@@ -44,20 +46,20 @@ public class ProductMenu {
         beverages.add(new Beverage("Ron", 1, "Ron abuelo", 14.0, 20));
         beverages.add(new Beverage("Ron", 1, "Garrafa abuelo", 26.00, 21));
         beverages.add(new Beverage("Whisky", 1, "Jack Daniels", 68.0, 22));
-        
-       beverages.forEach((bev) -> {
+
+        beverages.forEach((bev) -> {
             System.out.println("Beverage: " + bev);
-            });
-            int copyCode= beverage.choose();
-            for(int i=0; i<beverages.size();i++){
-                if(beverages.get(i).getCode()==copyCode){
-                    System.out.println("The BEVERAGE choosen"+beverages.get(i));
-                }
+        });
+        int copyCode = beverage.choose();
+        
+        for (int i = 0; i < beverages.size(); i++) {
+            if (beverages.get(i).getCode() == copyCode) {
+                System.out.println("The BEVERAGE choosen" + beverages.get(i));
+                
             }
-            return beverages.get(copyCode);
-            
-        
-        
+        }
+        return beverages.get(copyCode);
+
     }
 
     public void showSnack() {
@@ -66,21 +68,11 @@ public class ProductMenu {
         System.out.println("2.- Peanut          $1.0");
         System.out.println("3.- Bubblegum       $1.0");
 
-        
     }
-    
-     public int getBeverage(){
-         int copyBeverageCode= beverage.choose();     
-         //double copyPrice= beverages.get(copyBeverageCode).getPrice();
-          return(copyBeverageCode);
-     }
-    /*
-    public Beverage writeBeverage(){
-        int copyBeverageCode= beverage.choose();
-         Beverage beverageSelected= beverages.get(copyBeverageCode);
-       
-       return beverageSelected;    
-    }*/
-    
-   
+
+    public int getBeverage() {
+        int copyBeverageCode = beverage.choose();
+        return (copyBeverageCode);
+    }
+
 }

@@ -5,12 +5,13 @@
  */
 package ec.edu.espe.project.model;
 
-import ec.edu.espe.filemanager.view.FileManager;
+
+import ec.edu.espe.project.control.FileManager;
 import java.util.Scanner;
 
 /**
  *
- * @author hp
+ * @author camilavenegas
  */
 public class Bill {
 
@@ -20,16 +21,17 @@ public class Bill {
     private Snack snack;
     private double totalCost;
   
-    FileManager file;
+    FileManager file= new FileManager();
     Order order = new Order();
     Customer customer = new Customer();
     Beverage beverage = new Beverage();
+    Payment pay = new Payment();
 
     Scanner dataEntry = new Scanner(System.in);
 
     public Bill(long number, String name) {
         this.number = 1;
-        this.name = "LIQUOR STORE AUTOMATION";
+        this.name = "BENDITO ALCOHOL STORE";
 
     }
     public Bill() {
@@ -42,8 +44,8 @@ public class Bill {
         Bill bill = new Bill();
         int option = 0;
         do {
-            System.out.println("WELCOME TO THE LIQUOR STORE ");
-            System.out.println("1.Create Order\n2.Get Client Data for the Bill\n3.Cancel Order\n4.Exit");
+            System.out.println("");
+            System.out.println("1.Create Order\n\n2. Get Client Data for the Bill\n\n3. Make the Payment \n\n4.Cancel Order\n\n4.Exit");
             System.out.println("Please enter your option");
             do{
             try{
@@ -69,11 +71,12 @@ public class Bill {
                     break;
 
                 case 2:
-                    Customer customer = new Customer();
-                    customer = customer.customerData();
-                    bill.setCustomer(customer);
-
+                  
+                    file.register();
                 case 3:
+                    pay.pay(orderTotalPrice);
+
+                case 4:
                     int optionConfirm;
                     optionConfirm = order.confirm();
                     if (orderTotalPrice == 0) {
@@ -86,7 +89,7 @@ public class Bill {
                         break;
                     }
 
-                case 4:
+                case 5:
                     System.out.println("Are you sure that yoy want to cancel the order?");
                     int validateOption = order.confirm();
                     if (validateOption == 1) {
@@ -94,7 +97,7 @@ public class Bill {
                     } else {
                         break;
                     }
-                case 5:
+                case 6:
                     System.out.println("Thanks for your purchase");
                     break;
             }

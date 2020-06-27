@@ -68,7 +68,7 @@ public class Combo {
         System.out.println("|       Snack--> chips=2, peanut=4, bubblegum=0         |");
         System.out.println("|       PRICE= $34                                      |");
         System.out.println("\n\n");
-        System.out.println("-----------------COMBO 3---------------------------------");
+        System.out.println("-------------------COMBO 3---------------------------------");
         System.out.println("|              SI NO ME ACUERDO NO PASÓ                 |");
         System.out.println("|       Beverage-->Beer, 1, Pilsener, 15.0, 13          |");
         System.out.println("|       Beverage-->Beer, 1, Club, 15.0, 14              |");
@@ -76,7 +76,7 @@ public class Combo {
         System.out.println("|       Snack--> chips=1, peanut=2, bubblegum=3         |");
         System.out.println("|       PRICE= $43.5                                    |");
         System.out.println("\n\n");
-        System.out.println("-----------------------------COMBO 4---------------------------------");
+        System.out.println("----------------------------COMBO 4---------------------------------");
         System.out.println("|              BORRACHOS PERO ESTUDIOSOS                            |");
         System.out.println("|       Beverage-->Wine, 1, Vino Reservado, 14.00, 8                |");
         System.out.println("|       Beverage-->Agua Ardiente, 1,Zhumir Piña Colada, 12.50, 7    |");
@@ -84,6 +84,7 @@ public class Combo {
         System.out.println("|       Beverage-->Clasic, 1, Green mate, 13.5, 9                   |");
         System.out.println("|       Snack--> chips=3, peanut=0, bubblegum=2                     |");
         System.out.println("|       PRICE= $70                                                  |");
+        System.out.println("\n\n");
         
 
     }
@@ -91,6 +92,7 @@ public class Combo {
     public double select() {
 
         System.out.println("Please put the number of the combo that you want");
+        System.out.println("If you dont need a combo press -->0");
 
         int comboOption = 0;
         do {
@@ -103,19 +105,12 @@ public class Combo {
                 }
                 break;
             } while (true);
-        } while (comboOption <= 0 || comboOption > 4);
-
-        System.out.println("If you dont need a combo press -->0");
-        //int comboOption = -1;
-        comboOption = -1;
-        do{
-        comboOption = selectCombo.nextInt();
-        }while(comboOption<0||comboOption>4);
+        } while (comboOption < 0 || comboOption > 4);
 
         switch (comboOption) {
             case 1:
                 return calculateCombo1Price();
-                
+
             case 2:
                 return calculateCombo2Price();
             case 3:

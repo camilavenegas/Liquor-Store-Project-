@@ -39,18 +39,21 @@ public class Card {
         int copyMonth = date.writeMonth();
         int copyYear = date.writeYear();
 
-        if (copyYear == 2020) {
-            if (copyMonth <= 6) {
-                System.out.println("The Card has expired, so you can not use this card");
-            } else if (copyYear < 2020) {
-                System.out.println("The Card has expired, so you can not use this card");
+        do {
 
-            } else {
-                date.setMonth(copyMonth);
-                date.setYear(copyYear);
+            if (copyYear == 2020) {
+                if (copyMonth <= 6) {
+                    System.out.println("The Card has expired, so you can not use this card");
+                } else if (copyYear < 2020) {
+                    System.out.println("The Card has expired, so you can not use this card");
+
+                } else {
+                    date.setMonth(copyMonth);
+                    date.setYear(copyYear);
+                }
+
             }
-
-        }
+        } while (copyYear == 2020 && copyMonth <= 6);
 
         return date;
 
@@ -87,10 +90,9 @@ public class Card {
     public void setDate(CardDate date) {
         this.date = date;
     }
-    
-    
-    public Card getCardData(){
-        Card card=null;
+
+    public Card getCardData() {
+        Card card = new Card();
         System.out.println("You choose to pay with Card--> Please Write Card Data");
         System.out.println("\n\n");
         System.out.println("Please write the card's property Name");

@@ -81,7 +81,7 @@ public class FileManager {
         List <Customer> customers= new ArrayList<Customer>();
          try{
              
-             String consumerData= "database.txt";
+             String consumerData= "database.csv";
              File dataBase = new File(consumerData);
              
              if(!dataBase.exists()){
@@ -92,7 +92,7 @@ public class FileManager {
             while(dataEntry.hasNextLine()){
                 Customer customer= new Customer();
                 String line= dataEntry.nextLine();
-                String[] tokens= line.split(" ");
+                String[] tokens= line.split("\t");
                 
                 if(tokens.length<5){
                     continue;
@@ -145,7 +145,7 @@ public class FileManager {
             System.out.printf("%s: ", flag);
             line = scanner.nextLine();
 
-            if (line.contains(",")) {
+            if (line.contains(";")) {
                 System.out.println("Invalid character','");
                 valid = false;
             }
