@@ -45,10 +45,7 @@ public class Customer {
 
     public Customer customerData() {
         Customer custom = new Customer();
-<<<<<<< HEAD
-        
-=======
->>>>>>> 754e4cac63da54fcf6b6af59ccafb064bdc2cbf4
+
         System.out.println("Enter your full name:");
         custom.setFullName(dataEntry.nextLine());
         System.out.println("Enter yout Id: ");
