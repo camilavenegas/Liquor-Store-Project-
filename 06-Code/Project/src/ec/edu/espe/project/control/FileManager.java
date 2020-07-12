@@ -17,7 +17,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author hp
+ * @author Camila Venegas 
  */
 public class FileManager {
 

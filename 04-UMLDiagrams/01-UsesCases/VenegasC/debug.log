@@ -1,0 +1,2 @@
+[0628/000952.675:ERROR:process_reader_win.cc(127)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0628/000952.986:ERROR:exception_snapshot_win.cc(99)] thread ID 3780 not found in process
