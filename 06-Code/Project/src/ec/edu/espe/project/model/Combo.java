@@ -25,6 +25,10 @@ public class Combo {
         this.price = price;
         this.name = name;
     }
+
+    Combo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public void inicializeArray(){
         
@@ -33,7 +37,7 @@ public class Combo {
         }
     }
     
-    public ArrayList
+    //public ArrayList
    
     
 

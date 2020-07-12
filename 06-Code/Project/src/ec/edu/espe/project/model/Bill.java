@@ -39,7 +39,7 @@ public class Bill {
         this.name = "";
     }
 
-    public double generateBillAmount() {
+    /*public double generateBillAmount() {
         double orderTotalPrice = 0;
         Bill bill = new Bill();
         int option = 0;
@@ -104,7 +104,7 @@ public class Bill {
         } while (option < 0 || option > 5 || option != 5);
         bill.setTotalCost(orderTotalPrice);
         return orderTotalPrice;
-    }
+    }*/
 
     public Bill getBillData() {
         Bill bill = new Bill();

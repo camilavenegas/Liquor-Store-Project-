@@ -57,7 +57,7 @@ public class SystemAdmin {
             switch (op) {
 
                 case 1:
-                    double totalValue = bill.generateBillAmount();
+                    //double totalValue = bill.generateBillAmount();
 
                     break;
 
