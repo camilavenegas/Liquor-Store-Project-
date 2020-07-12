@@ -15,6 +15,7 @@ import ec.edu.espe.project.model.ProductMenu;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
+import org.json.simple.parser.ParseException;
 
 /**
  *
@@ -22,9 +23,9 @@ import java.util.Scanner;
  */
 public class SystemAdmin {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ParseException {
 
-        FileManager fileManager = new FileManager();
+        /*FileManager fileManager = new FileManager();
 
         int op = 0;
         Scanner in = new Scanner(System.in);
@@ -70,7 +71,9 @@ public class SystemAdmin {
                     break;
             }
 
-        } while (op <= 0 || op > 3 || op != 3);
+        } while (op <= 0 || op > 3 || op != 3);*/
 
+        ProductMenu beverages = new ProductMenu();
+        beverages.chooseBeverage();
     }
 }

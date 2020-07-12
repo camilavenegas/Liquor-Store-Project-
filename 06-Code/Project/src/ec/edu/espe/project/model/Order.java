@@ -5,10 +5,11 @@
  */
 package ec.edu.espe.project.model;
 
-import java.util.ArrayList;
+/*import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Scanner;
+import java.util.Scanner;*/
+import org.json.simple.parser.ParseException;
 
 /**
  *
@@ -21,7 +22,7 @@ public class Order {
     Snack snack = new Snack();
     Combo combo = new Combo();
 
-    public Beverage getBeverage() {
+    public Beverage getBeverage() throws ParseException {
         beverage = menu.chooseBeverage();
 
         return beverage;

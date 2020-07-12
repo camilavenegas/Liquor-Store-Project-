@@ -5,8 +5,15 @@
  */
 package ec.edu.espe.project.model;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
+import jdk.nashorn.internal.runtime.ParserException;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 /**
  *
@@ -20,9 +27,9 @@ public class ProductMenu {
     Snack snack = new Snack();
     ArrayList<Snack> snacks = new ArrayList<>();
 
-    public Beverage chooseBeverage() {
+    public Beverage chooseBeverage() throws ParseException {
 
-        System.out.println("---------BENDITO ALCOHOL MENU-----------\n\n");
+        /*System.out.println("---------BENDITO ALCOHOL MENU-----------\n\n");
         
         beverages.add(new Beverage("Clasic", 1.5, "Switch", 4.0, 1));
         beverages.add(new Beverage("Clasic", 1, "Cristal", 8.5, 2));
@@ -49,7 +56,25 @@ public class ProductMenu {
 
         beverages.forEach((bev) -> {
             System.out.println("Beverage: " + bev);
-        });
+        });*/
+        try{
+            JSONParser parser = new JSONParser();
+            ArrayList arrayBeverages = new ArrayList<>();
+            
+            Object obj = parser.parse(new FileReader("beverages.json"));
+            JSONObject jsonObject = (JSONObject) obj;
+            JSONArray array = (JSONArray) jsonObject.get("beverages");            
+            System.out.println("TYPE\t\tSIZE\t\tBRAND\t\t\tPRICE\t\tCODE");            
+            for(int i=0; i < array.size(); i++){
+                jsonObject = (JSONObject) array.get(i);
+                System.out.println(jsonObject.get("type")+"\t\t"
+                        +jsonObject.get("size")+"\t\t"+jsonObject.get("brand")
+                        +"\t\t"+jsonObject.get("price")+"\t\t"+jsonObject.get("code"));                
+                arrayBeverages.add(jsonObject);               
+            }  
+        }catch(FileNotFoundException e){ }
+        catch(IOException | ParserException e){ }
+        
         int copyCode = beverage.choose();
         
         for (int i = 0; i < beverages.size(); i++) {
@@ -59,17 +84,13 @@ public class ProductMenu {
             }
         }
         return beverages.get(copyCode);
-
     }
-
     public void showSnack() {
         System.out.println("Snacks avalibles");
         System.out.println("1.- Chips           $1.0");
         System.out.println("2.- Peanut          $1.0");
         System.out.println("3.- Bubblegum       $1.0");
-
     }
-
     public int getBeverage() {
         int copyBeverageCode = beverage.choose();
         return (copyBeverageCode);
