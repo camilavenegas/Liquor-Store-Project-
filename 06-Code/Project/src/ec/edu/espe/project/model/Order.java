@@ -53,9 +53,9 @@ public class Order {
         return totalPrice;
     }
 
-    public double getComboPrice() {
+    /*public double getComboPrice() {
         combo.show();
-        double price = combo.select();
+       double price = combo.select();
         if (price == 11.5) {
             System.out.println("Yoy have choose the Univesity Combo");
             System.out.println("And the price is-->$" + price);
@@ -90,5 +90,5 @@ public class Order {
         
         
         return confirmOption;
-    }
+    }*/
 }

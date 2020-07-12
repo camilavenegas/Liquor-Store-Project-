@@ -1,2 +1,2 @@
-/06-Code/Project/build/
-/06-Code/Project/dist/
+*.vpp.bak*
+*.class

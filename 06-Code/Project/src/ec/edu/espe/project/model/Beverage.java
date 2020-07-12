@@ -87,18 +87,28 @@ public class Beverage {
 
     @Override
     public String toString() {
-        return "Beverage{" + "type=" + type + ", size=" + size + ", brand=" + brand + ", price=" + price + ", CODE=" + code + '}';
+        return "{" + "type=" + type + ", size=" + size + ", brand=" + brand + ", price=$" + price + ", CODE=" + code + "\n" + '}';
     }
 
     public int choose() {
         System.out.println("Select the beverage by the CODE: ");
         int copyCode;
         do {
-            copyCode = codeBeverage.nextInt();
-            if (copyCode <= 0 || copyCode > 22) {
-                System.out.println("Enter a valid number");
+            try {
+                copyCode = Integer.parseInt(codeBeverage.nextLine());
+                do {
+
+                    if (copyCode <= 0 || copyCode > 22) {
+                        System.out.println("Enter a valid number");
+                    }
+                } while (copyCode <= 0 || copyCode > 22);
+            } catch (Exception exception) {
+                System.out.println("Invalidate option, enter a correct option");
+                continue;
             }
-        } while (copyCode <= 0 || copyCode > 22);
+            break;
+        } while (true);
+
         return copyCode;
     }
 

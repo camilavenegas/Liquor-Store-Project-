@@ -45,11 +45,21 @@ public class Customer {
 
     public Customer customerData() {
         Customer custom = new Customer();
+
         System.out.println("Enter your full name:");
         custom.setFullName(dataEntry.nextLine());
         System.out.println("Enter yout Id: ");
-        custom.setId(dataEntry.nextLong());
-        System.out.println("Enter your age: ");
+        do{
+        try {
+                custom.setId(Integer.parseInt(dataEntry.nextLine())); 
+                } catch (Exception exception) {
+                    System.out.println("Invalidate option, enter a correct option");
+                    continue;
+                }
+        break;
+        }while (true);
+        
+        System.out.println("Write your age ");
         
         custom.setAge(dataEntry.nextInt());
         System.out.println("Enter your e-mail: ");
@@ -110,7 +120,7 @@ public class Customer {
     }
 
     public String serialize() {
-        return fullName + ";" + id + ";" + age + ";" + mail + ";" + adress;
+        return fullName + "\t" + id + ";" + age + ";" + mail + ";" + adress;
     }
 
     @Override
