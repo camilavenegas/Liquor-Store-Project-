@@ -1,0 +1,157 @@
+{
+"beverages": [{
+"type": "Classic",
+"size": 1.5,
+"brand": "Switch    ",
+"price": 4.0,
+"code": 1
+},
+{
+"type": "Classic",
+"size": 1,
+"brand": "Cristal   ",
+"price": 8.5,
+"code": 2
+},
+{
+"type": "Classic",
+"size": 0.75,
+"brand": "Tr¢pico   ",
+"price": 8.50,
+"code": 3
+},
+{
+"type": "A Ardie",
+"size": 1.5,
+"brand": "Zhumir    ",
+"price": 8.50,
+"code": 4
+},
+{
+"type": "Classic",
+"size": 1.0,
+"brand": "Norte¤o   ",
+"price": 8.50,
+"code": 5
+},
+{
+"type": "A Ardie",
+"size": 1.0,
+"brand": "ZhumirPink",
+"price": 11.00,
+"code": 6
+},
+{
+"type": "A Ardie",
+"size": 1.0,
+"brand": "ZhumirPi¤a",
+"price": 12.50,
+"code": 7
+},
+{
+"type": "Wine",
+"size": 1.0,
+"brand": "VinoReserv",
+"price": 14.00,
+"code": 8
+},
+{
+"type": "Classic",
+"size": 1.0,
+"brand": "GreenMate",
+"price": 13.50,
+"code": 9
+},
+{
+"type": "Classic",
+"size": 1.0,
+"brand": "JagerMeis",
+"price": 34.00,
+"code": 10
+},
+{
+"type": "Vodka",
+"size": 1.0,
+"brand": "Smirnof   ",
+"price": 15.00,
+"code": 11
+},
+{
+"type": "Vodka",
+"size": 1.0,
+"brand": "Absolute  ",
+"price": 23.00,
+"code": 12
+},
+{
+"type": "Beer",
+"size": 1.0,
+"brand": "Pilsener  ",
+"price": 15.00,
+"code": 13
+},
+{
+"type": "Beer",
+"size": 1.0,
+"brand": "Club      ",
+"price": 15.00,
+"code": 14
+},
+{
+"type": "Whisky",
+"size": 1.0,
+"brand": "OldTimesR",
+"price": 13.00,
+"code": 15
+},
+{
+"type": "Whisky",
+"size": 1.0,
+"brand": "OldTimeBl",
+"price": 15.00,
+"code": 16
+},
+{
+"type": "Whisky",
+"size": 1.0,
+"brand": "Bellows  ",
+"price": 16.00,
+"code": 17
+},
+{
+"type": "Whisky",
+"size": 1.0,
+"brand": "JhonnyRedLa",
+"price": 25.00,
+"code": 18
+},
+{
+"type": "Ron",
+"size": 1.0,
+"brand": "RonPonPon",
+"price": 7.50,
+"code": 19
+},
+{
+"type": "Ron",
+"size": 1.0,
+"brand": "RonAbuelo",
+"price": 14.00,
+"code": 20
+},
+{
+"type": "Ron",
+"size": 1.0,
+"brand": "GarrafaAbue",
+"price": 26.00,
+"code": 21
+},
+{
+"type": "Whisky",
+"size": 1.0,
+"brand": "JackDaniels",
+"price": 68.00,
+"code": 22
+}
+]
+}
