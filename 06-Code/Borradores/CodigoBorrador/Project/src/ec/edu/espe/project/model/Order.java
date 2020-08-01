@@ -5,11 +5,10 @@
  */
 package ec.edu.espe.project.model;
 
-/*import java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Scanner;*/
-import org.json.simple.parser.ParseException;
+import java.util.Scanner;
 
 /**
  *
@@ -22,7 +21,7 @@ public class Order {
     Snack snack = new Snack();
     Combo combo = new Combo();
 
-    public Beverage getBeverage() throws ParseException {
+    public Beverage getBeverage() {
         beverage = menu.chooseBeverage();
 
         return beverage;
@@ -54,9 +53,9 @@ public class Order {
         return totalPrice;
     }
 
-    /*public double getComboPrice() {
+    public double getComboPrice() {
         combo.show();
-       double price = combo.select();
+        double price = combo.select();
         if (price == 11.5) {
             System.out.println("Yoy have choose the Univesity Combo");
             System.out.println("And the price is-->$" + price);
@@ -91,5 +90,5 @@ public class Order {
         
         
         return confirmOption;
-    }*/
+    }
 }
