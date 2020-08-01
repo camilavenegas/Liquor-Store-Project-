@@ -13,7 +13,7 @@ import jdk.nashorn.internal.objects.NativeArray;
 
 /**
  *
- * @author hp
+ * @author Camila Venegas 
  */
 public class Customer {
 

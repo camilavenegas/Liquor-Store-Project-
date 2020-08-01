@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class Combo {
 
-    private ArrayList<Beverage> beverages = new ArrayList<>();
+    private Beverage beverage;
     private Snack snack;
     private double price;
     private String name;
@@ -37,7 +37,7 @@ public class Combo {
         }
     }
     
-    //public ArrayList
+   public ArrayList
    
     
 
