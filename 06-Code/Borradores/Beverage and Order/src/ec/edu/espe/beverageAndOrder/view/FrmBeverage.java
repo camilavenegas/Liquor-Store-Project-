@@ -5,29 +5,25 @@
  */
 package ec.edu.espe.beverageAndOrder.view;
 
-import ec.edu.espe.beverageAndOrder.model.Beverage;
-import java.util.ArrayList;
-import javax.swing.SpinnerNumberModel;
+import ec.edu.espe.beverageAndOrder.controller.BeverageController;
+import ec.edu.espe.beverageAndOrder.service.BeverageService;
+import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Camila Venegas DCCO <your.name at your.org>
  */
-public class BeverageView extends javax.swing.JFrame {
-
-    /**
-     * Creates new form BeverageView
-     */
-    ArrayList<Beverage> beverages= new ArrayList<>();
+public class FrmBeverage extends javax.swing.JFrame {
+    private final BeverageService service;
     
-    public BeverageView() {
+    public FrmBeverage(BeverageService service) {
         initComponents();
-        SpinnerNumberModel spnSizeCopy= new SpinnerNumberModel();
-        spnSizeCopy.setMaximum(5);
-        spnSizeCopy.setMinimum(0);
-        sprSize.setModel(spnSizeCopy);
+        this.service = service;
+        
+        List<String> types = service.getBeverageTypes();
+        types.forEach(cmbType::addItem);
     }
-   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -48,11 +44,11 @@ public class BeverageView extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         sprSize = new javax.swing.JSpinner();
         jLabel6 = new javax.swing.JLabel();
-        txtPrice = new javax.swing.JTextField();
         btnAdd = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         txtBrand = new javax.swing.JTextField();
+        txtPrice = new javax.swing.JFormattedTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -105,7 +101,6 @@ public class BeverageView extends javax.swing.JFrame {
         jLabel4.setText("Type ");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 110, 40));
 
-        cmbType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Whisky", "Beer", "Ron", "Vodka", "Tequila", "Coñac", "Ginebra", "Wine", "Singani", "Pisco", " " }));
         jPanel2.add(cmbType, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 250, 20));
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
@@ -113,13 +108,14 @@ public class BeverageView extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(80, 12, 101));
         jLabel5.setText("Size ");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 90, 30));
+
+        sprSize.setModel(new javax.swing.SpinnerNumberModel(1.0d, 1.0d, 5.0d, 0.5d));
         jPanel2.add(sprSize, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 100, 30));
 
         jLabel6.setFont(new java.awt.Font("Maiandra GD", 3, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(78, 7, 91));
         jLabel6.setText("Price");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 60, -1));
-        jPanel2.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 100, -1));
 
         btnAdd.setBackground(new java.awt.Color(100, 38, 141));
         btnAdd.setFont(new java.awt.Font("Leelawadee UI", 3, 14)); // NOI18N
@@ -132,16 +128,16 @@ public class BeverageView extends javax.swing.JFrame {
         });
         jPanel2.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 110, 40));
 
-        jButton1.setBackground(new java.awt.Color(100, 38, 141));
-        jButton1.setFont(new java.awt.Font("Leelawadee UI", 3, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Delete");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnExit.setBackground(new java.awt.Color(100, 38, 141));
+        btnExit.setFont(new java.awt.Font("Leelawadee UI", 3, 14)); // NOI18N
+        btnExit.setForeground(new java.awt.Color(255, 255, 255));
+        btnExit.setText("Exit");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnExitActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 110, 40));
+        jPanel2.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 110, 40));
 
         jPanel3.setBackground(new java.awt.Color(102, 0, 204));
 
@@ -161,6 +157,9 @@ public class BeverageView extends javax.swing.JFrame {
         txtBrand.setBorder(null);
         jPanel2.add(txtBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 250, 30));
 
+        txtPrice.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
+        jPanel2.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 100, -1));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 300, 370));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/beverageAndOrder/view/Diseño sin título.png"))); // NOI18N
@@ -170,57 +169,68 @@ public class BeverageView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        Beverage beverage= new Beverage(txtBrand.getText(),txtPrice.getText(),sprSize.getValue().toString(),cmbType.getSelectedItem().toString());
-        beverages.add(beverage);
+        float price = 0.0F;
+        String brand = txtBrand.getText();
         
+        if (brand.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(
+                null,
+                "Brand is required",
+                "Error",
+                JOptionPane.ERROR_MESSAGE
+            );
+            
+            return;
+        } else if (brand.length() < 3 || brand.length() > 20) {
+            JOptionPane.showMessageDialog(
+                null,
+                "Brand must have between 3 and 20 characters",
+                "Error",
+                JOptionPane.ERROR_MESSAGE
+            );
+            
+            return;
+        }
+        
+        try {
+            price = Float.parseFloat(txtPrice.getText());
+        } catch (Exception e) {}
+        
+        if (price == 0) {
+            JOptionPane.showMessageDialog(
+                null,
+                "Price must be greather than zero",
+                "Error",
+                JOptionPane.ERROR_MESSAGE
+            );
+            return;
+        }
+        
+        String type = (String)cmbType.getSelectedItem();
+        Double size = (Double) sprSize.getValue();
+        
+        service.addBeverage(brand, type, price, size.floatValue());
+        
+        JOptionPane.showMessageDialog(
+            null,
+            "Product has been stored",
+            "Success",
+            JOptionPane.INFORMATION_MESSAGE
+        );
+        
+        txtBrand.setText("");
+        txtPrice.setText("");
+        sprSize.setValue(1.0);
     }//GEN-LAST:event_btnAddActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       txtBrand.setText("");
-       txtPrice.setText("");
-       sprSize.setValue(0);
-       cmbType.setSelectedItem("");
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BeverageView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BeverageView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BeverageView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BeverageView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new BeverageView().setVisible(true);
-            }
-        });
-    }
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+       dispose();
+    }//GEN-LAST:event_btnExitActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnExit;
     private javax.swing.JComboBox<String> cmbType;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -233,6 +243,6 @@ public class BeverageView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSpinner sprSize;
     private javax.swing.JTextField txtBrand;
-    private javax.swing.JTextField txtPrice;
+    private javax.swing.JFormattedTextField txtPrice;
     // End of variables declaration//GEN-END:variables
 }

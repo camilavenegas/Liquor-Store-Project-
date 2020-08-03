@@ -5,6 +5,9 @@
  */
 package ec.edu.espe.beverageAndOrder.view;
 
+import ec.edu.espe.beverageAndOrder.controller.BeverageController;
+import ec.edu.espe.beverageAndOrder.controller.OrderController;
+
 /**
  *
  * @author Camila Venegas DCCO <your.name at your.org>
@@ -14,11 +17,11 @@ public class BeverageAndOrder {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) {        
+        BeverageController beverageController = new BeverageController();
+        beverageController.init();
         
-        BeverageView bview= new BeverageView();
-        bview.setVisible(true);
+        OrderController orderController = new OrderController();
+        orderController.init();
     }
-    
 }

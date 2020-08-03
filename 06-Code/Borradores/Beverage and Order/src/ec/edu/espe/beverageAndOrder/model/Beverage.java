@@ -12,10 +12,12 @@ package ec.edu.espe.beverageAndOrder.model;
 public class Beverage {
     private String type;
     private String brand;
-    private String price;
-    private String size;
+    private float price;
+    private float size;
+    
+    public Beverage() {}
 
-    public Beverage(String type, String brand, String price, String size) {
+    public Beverage(String type, String brand, float price, float size) {
         this.type = type;
         this.brand = brand;
         this.price = price;
@@ -38,19 +40,19 @@ public class Beverage {
         this.brand = brand;
     }
 
-    public String getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
-    public String getSize() {
+    public float getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(float size) {
         this.size = size;
     }
     
