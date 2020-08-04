@@ -1,0 +1,11 @@
+[
+  { 
+   "description": "VISA"
+  },
+  {
+   "description": "Mastercard"
+  },
+  {
+   "description": "PayPal"
+  }
+]
