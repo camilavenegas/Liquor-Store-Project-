@@ -1,0 +1,23 @@
+{
+"CostumerData": [{
+"customerName": "Wilson Toapnta",
+"Address" : "Francisco Gonzales Suarez",
+"id": 1727294363,
+"age" : 19,
+"mail" : "wdtoapanta3@espe.edu.ec"  
+},
+{
+"customerName": "Camila Venegas",
+"Address" : "No s‚ alg£n lugar del Quito",
+"id": 1799999999,
+"age" : 20,
+"mail" : "cvenegas@espe.edu.ec"
+},
+{
+"customerName": "Fernando Paredes",
+"Address" : "Igual en alg£n lugar del mundo",
+"id": 1799999999,
+"age" : 19,
+"mail" : "fparedes@espe.edu.ec"
+},
+{
