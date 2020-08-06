@@ -182,7 +182,7 @@ public class FrmLoginAdmin extends javax.swing.JFrame {
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
         // TODO add your handling code here:
-        FrmMain frmMain = new FrmMain();
+        FrmMenu frmMain = new FrmMenu();
         frmMain.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnBackMouseClicked
