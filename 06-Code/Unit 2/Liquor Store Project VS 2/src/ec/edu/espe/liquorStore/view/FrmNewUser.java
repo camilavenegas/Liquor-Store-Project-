@@ -5,7 +5,7 @@
  */
 package ec.edu.espe.liquorStore.view;
 
-import ec.edu.espe.liquorStore.model.FileLibrary;
+import ec.edu.espe.liquorStore.model.JsonFile;
 import ec.edu.espe.liquorStore.model.Password;
 import ec.edu.espe.liquorStore.model.User;
 import javax.swing.JOptionPane;
@@ -172,10 +172,10 @@ public class FrmNewUser extends javax.swing.JFrame {
         }
         String nP = pswNewPassword.getText();
         User user = new User(newUser, newPaswd);
-        FileLibrary fl = new FileLibrary();
+        JsonFile fl = new JsonFile();
         fl.addToFile(user);
         JOptionPane.showMessageDialog(rootPane, "User register!");
-        FrmMenu main = new FrmMenu();
+        FrmMain main = new FrmMain();
         main.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnSaveActionPerformed
@@ -199,7 +199,7 @@ public class FrmNewUser extends javax.swing.JFrame {
 
     private void btnSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSaveMouseClicked
         // TODO add your handling code here:
-        FrmMenu frmMain = new FrmMenu();
+        FrmMain frmMain = new FrmMain();
         frmMain.setVisible(true);
         this.setVisible(false);
 

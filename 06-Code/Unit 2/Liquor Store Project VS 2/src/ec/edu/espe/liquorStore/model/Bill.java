@@ -14,9 +14,9 @@ public class Bill {
     private String clientName;
     private String address;
     private String phone;
-    private float price;
+    private double price;
 
-    public Bill(String clientId, String clientName, String address, String phone, float price) {
+    public Bill(String clientId, String clientName, String address, String phone, double price) {
         this.clientId = clientId;
         this.clientName = clientName;
         this.address = address;
@@ -56,11 +56,11 @@ public class Bill {
         this.phone = phone;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
     

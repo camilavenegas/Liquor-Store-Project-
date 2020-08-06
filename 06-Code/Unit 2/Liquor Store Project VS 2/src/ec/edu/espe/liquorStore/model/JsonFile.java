@@ -22,7 +22,7 @@ import java.util.ArrayList;
  *
  * @author Wilson Toapanta 6382
  */
-public class FileLibrary {
+public class JsonFile {
 
     static Gson gson = new Gson();
 

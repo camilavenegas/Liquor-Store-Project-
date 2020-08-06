@@ -202,7 +202,7 @@ public class FrmLoginUser extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        FrmMenu frmMain = new FrmMenu();
+        FrmMain frmMain = new FrmMain();
         frmMain.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnBackActionPerformed
