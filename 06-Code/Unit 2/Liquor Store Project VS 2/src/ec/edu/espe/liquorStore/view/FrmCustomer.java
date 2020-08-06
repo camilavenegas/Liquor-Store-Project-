@@ -128,10 +128,10 @@ public class FrmCustomer extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/view/6.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/6.png"))); // NOI18N
         jLabel7.setText("jLabel7");
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/view/customer icono.jpg"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/customer icono.jpg"))); // NOI18N
         jLabel8.setText("jLabel8");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

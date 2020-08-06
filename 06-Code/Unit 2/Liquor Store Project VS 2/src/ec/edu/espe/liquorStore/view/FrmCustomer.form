@@ -201,7 +201,7 @@
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/ec/edu/espe/liquorStore/view/6.png"/>
+              <Image iconType="3" name="/ec/edu/espe/liquorStore/icons/6.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel7"/>
           </Properties>
@@ -209,7 +209,7 @@
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/ec/edu/espe/liquorStore/view/customer icono.jpg"/>
+              <Image iconType="3" name="/ec/edu/espe/liquorStore/icons/customer icono.jpg"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel8"/>
           </Properties>

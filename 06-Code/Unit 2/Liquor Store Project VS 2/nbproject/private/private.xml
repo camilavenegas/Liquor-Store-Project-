@@ -3,11 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Unit%202/Liquor%20Store%20Project%20VS%202/src/ec/edu/espe/liquorStore/model/Card.java</file>
-            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Unit%202/Liquor%20Store%20Project%20VS%202/src/ec/edu/espe/liquorStore/view/FrmCard.java</file>
-            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Unit%202/Liquor%20Store%20Project%20VS%202/src/ec/edu/espe/liquorStore/model/Beverage.java</file>
-            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Unit%202/Liquor%20Store%20Project%20VS%202/src/ec/edu/espe/liquorStore/view/FrmCustomer.java</file>
-            <file>file:/C:/Users/admin/Desktop/POO/POO%20Project/Project-Group-4/06-Code/Unit%202/Liquor%20Store%20Project%20VS%202/src/ec/edu/espe/liquorStore/view/FrmOrder.java</file>
+            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Liquor%20Store%20Project/Project-Group-4/06-Code/Unit%202/Liquor%20Store%20Project%20VS%202/src/ec/edu/espe/liquorStore/service/BeverageService.java</file>
+            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Liquor%20Store%20Project/Project-Group-4/06-Code/Unit%202/Liquor%20Store%20Project%20VS%202/src/ec/edu/espe/liquorStore/model/FileLibrary.java</file>
+            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Liquor%20Store%20Project/Project-Group-4/06-Code/Unit%202/Liquor%20Store%20Project%20VS%202/src/ec/edu/espe/liquorStore/view/LiquorStoreProjectVS2.java</file>
+            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Liquor%20Store%20Project/Project-Group-4/06-Code/Unit%202/Liquor%20Store%20Project%20VS%202/src/ec/edu/espe/liquorStore/view/FrmBill.java</file>
+            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Liquor%20Store%20Project/Project-Group-4/06-Code/Unit%202/Liquor%20Store%20Project%20VS%202/src/ec/edu/espe/liquorStore/model/Bill.java</file>
+            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Liquor%20Store%20Project/Project-Group-4/06-Code/Unit%202/Liquor%20Store%20Project%20VS%202/src/ec/edu/espe/liquorStore/controller/BeverageController.java</file>
+            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Liquor%20Store%20Project/Project-Group-4/06-Code/Unit%202/Liquor%20Store%20Project%20VS%202/src/ec/edu/espe/liquorStore/model/Beverage.java</file>
+            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Liquor%20Store%20Project/Project-Group-4/06-Code/Unit%202/Liquor%20Store%20Project%20VS%202/src/ec/edu/espe/liquorStore/view/FrmMain.java</file>
+            <file>file:/C:/Users/hp/Documents/SEGUNDO%20SEMESTRE/GITHUB-POO/Liquor%20Store%20Project/Project-Group-4/06-Code/Unit%202/Liquor%20Store%20Project%20VS%202/src/ec/edu/espe/liquorStore/view/FrmOrder.java</file>
         </group>
     </open-files>
 </project-private>
