@@ -51,7 +51,7 @@ public class FrmOrder extends javax.swing.JFrame {
         BufferedReader BufferedR = null;
 
         String combosJson = "";
-        ArrayList<Combo1> options = new ArrayList<>();
+        ArrayList<Combo1> options = new ArrayList<>();       
         Gson gson = new Gson();
         try {
             archivo = new File(ruta + "//DescriptionCombo1.json");
@@ -111,12 +111,6 @@ public class FrmOrder extends javax.swing.JFrame {
         btnCancel = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        cmbCombo4 = new javax.swing.JScrollPane();
-        cmbCombo3 = new javax.swing.JScrollPane();
-        cmbCombo2 = new javax.swing.JScrollPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         ltsCombo1 = new javax.swing.JList<>();
         jPanel2 = new javax.swing.JPanel();
@@ -192,13 +186,7 @@ public class FrmOrder extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setText("COMBO 1 ");
-
-        jLabel9.setText("COMBO 2");
-
-        jLabel10.setText("COMBO 3");
-
-        jLabel11.setText("COMBO 4 ");
+        jLabel8.setText("COMBOS ");
 
         jScrollPane1.setViewportView(ltsCombo1);
 
@@ -209,45 +197,21 @@ public class FrmOrder extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel9))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cmbCombo4, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                    .addComponent(cmbCombo3)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(cmbCombo2))
-                .addContainerGap(21, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(jLabel8)
+                        .addGap(0, 98, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel8)
-                        .addGap(37, 37, 37)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addComponent(jLabel9)
-                                .addGap(56, 56, 56)
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel11))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(cmbCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(cmbCombo3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(cmbCombo4, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addGap(25, 25, 25)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -294,7 +258,7 @@ public class FrmOrder extends javax.swing.JFrame {
                         .addComponent(btnConfirm)
                         .addGap(28, 28, 28)
                         .addComponent(btnCancel)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -402,7 +366,6 @@ public class FrmOrder extends javax.swing.JFrame {
             if (beverage.getBrand().equalsIgnoreCase(selected.toLowerCase())) {
                 lblSize.setText(String.format("%.2f", beverage.getSize()));
                 lblPrice.setText(String.format("%.2f", beverage.getPrice()));
-
             }
         });
 
@@ -429,13 +392,8 @@ public class FrmOrder extends javax.swing.JFrame {
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnConfirm;
     private javax.swing.JComboBox<String> cmbBeverage;
-    private javax.swing.JScrollPane cmbCombo2;
-    private javax.swing.JScrollPane cmbCombo3;
-    private javax.swing.JScrollPane cmbCombo4;
     private javax.swing.JComboBox<String> cmbCombos;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -447,7 +405,6 @@ public class FrmOrder extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

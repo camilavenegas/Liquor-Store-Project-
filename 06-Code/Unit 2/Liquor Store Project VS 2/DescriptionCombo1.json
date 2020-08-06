@@ -1,4 +1,7 @@
 [
+  {
+    "description": "COMBO UNIVERSITY-COMBO"
+  },
   { 
    "description": "Beer"
   },
@@ -10,6 +13,51 @@
   },
   {
    "description": "2 Chips"
+  },
+  {
+    "description": "COMBO FRIENDS-PARTY-COMBO"
+  },
+  {
+    "description": "Vodka"
+  },
+  {
+    "description": "Zhumir"
+  },
+  {
+    "description": "2 Chips"
+  },
+  {
+    "description": "2 Bubblegum"
+  },
+  {
+    "description": "COMBO SiNoMeAcuerdoNoPaso"
+  },
+  {
+    "description": "Ron Pon Pon"
+  },
+  {
+    "description": "Jack Daniels"
+  },
+  {
+    "description": "4 Chips"
+  },
+  {
+    "description": "1 Bubblegum"
+  },
+  {
+    "description": "COMBO BorrachosPeroResponsables"
+  },
+  {
+    "description": "Vodka"
+  },
+  {
+    "description": "Jack Daniels"
+  },
+  {
+    "description": "3 Chips"
+  },
+  {
+    "description": "2 Peanuts"
   }
 ]
 
