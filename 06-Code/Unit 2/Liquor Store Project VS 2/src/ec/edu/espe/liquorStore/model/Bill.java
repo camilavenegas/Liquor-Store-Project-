@@ -14,18 +14,14 @@ public class Bill {
     private String clientName;
     private String address;
     private String phone;
-    private String iva;
-    private String subTotal;
-    private String total;
+    private float price;
 
-    public Bill(String clientId, String clientName, String address, String phone, String iva, String subTotal, String total) {
+    public Bill(String clientId, String clientName, String address, String phone, float price) {
         this.clientId = clientId;
         this.clientName = clientName;
         this.address = address;
         this.phone = phone;
-        this.iva = iva;
-        this.subTotal = subTotal;
-        this.total = total;
+        this.price = price;
     }
 
     public String getClientId() {
@@ -60,35 +56,17 @@ public class Bill {
         this.phone = phone;
     }
 
-    public String getIva() {
-        return iva;
+    public float getPrice() {
+        return price;
     }
 
-    public void setIva(String iva) {
-        this.iva = iva;
+    public void setPrice(float price) {
+        this.price = price;
     }
+    
+    
 
-    public String getSubTotal() {
-        return subTotal;
-    }
 
-    public void setSubTotal(String subTotal) {
-        this.subTotal = subTotal;
-    }
-
-    public String getTotal() {
-        return total;
-    }
-
-    public void setTotal(String total) {
-        this.total = total;
-    }
-
-    @Override
-    public String toString() {
-        return "Bill{" + "clientId=" + clientId + ", clientName=" + clientName 
-                + ", address=" + address + ", phone=" + phone + ", iva=" + iva +
-                ", subTotal=" + subTotal + ", total=" + total + '}';
-    }
+    
 
 }
