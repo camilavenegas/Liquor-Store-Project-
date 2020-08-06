@@ -25,22 +25,27 @@ import javax.swing.JOptionPane;
  * @author Camila Venegas DCCO <your.name at your.org>
  */
 public class FrmOrder extends javax.swing.JFrame {
-    
+
     private final String ruta = System.getProperties().getProperty("user.dir");
     private final BeverageService service;
-    
+
+    public FrmOrder() {
+        initComponents();
+       this.service = null; 
+    }
+
     public FrmOrder(BeverageService service) {
         initComponents();
-        this.service=service;
-        
+        this.service = service;
+
         List<Beverage> beverages = service.getAllBeverages();
-        
+
         cmbBeverage.removeAll();
-        
+
         beverages.forEach(beverage -> {
             cmbBeverage.addItem(beverage.getBrand());
         });
-        
+
         File archivo = null;
         FileReader FileR = null;
         BufferedReader BufferedR = null;
@@ -58,15 +63,16 @@ public class FrmOrder extends javax.swing.JFrame {
                 //combosList.addElement(line);
                 combosJson = combosJson + line;
             }
-            java.lang.reflect.Type combosType= new TypeToken<ArrayList<Combo1>>(){}.getType();
+            java.lang.reflect.Type combosType = new TypeToken<ArrayList<Combo1>>() {
+            }.getType();
             options = gson.fromJson(combosJson, combosType);
-            
+
             for (Combo1 op : options) {
                 combosList.addElement(op.getDescription());
-                
+
             } //listCombo.setModel(combosList);
             ltsCombo1.setModel(combosList);
-            
+
         } catch (JsonSyntaxException | IOException e) {
             JOptionPane.showMessageDialog(ltsCombo1, e);
         } finally {
@@ -74,12 +80,11 @@ public class FrmOrder extends javax.swing.JFrame {
                 if (null != FileR) {
                     FileR.close();
                 }
-            } catch (IOException e2) {              
+            } catch (IOException e2) {
             }
-        }  
+        }
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -381,20 +386,18 @@ public class FrmOrder extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbBeverageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbBeverageActionPerformed
-        String selected= (String) cmbBeverage.getSelectedItem();
-        
-        service.getAllBeverages().forEach(beverage-> {
+        String selected = (String) cmbBeverage.getSelectedItem();
+
+        service.getAllBeverages().forEach(beverage -> {
             if (beverage.getBrand().equalsIgnoreCase(selected.toLowerCase())) {
                 lblSize.setText(String.format("%.2f", beverage.getSize()));
                 lblPrice.setText(String.format("%.2f", beverage.getPrice()));
-                
-            } 
-            });
-            
+
+            }
+        });
+
     }//GEN-LAST:event_cmbBeverageActionPerformed
 
-   
-  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBackMenu;

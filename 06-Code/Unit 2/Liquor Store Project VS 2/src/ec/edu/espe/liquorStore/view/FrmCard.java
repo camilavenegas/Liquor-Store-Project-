@@ -231,16 +231,16 @@ public class FrmCard extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 390, 420));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/view/fondo cuerpo.jpg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/fondo cuerpo.jpg"))); // NOI18N
         jLabel5.setText("jLabel5");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 650, 500));
 
         jPanel5.setBackground(new java.awt.Color(13, 13, 72));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/view/icono tarjeta.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/card.png"))); // NOI18N
         jLabel6.setText("jLabel6");
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/view/card icono.jpg"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/card icono.jpg"))); // NOI18N
         jLabel7.setText("jLabel7");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -254,16 +254,16 @@ public class FrmCard extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel7)
-                .addGap(71, 71, 71)
+                .addGap(49, 49, 49)
                 .addComponent(jLabel6)
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addContainerGap(167, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 500));

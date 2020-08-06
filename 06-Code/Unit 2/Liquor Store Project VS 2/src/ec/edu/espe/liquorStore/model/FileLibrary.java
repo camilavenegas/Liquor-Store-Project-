@@ -23,13 +23,13 @@ import java.util.ArrayList;
  * @author Wilson Toapanta 6382
  */
 public class FileLibrary {
+
     static Gson gson = new Gson();
-     
-     
+
     /**
-     * 
-     * @param object  to add to file with your Classname.json
-     * 
+     *
+     * @param object to add to file with your Classname.json
+     *
      */
     public static void addToFile(Object object) {
         JsonArray jArray = new JsonArray();
@@ -66,12 +66,13 @@ public class FileLibrary {
 
         }
     }
-     /**
-      * 
-      * @param nameClass   ---> to name the file
-      * @return objects  ---> the objects found in the file
-      */
-    public static ArrayList<Object> readObjects(String nameClass){
+
+    /**
+     *
+     * @param nameClass ---> to name the file
+     * @return objects ---> the objects found in the file
+     */
+    public static ArrayList<Object> readObjects(String nameClass) {
         JsonParser parser = new JsonParser();
         ArrayList<Object> objects = new ArrayList<>();
         try {
