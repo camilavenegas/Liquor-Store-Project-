@@ -56,6 +56,12 @@ public class Beverage {
     public void setSize(float size) {
         this.size = size;
     }
+
+    @Override
+    public String toString() {
+        return "Beverage{" + "type=" + type + ", brand=" + brand + ", price=" + price + ", size=" + size + '}';
+    }
+    
     
     
 }

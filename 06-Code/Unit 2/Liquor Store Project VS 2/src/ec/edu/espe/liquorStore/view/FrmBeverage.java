@@ -5,18 +5,26 @@
  */
 package ec.edu.espe.liquorStore.view;
 
+import ec.edu.espe.liquorStore.service.BeverageService;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Camila Venegas DCCO <your.name at your.org>
  */
 public class FrmBeverage extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Beverage
-     */
-    public FrmBeverage() {
+    private final BeverageService service;
+    
+    public FrmBeverage(BeverageService service) {
         initComponents();
+        this.service=service;
+        
+        List<String> types= service.getBeverageTypes();
+        types.forEach(cmbType::addItem);
+        
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,10 +42,10 @@ public class FrmBeverage extends javax.swing.JFrame {
         cmbType = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         btnAdd = new javax.swing.JButton();
-        cmbSize = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         txtPrice = new javax.swing.JFormattedTextField();
         btnExit = new javax.swing.JButton();
+        sprSize = new javax.swing.JSpinner();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -55,8 +63,11 @@ public class FrmBeverage extends javax.swing.JFrame {
         jLabel3.setText("Size");
 
         btnAdd.setText("Add");
-
-        cmbSize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Price");
 
@@ -83,8 +94,8 @@ public class FrmBeverage extends javax.swing.JFrame {
                                         .addComponent(jLabel4)
                                         .addGap(34, 34, 34)))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(cmbSize, 0, 75, Short.MAX_VALUE)
-                                    .addComponent(txtPrice))
+                                    .addComponent(txtPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                                    .addComponent(sprSize))
                                 .addGap(61, 61, 61))
                             .addComponent(txtBrand)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -106,12 +117,10 @@ public class FrmBeverage extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(cmbType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(cmbSize))
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(sprSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 24, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -126,10 +135,10 @@ public class FrmBeverage extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/view/2 COPIA SIN BORDE.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/2 - copia.png"))); // NOI18N
         jLabel6.setText("jLabel6");
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/view/beverage icono.jpg"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/beverage icono.jpg"))); // NOI18N
         jLabel7.setText("jLabel7");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -137,73 +146,94 @@ public class FrmBeverage extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(46, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(99, 99, 99))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel7)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 460));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/view/Diseño sin título.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/Diseño sin título.png"))); // NOI18N
         jLabel5.setText("jLabel5");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 380, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmBeverage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmBeverage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmBeverage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmBeverage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+         float price = 0.0F;
+        String brand = txtBrand.getText();
+        
+        if (brand.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(
+                null,
+                "Brand is required",
+                "Error",
+                JOptionPane.ERROR_MESSAGE
+            );
+            
+            return;
+        } else if (brand.length() < 3 || brand.length() > 20) {
+            JOptionPane.showMessageDialog(
+                null,
+                "Brand must have between 3 and 20 characters",
+                "Error",
+                JOptionPane.ERROR_MESSAGE
+            );
+            
+            return;
         }
-        //</editor-fold>
-        //</editor-fold>
+        
+        try {
+            price = Float.parseFloat(txtPrice.getText());
+        } catch (Exception e) {}
+        
+        if (price == 0) {
+            JOptionPane.showMessageDialog(
+                null,
+                "Price must be greather than zero",
+                "Error",
+                JOptionPane.ERROR_MESSAGE
+            );
+            return;
+        }
+        
+        String type = (String)cmbType.getSelectedItem();
+        Double size = (Double) sprSize.getValue();
+        
+        service.addBeverage(brand, type, price, size.floatValue());
+        
+        JOptionPane.showMessageDialog(
+            null,
+            "Product has been stored",
+            "Success",
+            JOptionPane.INFORMATION_MESSAGE
+        );
+        
+        txtBrand.setText("");
+        txtPrice.setText("");
+        sprSize.setValue(1.0);
+    }//GEN-LAST:event_btnAddActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrmBeverage().setVisible(true);
-            }
-        });
-    }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnExit;
-    private javax.swing.JComboBox<String> cmbSize;
     private javax.swing.JComboBox<String> cmbType;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -214,6 +244,7 @@ public class FrmBeverage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JSpinner sprSize;
     private javax.swing.JTextField txtBrand;
     private javax.swing.JFormattedTextField txtPrice;
     // End of variables declaration//GEN-END:variables
