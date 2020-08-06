@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.liquorStore.view;
 
+import ec.edu.espe.liquorStore.controller.BeverageController;
+
 /**
  *
  * @author Alex Velastegui ESPE-DCCO
@@ -35,7 +37,7 @@ public class FrmMain extends javax.swing.JFrame {
         menuExploreStore = new javax.swing.JMenu();
         itmStartOrder = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        itmAddBeverage = new javax.swing.JMenuItem();
         itmAddCustomer = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -84,13 +86,18 @@ public class FrmMain extends javax.swing.JFrame {
 
         jMenu3.setText("Admin");
 
-        jMenuItem1.setText("Add Beverage");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+        itmAddBeverage.setText("Add Beverage");
+        itmAddBeverage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itmAddBeverageMouseClicked(evt);
             }
         });
-        jMenu3.add(jMenuItem1);
+        itmAddBeverage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmAddBeverageActionPerformed(evt);
+            }
+        });
+        jMenu3.add(itmAddBeverage);
 
         itmAddCustomer.setText("Add Customer");
         itmAddCustomer.addActionListener(new java.awt.event.ActionListener() {
@@ -107,9 +114,11 @@ public class FrmMain extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void itmAddBeverageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmAddBeverageActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+        BeverageController beverageController = new BeverageController();
+        beverageController.init();
+    }//GEN-LAST:event_itmAddBeverageActionPerformed
 
     private void btnExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseClicked
         // TODO add your handling code here:
@@ -143,6 +152,11 @@ public class FrmMain extends javax.swing.JFrame {
         newUser.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_itmAddCustomerActionPerformed
+
+    private void itmAddBeverageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itmAddBeverageMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_itmAddBeverageMouseClicked
 
     /**
      * @param args the command line arguments
@@ -182,13 +196,13 @@ public class FrmMain extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem btnExit;
+    private javax.swing.JMenuItem itmAddBeverage;
     private javax.swing.JMenuItem itmAddCustomer;
     private javax.swing.JMenuItem itmStartOrder;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenu menuExploreStore;
     private javax.swing.JMenu menuLiquorStore;
     // End of variables declaration//GEN-END:variables

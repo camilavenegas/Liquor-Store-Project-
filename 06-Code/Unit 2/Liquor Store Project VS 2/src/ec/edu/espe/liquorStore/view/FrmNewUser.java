@@ -199,6 +199,9 @@ public class FrmNewUser extends javax.swing.JFrame {
 
     private void btnSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSaveMouseClicked
         // TODO add your handling code here:
+        FrmMain frmMain = new FrmMain();
+        frmMain.setVisible(true);
+        this.setVisible(false);
 
     }//GEN-LAST:event_btnSaveMouseClicked
 

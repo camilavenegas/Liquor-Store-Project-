@@ -30,6 +30,7 @@ public class FrmBill extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtBillNumber = new javax.swing.JFormattedTextField();
@@ -43,8 +44,8 @@ public class FrmBill extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtPhone = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        rbtPayCard = new javax.swing.JRadioButton();
+        rbtPayCash = new javax.swing.JRadioButton();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
@@ -84,9 +85,14 @@ public class FrmBill extends javax.swing.JFrame {
 
         jLabel6.setText("Payment");
 
-        jRadioButton1.setText("Pay with card");
+        rbtPayCard.setText("Pay with card");
+        rbtPayCard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtPayCardActionPerformed(evt);
+            }
+        });
 
-        jRadioButton2.setText("Pay with cash ");
+        rbtPayCash.setText("Pay with cash ");
 
         jSeparator2.setForeground(new java.awt.Color(153, 102, 255));
 
@@ -113,6 +119,11 @@ public class FrmBill extends javax.swing.JFrame {
         });
 
         btnCancel.setText("Cancel");
+        btnCancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCancelMouseClicked(evt);
+            }
+        });
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelActionPerformed(evt);
@@ -149,9 +160,9 @@ public class FrmBill extends javax.swing.JFrame {
                                         .addComponent(txtAddress)
                                         .addComponent(txtPhone, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jRadioButton1)
+                                        .addComponent(rbtPayCard)
                                         .addGap(36, 36, 36)
-                                        .addComponent(jRadioButton2))))
+                                        .addComponent(rbtPayCash))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(66, 66, 66)
                                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -179,7 +190,7 @@ public class FrmBill extends javax.swing.JFrame {
                             .addComponent(txtIva)
                             .addComponent(txtTotal)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,8 +221,8 @@ public class FrmBill extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel6)
-                        .addComponent(jRadioButton2))
-                    .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(rbtPayCash))
+                    .addComponent(rbtPayCard, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -242,14 +253,14 @@ public class FrmBill extends javax.swing.JFrame {
                 .addGap(42, 42, 42))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 610, 340));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 770, 420));
 
         jPanel2.setBackground(new java.awt.Color(204, 153, 255));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/bill icono.jpg"))); // NOI18N
         jLabel11.setText("jLabel11");
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/view/4.png"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/4.png"))); // NOI18N
         jLabel12.setText("jLabel12");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -278,7 +289,7 @@ public class FrmBill extends javax.swing.JFrame {
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/fondo open.jpg"))); // NOI18N
         jLabel13.setText("jLabel13");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 640, 500));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 930, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -295,11 +306,26 @@ public class FrmBill extends javax.swing.JFrame {
         String iva = txtIva.getText();
         String subTotal = txtSubTotal.getText();
         String total = txtTotal.getText();
- 
+
         Bill user = new Bill(clientId, clientName, address, phone, iva, subTotal, total);
         FileLibrary register = new FileLibrary();
         register.addToFile(user);
     }//GEN-LAST:event_btnConfirmActionPerformed
+
+    private void btnCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseClicked
+        // TODO add your handling code here:
+        FrmMain frmMain = new FrmMain();
+        frmMain.setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_btnCancelMouseClicked
+
+    private void rbtPayCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtPayCardActionPerformed
+        // TODO add your handling code here:
+        FrmCard frmCard = new FrmCard();
+        frmCard.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_rbtPayCardActionPerformed
 
     /**
      * @param args the command line arguments
@@ -339,6 +365,7 @@ public class FrmBill extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnConfirm;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -354,12 +381,12 @@ public class FrmBill extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JRadioButton rbtPayCard;
+    private javax.swing.JRadioButton rbtPayCash;
     private javax.swing.JTextArea txrOrder;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JFormattedTextField txtBillNumber;

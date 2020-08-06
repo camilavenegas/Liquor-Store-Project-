@@ -31,7 +31,7 @@ public class FrmOrder extends javax.swing.JFrame {
 
     public FrmOrder() {
         initComponents();
-       this.service = null; 
+        this.service = null;
     }
 
     public FrmOrder(BeverageService service) {
@@ -176,11 +176,21 @@ public class FrmOrder extends javax.swing.JFrame {
         btnConfirm.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         btnConfirm.setForeground(new java.awt.Color(255, 255, 255));
         btnConfirm.setText("Confirm");
+        btnConfirm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnConfirmMouseClicked(evt);
+            }
+        });
 
         btnCancel.setBackground(new java.awt.Color(102, 0, 153));
         btnCancel.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         btnCancel.setForeground(new java.awt.Color(255, 255, 255));
         btnCancel.setText("Cancel");
+        btnCancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCancelMouseClicked(evt);
+            }
+        });
 
         jLabel8.setText("COMBO 1 ");
 
@@ -351,7 +361,7 @@ public class FrmOrder extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(16, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -397,6 +407,21 @@ public class FrmOrder extends javax.swing.JFrame {
         });
 
     }//GEN-LAST:event_cmbBeverageActionPerformed
+
+    private void btnConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmMouseClicked
+        // TODO add your handling code here:
+        FrmBill bill = new FrmBill();
+        bill.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_btnConfirmMouseClicked
+
+    private void btnCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseClicked
+        // TODO add your handling code here:
+        FrmLoginUser login = new FrmLoginUser();
+        login.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCancelMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
