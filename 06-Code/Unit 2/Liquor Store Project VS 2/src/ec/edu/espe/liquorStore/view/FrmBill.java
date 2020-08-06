@@ -7,6 +7,12 @@ package ec.edu.espe.liquorStore.view;
 
 import ec.edu.espe.liquorStore.model.Bill;
 import ec.edu.espe.liquorStore.model.FileLibrary;
+<<<<<<< HEAD
+import javax.swing.JOptionPane;
+=======
+import ec.edu.espe.liquorStore.model.Bill;
+import java.text.DecimalFormat;
+>>>>>>> 07ed4fae15bb423c3ca66becd7ce41c506a589d1
 
 /**
  *
@@ -14,11 +20,25 @@ import ec.edu.espe.liquorStore.model.FileLibrary;
  */
 public class FrmBill extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrmBill
-     */
+    private final Bill bill;
+
     public FrmBill() {
+        this.bill = null;
+    }
+
+    public FrmBill(Bill bill) {
         initComponents();
+        double copyPrice = 17.78F;
+        this.bill = bill;
+        double price = copyPrice;
+        copyPrice = ((bill.getPrice()) - (bill.getPrice() * 0.12));
+        double iva = (bill.getPrice() * 0.12);
+        double total = price + iva;
+
+        jLabel8.setText(new DecimalFormat("#.##").format(copyPrice));
+        jLabel9.setText(new DecimalFormat("#.##").format(iva));
+        jLabel10.setText(new DecimalFormat("#.##").format(total));
+
     }
 
     /**
@@ -48,9 +68,6 @@ public class FrmBill extends javax.swing.JFrame {
         rbtPayCash = new javax.swing.JRadioButton();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
-        jLabel7 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txrOrder = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
         txtSubTotal = new javax.swing.JFormattedTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -99,12 +116,6 @@ public class FrmBill extends javax.swing.JFrame {
         jSeparator3.setForeground(new java.awt.Color(153, 0, 255));
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jLabel7.setText("Order");
-
-        txrOrder.setColumns(20);
-        txrOrder.setRows(5);
-        jScrollPane1.setViewportView(txrOrder);
-
         jLabel8.setText("Sub Total ");
 
         jLabel9.setText("IVA");
@@ -112,6 +123,11 @@ public class FrmBill extends javax.swing.JFrame {
         jLabel10.setText("TOTAL");
 
         btnConfirm.setText("Confirm");
+        btnConfirm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnConfirmMouseClicked(evt);
+            }
+        });
         btnConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfirmActionPerformed(evt);
@@ -176,21 +192,24 @@ public class FrmBill extends javax.swing.JFrame {
                         .addComponent(btnCancel)
                         .addGap(109, 109, 109)))
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel8)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel9)
-                            .addComponent(jLabel10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtSubTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-                            .addComponent(txtIva)
-                            .addComponent(txtTotal)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGap(26, 26, 26)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addGap(26, 26, 26)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtSubTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                        .addComponent(txtIva)))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,29 +250,26 @@ public class FrmBill extends javax.swing.JFrame {
                     .addComponent(btnCancel))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(47, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
+                        .addGap(16, 16, 16)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
                             .addComponent(txtSubTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addGap(52, 52, 52)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(txtIva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                            .addComponent(txtIva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9))
+                        .addGap(45, 45, 45)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10)))
                     .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 770, 420));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 670, 420));
 
         jPanel2.setBackground(new java.awt.Color(204, 153, 255));
 
@@ -299,22 +315,21 @@ public class FrmBill extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
+        float price = 0.0F;
         String clientId = txtId.getText();
         String clientName = txtName.getText();
         String address = txtAddress.getText();
         String phone = txtPhone.getText();
-        String iva = txtIva.getText();
-        String subTotal = txtSubTotal.getText();
-        String total = txtTotal.getText();
+        price = Float.parseFloat(txtSubTotal.getText());
 
-        Bill user = new Bill(clientId, clientName, address, phone, iva, subTotal, total);
+        Bill user = new Bill(clientId, clientName, address, phone, price);
         FileLibrary register = new FileLibrary();
         register.addToFile(user);
     }//GEN-LAST:event_btnConfirmActionPerformed
 
     private void btnCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseClicked
         // TODO add your handling code here:
-        FrmMain frmMain = new FrmMain();
+        FrmMenu frmMain = new FrmMenu();
         frmMain.setVisible(true);
         this.setVisible(false);
 
@@ -326,6 +341,12 @@ public class FrmBill extends javax.swing.JFrame {
         frmCard.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_rbtPayCardActionPerformed
+
+    private void btnConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmMouseClicked
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Order Complete");
+        System.exit(0);
+    }//GEN-LAST:event_btnConfirmMouseClicked
 
     /**
      * @param args the command line arguments
@@ -376,18 +397,15 @@ public class FrmBill extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JRadioButton rbtPayCard;
     private javax.swing.JRadioButton rbtPayCash;
-    private javax.swing.JTextArea txrOrder;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JFormattedTextField txtBillNumber;
     private javax.swing.JTextField txtId;

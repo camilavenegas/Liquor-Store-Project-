@@ -10,7 +10,6 @@ import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import ec.edu.espe.liquorStore.model.Beverage;
 import ec.edu.espe.liquorStore.model.Combo1;
-import ec.edu.espe.liquorStore.model.Combo2;
 import ec.edu.espe.liquorStore.service.BeverageService;
 import java.io.BufferedReader;
 import java.io.File;
@@ -367,7 +366,6 @@ public class FrmOrder extends javax.swing.JFrame {
             if (beverage.getBrand().equalsIgnoreCase(selected.toLowerCase())) {
                 lblSize.setText(String.format("%.2f", beverage.getSize()));
                 lblPrice.setText(String.format("%.2f", beverage.getPrice()));
-
             }
         });
 
