@@ -312,7 +312,7 @@ public class FrmBill extends javax.swing.JFrame {
 
     private void btnCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseClicked
         // TODO add your handling code here:
-        FrmMain frmMain = new FrmMain();
+        FrmMenu frmMain = new FrmMenu();
         frmMain.setVisible(true);
         this.setVisible(false);
 
