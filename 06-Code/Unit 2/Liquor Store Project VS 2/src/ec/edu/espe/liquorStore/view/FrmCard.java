@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.liquorStore.view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Camila Venegas DCCO <your.name at your.org>
@@ -60,6 +62,11 @@ public class FrmCard extends javax.swing.JFrame {
         jLabel2.setText("Card Id");
 
         txtCardId.setBorder(null);
+        txtCardId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCardIdKeyTyped(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 0, 102));
@@ -71,12 +78,22 @@ public class FrmCard extends javax.swing.JFrame {
                 txtOwnerActionPerformed(evt);
             }
         });
+        txtOwner.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtOwnerKeyTyped(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 0, 102));
         jLabel3.setText("Code ");
 
         txtCode.setBorder(null);
+        txtCode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCodeKeyTyped(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 0, 102));
@@ -299,6 +316,53 @@ public class FrmCard extends javax.swing.JFrame {
         bill.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelMouseClicked
+
+    private void txtCodeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodeKeyTyped
+        // TODO add your handling code here:
+        char letter = evt.getKeyChar();
+
+        if (Character.isLetter(letter)) {
+            getToolkit().beep();
+            evt.consume();
+
+            JOptionPane.showMessageDialog(this, "Please only numbers!!!");
+
+        }
+        if (txtCode.getText().length() >= 4) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCodeKeyTyped
+
+    private void txtCardIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCardIdKeyTyped
+        // TODO add your handling code here:
+        char letter = evt.getKeyChar();
+
+        if (Character.isLetter(letter)) {
+            getToolkit().beep();
+            evt.consume();
+
+            JOptionPane.showMessageDialog(this, "Please only numbers!!!");
+
+        }
+        if (txtCardId.getText().length() >= 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCardIdKeyTyped
+
+    private void txtOwnerKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOwnerKeyTyped
+        // TODO add your handling code here:    
+        char letter = evt.getKeyChar();
+
+        if (Character.isDigit(letter)) {
+            getToolkit().beep();
+            evt.consume();
+
+            JOptionPane.showMessageDialog(this, "Please not numbers!!!");
+
+        }if(evt.getKeyChar() >= 33 && evt.getKeyChar() <= 64){
+            JOptionPane.showMessageDialog(this, "Please not Special Characters!!!");
+        }
+    }//GEN-LAST:event_txtOwnerKeyTyped
 
     /**
      * @param args the command line arguments

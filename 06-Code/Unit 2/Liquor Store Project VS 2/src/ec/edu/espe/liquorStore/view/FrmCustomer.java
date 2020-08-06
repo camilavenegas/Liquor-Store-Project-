@@ -5,6 +5,10 @@
  */
 package ec.edu.espe.liquorStore.view;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Camila Venegas DCCO <your.name at your.org>
@@ -61,7 +65,18 @@ public class FrmCustomer extends javax.swing.JFrame {
 
         jLabel5.setText("E-mail");
 
+        txtMail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtMailFocusLost(evt);
+            }
+        });
+
         btnAdd.setText("Add");
+        btnAdd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAddMouseClicked(evt);
+            }
+        });
 
         btnCancel.setText("Cancel");
 
@@ -92,7 +107,7 @@ public class FrmCustomer extends javax.swing.JFrame {
                         .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36)
                         .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,7 +139,7 @@ public class FrmCustomer extends javax.swing.JFrame {
                 .addGap(45, 45, 45))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 340, 270));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 340, 270));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -157,16 +172,49 @@ public class FrmCustomer extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 310, 440));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/view/fondo cuerpo.jpg"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/fondo cuerpo_1.jpg"))); // NOI18N
         jLabel6.setText("jLabel6");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 430, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public boolean isEmail(String correo){
+        Pattern pat = null;
+        Matcher mat = null;
+        pat = Pattern.compile("^[\\w\\-\\_\\+]+(\\-\\_]+)*@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$");
+        mat = pat.matcher(correo);
+        if(mat.find()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    private void btnAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddMouseClicked
+        // TODO add your handling code here:
+        FrmMenu frmMenu = new FrmMenu();
+        frmMenu.setVisible(true);
+        this.setVisible(false);
+        JOptionPane.showMessageDialog(rootPane, "Data register!");
+    }//GEN-LAST:event_btnAddMouseClicked
+
+    private void txtMailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtMailFocusLost
+        // TODO add your handling code here
+        if(isEmail(txtMail.getText())){
+            
+        }else{
+            JOptionPane.showMessageDialog(null,"Incorrect Email!!","Put a correct", 
+                    JOptionPane.INFORMATION_MESSAGE);
+            txtMail.requestFocus();
+            
+        }
+    }//GEN-LAST:event_txtMailFocusLost
+
     /**
      * @param args the command line arguments
      */
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

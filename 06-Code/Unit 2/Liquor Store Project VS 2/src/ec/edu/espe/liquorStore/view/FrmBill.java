@@ -9,6 +9,7 @@ import ec.edu.espe.liquorStore.model.Bill;
 import ec.edu.espe.liquorStore.model.JsonFile;
 import ec.edu.espe.liquorStore.model.Bill;
 import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -103,6 +104,11 @@ public class FrmBill extends javax.swing.JFrame {
         jLabel10.setText("TOTAL");
 
         btnConfirm.setText("Confirm");
+        btnConfirm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnConfirmMouseClicked(evt);
+            }
+        });
         btnConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfirmActionPerformed(evt);
@@ -185,7 +191,7 @@ public class FrmBill extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(txtSubTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
                         .addComponent(txtIva)))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,7 +231,7 @@ public class FrmBill extends javax.swing.JFrame {
                     .addComponent(btnCancel))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
@@ -244,7 +250,7 @@ public class FrmBill extends javax.swing.JFrame {
                 .addGap(42, 42, 42))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 670, 420));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 720, 420));
 
         jPanel2.setBackground(new java.awt.Color(204, 153, 255));
 
@@ -324,6 +330,13 @@ public class FrmBill extends javax.swing.JFrame {
         frmCard.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_rbtPayCardActionPerformed
+
+    private void btnConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmMouseClicked
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Order Completed , THANKS FOR ALL!");
+        System.exit(0);
+
+    }//GEN-LAST:event_btnConfirmMouseClicked
 
     /**
      * @param args the command line arguments

@@ -175,8 +175,8 @@ public class FrmNewUser extends javax.swing.JFrame {
         JsonFile fl = new JsonFile();
         fl.addToFile(user);
         JOptionPane.showMessageDialog(rootPane, "User register!");
-        FrmMenu main = new FrmMenu();
-        main.setVisible(true);
+        FrmCustomer frmCustomer = new FrmCustomer();
+        frmCustomer.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnSaveActionPerformed
 
@@ -199,8 +199,8 @@ public class FrmNewUser extends javax.swing.JFrame {
 
     private void btnSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSaveMouseClicked
         // TODO add your handling code here:
-        FrmMenu frmMain = new FrmMenu();
-        frmMain.setVisible(true);
+        FrmCustomer frmCustomer = new FrmCustomer();
+        frmCustomer.setVisible(true);
         this.setVisible(false);
 
     }//GEN-LAST:event_btnSaveMouseClicked
