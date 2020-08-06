@@ -5,6 +5,9 @@
  */
 package ec.edu.espe.liquorStore.view;
 
+import ec.edu.espe.liquorStore.model.Bill;
+import ec.edu.espe.liquorStore.model.FileLibrary;
+
 /**
  *
  * @author Camila Venegas DCCO <your.name at your.org>
@@ -103,6 +106,11 @@ public class FrmBill extends javax.swing.JFrame {
         jLabel10.setText("TOTAL");
 
         btnConfirm.setText("Confirm");
+        btnConfirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmActionPerformed(evt);
+            }
+        });
 
         btnCancel.setText("Cancel");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -278,6 +286,20 @@ public class FrmBill extends javax.swing.JFrame {
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
+        String clientId = txtId.getText();
+        String clientName = txtName.getText();
+        String address = txtAddress.getText();
+        String phone = txtPhone.getText();
+        String iva = txtIva.getText();
+        String subTotal = txtSubTotal.getText();
+        String total = txtTotal.getText();
+ 
+        Bill user = new Bill(clientId, clientName, address, phone, iva, subTotal, total);
+        FileLibrary register = new FileLibrary();
+        register.addToFile(user);
+    }//GEN-LAST:event_btnConfirmActionPerformed
 
     /**
      * @param args the command line arguments

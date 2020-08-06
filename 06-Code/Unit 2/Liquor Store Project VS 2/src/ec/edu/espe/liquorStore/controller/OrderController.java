@@ -6,21 +6,19 @@
 package ec.edu.espe.liquorStore.controller;
 
 import ec.edu.espe.liquorStore.service.BeverageService;
-import ec.edu.espe.liquorStore.view.FrmBeverage;
+import ec.edu.espe.liquorStore.view.FrmOrder;
 import javax.swing.JFrame;
 
 /**
  *
- * @author Camila Venegas DCCO <your.name at your.org>
+ * @author Wilson Toapanta 6382
  */
-public class BeverageController {
+public class OrderController {
     private BeverageService beverageService = new BeverageService();
-    
+
     public void init() {
-        FrmBeverage view = new FrmBeverage(beverageService);
+        FrmOrder view = new FrmOrder(beverageService);
         view.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         view.setVisible(true);
     }
-    
-    
 }

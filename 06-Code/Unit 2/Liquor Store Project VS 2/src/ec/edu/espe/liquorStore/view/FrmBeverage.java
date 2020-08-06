@@ -58,8 +58,6 @@ public class FrmBeverage extends javax.swing.JFrame {
 
         jLabel2.setText("Type");
 
-        cmbType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jLabel3.setText("Size");
 
         btnAdd.setText("Add");
