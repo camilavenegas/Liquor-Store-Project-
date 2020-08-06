@@ -7,6 +7,7 @@ package ec.edu.espe.liquorStore.view;
 
 import ec.edu.espe.liquorStore.model.Bill;
 import ec.edu.espe.liquorStore.model.FileLibrary;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -112,6 +113,11 @@ public class FrmBill extends javax.swing.JFrame {
         jLabel10.setText("TOTAL");
 
         btnConfirm.setText("Confirm");
+        btnConfirm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnConfirmMouseClicked(evt);
+            }
+        });
         btnConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfirmActionPerformed(evt);
@@ -326,6 +332,12 @@ public class FrmBill extends javax.swing.JFrame {
         frmCard.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_rbtPayCardActionPerformed
+
+    private void btnConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmMouseClicked
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Order Complete");
+        System.exit(0);
+    }//GEN-LAST:event_btnConfirmMouseClicked
 
     /**
      * @param args the command line arguments
