@@ -82,5 +82,11 @@
     "brand": "Charro2",
     "price": 18.0,
     "size": 1.0
+  },
+  {
+    "type": "",
+    "brand": "",
+    "price": 0.0,
+    "size": 0.0
   }
 ]

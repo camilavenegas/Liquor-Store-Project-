@@ -5,6 +5,12 @@
  */
 package ec.edu.espe.liquorStore.view;
 
+import ec.edu.espe.liquorStore.model.Customer;
+import ec.edu.espe.liquorStore.model.JsonFile;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Camila Venegas DCCO <your.name at your.org>
@@ -61,9 +67,30 @@ public class FrmCustomer extends javax.swing.JFrame {
 
         jLabel5.setText("E-mail");
 
+        txtMail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtMailFocusLost(evt);
+            }
+        });
+
         btnAdd.setText("Add");
+        btnAdd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAddMouseClicked(evt);
+            }
+        });
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
         btnCancel.setText("Cancel");
+        btnCancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCancelMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -124,7 +151,7 @@ public class FrmCustomer extends javax.swing.JFrame {
                 .addGap(45, 45, 45))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 340, 270));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 340, 270));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -157,16 +184,69 @@ public class FrmCustomer extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 310, 440));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/fondo cuerpo.jpg"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/fondo cuerpo_1.jpg"))); // NOI18N
         jLabel6.setText("jLabel6");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 430, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public boolean isEmail(String correo){
+        Pattern pat = null;
+        Matcher mat = null;
+        pat = Pattern.compile("^[\\w\\-\\_\\+]+(\\-\\_]+)*@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$");
+        mat = pat.matcher(correo);
+        if(mat.find()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    private void btnAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddMouseClicked
+        // TODO add your handling code here:
+        FrmMenu frmMenu = new FrmMenu();
+        frmMenu.setVisible(true);
+        this.setVisible(false);
+        JOptionPane.showMessageDialog(rootPane, "Data register!");
+    }//GEN-LAST:event_btnAddMouseClicked
+
+    private void txtMailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtMailFocusLost
+        // TODO add your handling code here
+        if(isEmail(txtMail.getText())){
+            
+        }else{
+            JOptionPane.showMessageDialog(null,"Incorrect Email!!","Put a correct", 
+                    JOptionPane.INFORMATION_MESSAGE);
+            txtMail.requestFocus();
+            
+        }
+    }//GEN-LAST:event_txtMailFocusLost
+
+    private void btnCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseClicked
+        // TODO add your handling code here:
+      FrmAdminChooser frmChoose = new FrmAdminChooser();
+        frmChoose.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCancelMouseClicked
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        String customerName = txtCustomerName.getText();
+        String customerAddress = txtAdress.getText();
+        String id = txtId.getText();
+        String age = txtAge.getText();
+        String mail = txtMail.getText();
+
+        Customer user = new Customer(customerName, customerAddress, id, age, mail);
+        JsonFile register = new JsonFile();
+        register.addToFile(user);
+
+    }//GEN-LAST:event_btnAddActionPerformed
+
     /**
      * @param args the command line arguments
      */
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -6,13 +6,10 @@
 package ec.edu.espe.liquorStore.view;
 
 import ec.edu.espe.liquorStore.model.Bill;
-import ec.edu.espe.liquorStore.model.FileLibrary;
-<<<<<<< HEAD
-import javax.swing.JOptionPane;
-=======
+import ec.edu.espe.liquorStore.model.JsonFile;
 import ec.edu.espe.liquorStore.model.Bill;
 import java.text.DecimalFormat;
->>>>>>> 07ed4fae15bb423c3ca66becd7ce41c506a589d1
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,24 +17,8 @@ import java.text.DecimalFormat;
  */
 public class FrmBill extends javax.swing.JFrame {
 
-    private final Bill bill;
-
     public FrmBill() {
-        this.bill = null;
-    }
-
-    public FrmBill(Bill bill) {
         initComponents();
-        double copyPrice = 17.78F;
-        this.bill = bill;
-        double price = copyPrice;
-        copyPrice = ((bill.getPrice()) - (bill.getPrice() * 0.12));
-        double iva = (bill.getPrice() * 0.12);
-        double total = price + iva;
-
-        jLabel8.setText(new DecimalFormat("#.##").format(copyPrice));
-        jLabel9.setText(new DecimalFormat("#.##").format(iva));
-        jLabel10.setText(new DecimalFormat("#.##").format(total));
 
     }
 
@@ -210,7 +191,7 @@ public class FrmBill extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(txtSubTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
                         .addComponent(txtIva)))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,7 +231,7 @@ public class FrmBill extends javax.swing.JFrame {
                     .addComponent(btnCancel))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
@@ -269,7 +250,7 @@ public class FrmBill extends javax.swing.JFrame {
                 .addGap(42, 42, 42))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 670, 420));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 720, 420));
 
         jPanel2.setBackground(new java.awt.Color(204, 153, 255));
 
@@ -314,16 +295,24 @@ public class FrmBill extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
 
-    private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
-        float price = 0.0F;
-        String clientId = txtId.getText();
-        String clientName = txtName.getText();
-        String address = txtAddress.getText();
-        String phone = txtPhone.getText();
-        price = Float.parseFloat(txtSubTotal.getText());
 
-        Bill user = new Bill(clientId, clientName, address, phone, price);
-        FileLibrary register = new FileLibrary();
+    private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
+        String billNumber = txtBillNumber.getText();
+        String clientId = txtId.getText();
+        String name = txtName.getText();
+        String adress = txtAddress.getText();
+        double price = Float.parseFloat(txtSubTotal.getText());
+
+        Bill user = new Bill(billNumber, clientId, name, adress, price);
+        double copyPrice = 0.0F;
+        copyPrice = (copyPrice - (copyPrice * 0.12));
+        double iva = (copyPrice * 0.12);
+        double total = price + iva;
+
+        jLabel8.setText(new DecimalFormat("#.##").format(copyPrice));
+        jLabel9.setText(new DecimalFormat("#.##").format(iva));
+        jLabel10.setText(new DecimalFormat("#.##").format(total));
+        JsonFile register = new JsonFile();
         register.addToFile(user);
     }//GEN-LAST:event_btnConfirmActionPerformed
 
@@ -344,8 +333,9 @@ public class FrmBill extends javax.swing.JFrame {
 
     private void btnConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmMouseClicked
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Order Complete");
+        JOptionPane.showMessageDialog(this, "Order Completed , THANKS FOR ALL!");
         System.exit(0);
+
     }//GEN-LAST:event_btnConfirmMouseClicked
 
     /**

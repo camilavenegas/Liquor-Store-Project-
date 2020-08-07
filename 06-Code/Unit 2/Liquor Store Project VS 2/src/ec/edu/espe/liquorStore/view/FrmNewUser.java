@@ -5,7 +5,8 @@
  */
 package ec.edu.espe.liquorStore.view;
 
-import ec.edu.espe.liquorStore.model.FileLibrary;
+import ec.edu.espe.liquorStore.controller.OrderController;
+import ec.edu.espe.liquorStore.model.JsonFile;
 import ec.edu.espe.liquorStore.model.Password;
 import ec.edu.espe.liquorStore.model.User;
 import javax.swing.JOptionPane;
@@ -47,6 +48,11 @@ public class FrmNewUser extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
+        txtNewUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNewUserActionPerformed(evt);
+            }
+        });
         txtNewUser.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNewUserKeyTyped(evt);
@@ -60,6 +66,12 @@ public class FrmNewUser extends javax.swing.JFrame {
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Password :");
+
+        pswNewPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pswNewPasswordActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -161,6 +173,7 @@ public class FrmNewUser extends javax.swing.JFrame {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
+
         Password ps = new Password();
         String newPaswd = ps.Encrypt(pswNewPassword.getText());
         String newUser = txtNewUser.getText();
@@ -172,21 +185,27 @@ public class FrmNewUser extends javax.swing.JFrame {
         }
         String nP = pswNewPassword.getText();
         User user = new User(newUser, newPaswd);
-        FileLibrary fl = new FileLibrary();
+        JsonFile fl = new JsonFile();
         fl.addToFile(user);
         JOptionPane.showMessageDialog(rootPane, "User register!");
-        FrmMenu main = new FrmMenu();
-        main.setVisible(true);
-        this.setVisible(false);
+        OrderController orderController = new OrderController();
+        orderController.init();
+
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void txtNewUserKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNewUserKeyTyped
         // TODO add your handling code here:
-        char validate = evt.getKeyChar();
-        if (Character.isDigit(validate)) {
+        char letter = evt.getKeyChar();
+
+        if (Character.isDigit(letter)) {
             getToolkit().beep();
             evt.consume();
-            JOptionPane.showMessageDialog(rootPane, "Enter only String");
+
+            JOptionPane.showMessageDialog(this, "Please not numbers!!!");
+
+        }
+        if (evt.getKeyChar() >= 33 && evt.getKeyChar() <= 64) {
+            JOptionPane.showMessageDialog(this, "Please not Special Characters!!!");
         }
     }//GEN-LAST:event_txtNewUserKeyTyped
 
@@ -199,11 +218,18 @@ public class FrmNewUser extends javax.swing.JFrame {
 
     private void btnSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSaveMouseClicked
         // TODO add your handling code here:
-        FrmMenu frmMain = new FrmMenu();
-        frmMain.setVisible(true);
-        this.setVisible(false);
+        OrderController orderController = new OrderController();
+        orderController.init();
 
     }//GEN-LAST:event_btnSaveMouseClicked
+
+    private void pswNewPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pswNewPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pswNewPasswordActionPerformed
+
+    private void txtNewUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNewUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNewUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -248,7 +274,7 @@ public class FrmNewUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField pswNewPassword;
-    private javax.swing.JTextField txtNewUser;
+    public static javax.swing.JPasswordField pswNewPassword;
+    public static javax.swing.JTextField txtNewUser;
     // End of variables declaration//GEN-END:variables
 }

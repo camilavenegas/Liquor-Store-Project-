@@ -317,6 +317,22 @@ public class FrmCard extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelMouseClicked
 
+    private void txtCodeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodeKeyTyped
+        // TODO add your handling code here:
+        char letter = evt.getKeyChar();
+
+        if (Character.isLetter(letter)) {
+            getToolkit().beep();
+            evt.consume();
+
+            JOptionPane.showMessageDialog(this, "Please only numbers!!!");
+
+        }
+        if (txtCode.getText().length() >= 4) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCodeKeyTyped
+
     private void txtCardIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCardIdKeyTyped
         // TODO add your handling code here:
         char letter = evt.getKeyChar();
@@ -334,7 +350,7 @@ public class FrmCard extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCardIdKeyTyped
 
     private void txtOwnerKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOwnerKeyTyped
-        // TODO add your handling code here:
+        // TODO add your handling code here:    
         char letter = evt.getKeyChar();
 
         if (Character.isDigit(letter)) {
@@ -343,26 +359,10 @@ public class FrmCard extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(this, "Please not numbers!!!");
 
-        } else if (evt.getKeyChar() >= 33 && evt.getKeyChar() <= 64) {
+        }if(evt.getKeyChar() >= 33 && evt.getKeyChar() <= 64){
             JOptionPane.showMessageDialog(this, "Please not Special Characters!!!");
-            evt.consume();
         }
     }//GEN-LAST:event_txtOwnerKeyTyped
-
-    private void txtCodeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodeKeyTyped
-        // TODO add your handling code here:
-        char letter = evt.getKeyChar();
-        if (Character.isLetter(letter)) {
-            getToolkit().beep();
-            evt.consume();
-
-            JOptionPane.showMessageDialog(this, "Please only numbers!!!");
-
-        }
-        if (txtCode.getText().length() >= 4) {
-            evt.consume();
-        }
-    }//GEN-LAST:event_txtCodeKeyTyped
 
     /**
      * @param args the command line arguments

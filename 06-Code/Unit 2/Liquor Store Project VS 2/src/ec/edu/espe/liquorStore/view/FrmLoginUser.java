@@ -7,7 +7,11 @@ package ec.edu.espe.liquorStore.view;
 
 import ec.edu.espe.liquorStore.controller.BeverageController;
 import ec.edu.espe.liquorStore.controller.OrderController;
+import ec.edu.espe.liquorStore.model.JsonFile;
+import ec.edu.espe.liquorStore.model.Password;
+import ec.edu.espe.liquorStore.model.User;
 import ec.edu.espe.liquorStore.service.BeverageService;
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 /**
@@ -66,6 +70,12 @@ public class FrmLoginUser extends javax.swing.JFrame {
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Password :");
+
+        pswPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pswPasswordActionPerformed(evt);
+            }
+        });
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Welcome");
@@ -147,26 +157,26 @@ public class FrmLoginUser extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
-                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79)
-                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+                .addGap(24, 24, 24)
+                .addComponent(btnRegister)
+                .addGap(33, 33, 33)
+                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegister)
-                    .addComponent(btnBack)
-                    .addComponent(btnLogin))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBack))
+                .addContainerGap())
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 570, -1));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 330, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/humomorado.jpg"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 420));
@@ -174,8 +184,51 @@ public class FrmLoginUser extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public boolean valUser(String userIn, String newUser) {
+        boolean good = true;
+        if (userIn.length() == newUser.length()) {
+            good = true;
+        } else {
+            good = false;
+        }
+        return good;
+    }
+
+    public boolean valPassword(char[] passwordIn, String passwordNewUser) {
+        boolean good = true;
+        Password psw = new Password();
+        String pss = psw.Decrypt(passwordNewUser);
+
+        char[] passwordNew = pss.toCharArray();
+        if (passwordNew.length != passwordIn.length) {
+            good = false;
+        } else {
+            good = Arrays.equals(passwordIn, passwordNew);
+        }
+        return good;
+    }
+
+    public void createFile() {
+        JsonFile fl = new JsonFile();
+        Password psw = new Password();
+        String newPassw;
+        newPassw = psw.Encrypt(FrmNewUser.pswNewPassword.getText());
+        User user = new User(txtUser.getText(), newPassw);
+        fl.addToFile(user);
+    }
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
+        Password psw = new Password();
+        char[] passwordIn = pswPassword.getPassword();
+        String newPassw = psw.Encrypt(FrmNewUser.pswNewPassword.getText());
+        String user = String.valueOf(txtUser.getText());
+        if ((valPassword(passwordIn, newPassw)) && ((valUser(user, FrmNewUser.txtNewUser.getText())))) {
+            JOptionPane.showMessageDialog(rootPane, "Correct User and Password");
+            OrderController orderController = new OrderController();
+            orderController.init();
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Incorrect User and Password");
+        }
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void txtUserKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserKeyTyped
@@ -209,11 +262,13 @@ public class FrmLoginUser extends javax.swing.JFrame {
 
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
         // TODO add your handling code here:
-        
         OrderController orderController = new OrderController();
         orderController.init();
-
     }//GEN-LAST:event_btnLoginMouseClicked
+
+    private void pswPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pswPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pswPasswordActionPerformed
 
     /**
      * @param args the command line arguments

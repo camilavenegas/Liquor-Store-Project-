@@ -10,6 +10,8 @@ import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import ec.edu.espe.liquorStore.model.Beverage;
 import ec.edu.espe.liquorStore.model.Combo1;
+import ec.edu.espe.liquorStore.model.JsonFile;
+import ec.edu.espe.liquorStore.model.Order;
 import ec.edu.espe.liquorStore.service.BeverageService;
 import java.io.BufferedReader;
 import java.io.File;
@@ -173,6 +175,11 @@ public class FrmOrder extends javax.swing.JFrame {
         btnConfirm.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnConfirmMouseClicked(evt);
+            }
+        });
+        btnConfirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmActionPerformed(evt);
             }
         });
 
@@ -385,6 +392,18 @@ public class FrmOrder extends javax.swing.JFrame {
         login.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelMouseClicked
+
+    private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
+        String beverage = cmbBeverage.getSelectedItem().toString();
+        String bubblegum = (String)sprBubbleGum.getValue().toString();
+        String peanuts = (String)sprPeanut.getValue().toString();
+        String chips = (String)sprChips.getValue().toString();
+        String comboSelected = cmbCombos.getSelectedItem().toString();
+        
+        Order user = new Order(beverage, bubblegum, peanuts, chips, comboSelected);
+        JsonFile register = new JsonFile();
+        register.addToFile(user);
+    }//GEN-LAST:event_btnConfirmActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
