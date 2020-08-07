@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.liquorStore.view;
 
+import ec.edu.espe.liquorStore.model.Customer;
+import ec.edu.espe.liquorStore.model.JsonFile;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -75,6 +77,11 @@ public class FrmCustomer extends javax.swing.JFrame {
         btnAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAddMouseClicked(evt);
+            }
+        });
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
             }
         });
 
@@ -222,6 +229,19 @@ public class FrmCustomer extends javax.swing.JFrame {
         frmChoose.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelMouseClicked
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        String customerName = txtCustomerName.getText();
+        String customerAddress = txtAdress.getText();
+        String id = txtId.getText();
+        String age = txtAge.getText();
+        String mail = txtMail.getText();
+
+        Customer user = new Customer(customerName, customerAddress, id, age, mail);
+        JsonFile register = new JsonFile();
+        register.addToFile(user);
+
+    }//GEN-LAST:event_btnAddActionPerformed
 
     /**
      * @param args the command line arguments
