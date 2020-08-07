@@ -8,6 +8,7 @@ package ec.edu.espe.liquorStore.view;
 import ec.edu.espe.liquorStore.model.Bill;
 import ec.edu.espe.liquorStore.model.JsonFile;
 import ec.edu.espe.liquorStore.model.Bill;
+import ec.edu.espe.liquorStore.utils.Validator;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
@@ -74,12 +75,30 @@ public class FrmBill extends javax.swing.JFrame {
 
         jLabel3.setText("Name");
 
+        txtName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNameKeyTyped(evt);
+            }
+        });
+
         jLabel4.setText("Address");
 
         jSeparator1.setBackground(new java.awt.Color(153, 102, 255));
         jSeparator1.setForeground(new java.awt.Color(153, 102, 255));
 
+        txtAddress.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAddressKeyTyped(evt);
+            }
+        });
+
         jLabel5.setText("Phone");
+
+        txtPhone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPhoneKeyTyped(evt);
+            }
+        });
 
         jLabel6.setText("Payment");
 
@@ -104,11 +123,6 @@ public class FrmBill extends javax.swing.JFrame {
         jLabel10.setText("TOTAL");
 
         btnConfirm.setText("Confirm");
-        btnConfirm.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnConfirmMouseClicked(evt);
-            }
-        });
         btnConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfirmActionPerformed(evt);
@@ -286,7 +300,7 @@ public class FrmBill extends javax.swing.JFrame {
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/fondo open.jpg"))); // NOI18N
         jLabel13.setText("jLabel13");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 930, 500));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 840, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -297,23 +311,31 @@ public class FrmBill extends javax.swing.JFrame {
 
 
     private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
+
         String billNumber = txtBillNumber.getText();
         String clientId = txtId.getText();
         String name = txtName.getText();
         String adress = txtAddress.getText();
-        double price = Float.parseFloat(txtSubTotal.getText());
+        String phone = txtPhone.getText();
 
-        Bill user = new Bill(billNumber, clientId, name, adress, price);
-        double copyPrice = 0.0F;
-        copyPrice = (copyPrice - (copyPrice * 0.12));
-        double iva = (copyPrice * 0.12);
-        double total = price + iva;
+        Bill user = new Bill(clientId, name, adress, phone);
 
-        jLabel8.setText(new DecimalFormat("#.##").format(copyPrice));
-        jLabel9.setText(new DecimalFormat("#.##").format(iva));
-        jLabel10.setText(new DecimalFormat("#.##").format(total));
+        if (clientId.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(
+                    null, "Client Id  is neccesary", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else if (!Validator.validateCI(clientId)) {
+            JOptionPane.showMessageDialog(
+                    null, "Client Id incorrect", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         JsonFile register = new JsonFile();
         register.addToFile(user);
+        JOptionPane.showMessageDialog(this, "Order Completed , THANKS FOR ALL!");
+        System.exit(0);
+
+
     }//GEN-LAST:event_btnConfirmActionPerformed
 
     private void btnCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseClicked
@@ -331,12 +353,28 @@ public class FrmBill extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_rbtPayCardActionPerformed
 
-    private void btnConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmMouseClicked
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Order Completed , THANKS FOR ALL!");
-        System.exit(0);
+    private void txtNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyTyped
 
-    }//GEN-LAST:event_btnConfirmMouseClicked
+        char validate = evt.getKeyChar();
+        if (Character.isDigit(validate)) {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Enter only letters");
+        }
+    }//GEN-LAST:event_txtNameKeyTyped
+
+    private void txtAddressKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAddressKeyTyped
+
+    }//GEN-LAST:event_txtAddressKeyTyped
+
+    private void txtPhoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPhoneKeyTyped
+        char validate = evt.getKeyChar();
+        if (Character.isLetter(validate)) {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Enter only numbers");
+        }
+    }//GEN-LAST:event_txtPhoneKeyTyped
 
     /**
      * @param args the command line arguments

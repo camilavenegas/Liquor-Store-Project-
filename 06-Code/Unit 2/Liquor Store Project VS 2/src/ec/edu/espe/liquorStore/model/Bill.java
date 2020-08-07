@@ -14,14 +14,14 @@ public class Bill {
     private String clientName;
     private String address;
     private String phone;
-    private double price;
+    
 
-    public Bill(String clientId, String clientName, String address, String phone, double price) {
+    public Bill(String clientId, String clientName, String address, String phone) {
         this.clientId = clientId;
         this.clientName = clientName;
         this.address = address;
         this.phone = phone;
-        this.price = price;
+        
     }
 
     public String getClientId() {
@@ -56,13 +56,6 @@ public class Bill {
         this.phone = phone;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
     
     
 

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package ec.edu.espe.liquorStore.view;
+import ec.edu.espe.liquorStore.utils.Validator;
 
 import javax.swing.JOptionPane;
 
@@ -304,7 +305,18 @@ public class FrmCard extends javax.swing.JFrame {
     }//GEN-LAST:event_txtOwnerActionPerformed
 
     private void btnConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmMouseClicked
-        // TODO add your handling code here:
+        
+        String creditCard= txtCardId.getText();
+        if (creditCard.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(
+                null, "credit card was wrong", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else if (!Validator.checkCard(creditCard)) {
+            JOptionPane.showMessageDialog(
+                null, "credit card was wrong", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         FrmBill bill = new FrmBill();
         bill.setVisible(true);
         this.setVisible(false);

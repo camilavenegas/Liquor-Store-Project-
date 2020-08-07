@@ -76,6 +76,8 @@ public class FrmBeverage extends javax.swing.JFrame {
             }
         });
 
+        sprSize.setModel(new javax.swing.SpinnerNumberModel(1, 0, 4, 1));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
