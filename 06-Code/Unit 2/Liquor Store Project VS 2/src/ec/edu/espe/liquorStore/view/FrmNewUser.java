@@ -47,6 +47,11 @@ public class FrmNewUser extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
+        txtNewUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNewUserActionPerformed(evt);
+            }
+        });
         txtNewUser.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNewUserKeyTyped(evt);
@@ -60,6 +65,12 @@ public class FrmNewUser extends javax.swing.JFrame {
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Password :");
+
+        pswNewPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pswNewPasswordActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -161,6 +172,7 @@ public class FrmNewUser extends javax.swing.JFrame {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
+
         Password ps = new Password();
         String newPaswd = ps.Encrypt(pswNewPassword.getText());
         String newUser = txtNewUser.getText();
@@ -175,14 +187,12 @@ public class FrmNewUser extends javax.swing.JFrame {
         JsonFile fl = new JsonFile();
         fl.addToFile(user);
         JOptionPane.showMessageDialog(rootPane, "User register!");
-        FrmCustomer frmCustomer = new FrmCustomer();
-        frmCustomer.setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void txtNewUserKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNewUserKeyTyped
         // TODO add your handling code here:
         char validate = evt.getKeyChar();
+
         if (Character.isDigit(validate)) {
             getToolkit().beep();
             evt.consume();
@@ -204,6 +214,14 @@ public class FrmNewUser extends javax.swing.JFrame {
         this.setVisible(false);
 
     }//GEN-LAST:event_btnSaveMouseClicked
+
+    private void pswNewPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pswNewPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pswNewPasswordActionPerformed
+
+    private void txtNewUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNewUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNewUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -248,7 +266,7 @@ public class FrmNewUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField pswNewPassword;
-    private javax.swing.JTextField txtNewUser;
+    public static javax.swing.JPasswordField pswNewPassword;
+    public static javax.swing.JTextField txtNewUser;
     // End of variables declaration//GEN-END:variables
 }
