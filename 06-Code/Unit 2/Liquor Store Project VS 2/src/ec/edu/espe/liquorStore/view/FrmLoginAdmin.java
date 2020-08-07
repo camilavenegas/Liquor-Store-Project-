@@ -189,6 +189,9 @@ public class FrmLoginAdmin extends javax.swing.JFrame {
 
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
         // TODO add your handling code here:
+        FrmAdminChooser frmChoose = new FrmAdminChooser();
+        frmChoose.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnLoginMouseClicked
 
     /**

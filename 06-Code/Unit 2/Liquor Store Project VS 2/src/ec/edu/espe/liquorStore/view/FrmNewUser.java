@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.liquorStore.view;
 
+import ec.edu.espe.liquorStore.controller.OrderController;
 import ec.edu.espe.liquorStore.model.JsonFile;
 import ec.edu.espe.liquorStore.model.Password;
 import ec.edu.espe.liquorStore.model.User;
@@ -187,16 +188,24 @@ public class FrmNewUser extends javax.swing.JFrame {
         JsonFile fl = new JsonFile();
         fl.addToFile(user);
         JOptionPane.showMessageDialog(rootPane, "User register!");
+        OrderController orderController = new OrderController();
+        orderController.init();
+
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void txtNewUserKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNewUserKeyTyped
         // TODO add your handling code here:
-        char validate = evt.getKeyChar();
+        char letter = evt.getKeyChar();
 
-        if (Character.isDigit(validate)) {
+        if (Character.isDigit(letter)) {
             getToolkit().beep();
             evt.consume();
-            JOptionPane.showMessageDialog(rootPane, "Enter only String");
+
+            JOptionPane.showMessageDialog(this, "Please not numbers!!!");
+
+        }
+        if (evt.getKeyChar() >= 33 && evt.getKeyChar() <= 64) {
+            JOptionPane.showMessageDialog(this, "Please not Special Characters!!!");
         }
     }//GEN-LAST:event_txtNewUserKeyTyped
 
@@ -209,9 +218,8 @@ public class FrmNewUser extends javax.swing.JFrame {
 
     private void btnSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSaveMouseClicked
         // TODO add your handling code here:
-        FrmCustomer frmCustomer = new FrmCustomer();
-        frmCustomer.setVisible(true);
-        this.setVisible(false);
+        OrderController orderController = new OrderController();
+        orderController.init();
 
     }//GEN-LAST:event_btnSaveMouseClicked
 

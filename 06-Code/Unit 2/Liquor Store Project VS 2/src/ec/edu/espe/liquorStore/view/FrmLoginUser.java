@@ -224,6 +224,8 @@ public class FrmLoginUser extends javax.swing.JFrame {
         String user = String.valueOf(txtUser.getText());
         if ((valPassword(passwordIn, newPassw)) && ((valUser(user, FrmNewUser.txtNewUser.getText())))) {
             JOptionPane.showMessageDialog(rootPane, "Correct User and Password");
+            OrderController orderController = new OrderController();
+            orderController.init();
         } else {
             JOptionPane.showMessageDialog(rootPane, "Incorrect User and Password");
         }
@@ -262,7 +264,6 @@ public class FrmLoginUser extends javax.swing.JFrame {
         // TODO add your handling code here:
         OrderController orderController = new OrderController();
         orderController.init();
-
     }//GEN-LAST:event_btnLoginMouseClicked
 
     private void pswPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pswPasswordActionPerformed

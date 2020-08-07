@@ -14,17 +14,17 @@ import javax.swing.JOptionPane;
  * @author Camila Venegas DCCO <your.name at your.org>
  */
 public class FrmBeverage extends javax.swing.JFrame {
+
     private final BeverageService service;
-    
+
     public FrmBeverage(BeverageService service) {
         initComponents();
-        this.service=service;
-        
-        List<String> types= service.getBeverageTypes();
-        types.forEach(cmbType::addItem);
-        
-    }
+        this.service = service;
 
+        List<String> types = service.getBeverageTypes();
+        types.forEach(cmbType::addItem);
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -70,6 +70,11 @@ public class FrmBeverage extends javax.swing.JFrame {
         jLabel4.setText("Price");
 
         btnExit.setText("Exit");
+        btnExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnExitMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -173,61 +178,68 @@ public class FrmBeverage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-         float price = 0.0F;
+        float price = 0.0F;
         String brand = txtBrand.getText();
-        
+
         if (brand.trim().isEmpty()) {
             JOptionPane.showMessageDialog(
-                null,
-                "Brand is required",
-                "Error",
-                JOptionPane.ERROR_MESSAGE
+                    null,
+                    "Brand is required",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE
             );
-            
+
             return;
         } else if (brand.length() < 3 || brand.length() > 20) {
             JOptionPane.showMessageDialog(
-                null,
-                "Brand must have between 3 and 20 characters",
-                "Error",
-                JOptionPane.ERROR_MESSAGE
+                    null,
+                    "Brand must have between 3 and 20 characters",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE
             );
-            
+
             return;
         }
-        
+
         try {
             price = Float.parseFloat(txtPrice.getText());
-        } catch (Exception e) {}
-        
+        } catch (Exception e) {
+        }
+
         if (price == 0) {
             JOptionPane.showMessageDialog(
-                null,
-                "Price must be greather than zero",
-                "Error",
-                JOptionPane.ERROR_MESSAGE
+                    null,
+                    "Price must be greather than zero",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE
             );
             return;
         }
-        
-        String type = (String)cmbType.getSelectedItem();
+
+        String type = (String) cmbType.getSelectedItem();
         Double size = (Double) sprSize.getValue();
-        
+
         service.addBeverage(brand, type, price, size.floatValue());
-        
+
         JOptionPane.showMessageDialog(
-            null,
-            "Product has been stored",
-            "Success",
-            JOptionPane.INFORMATION_MESSAGE
+                null,
+                "Product has been stored",
+                "Success",
+                JOptionPane.INFORMATION_MESSAGE
         );
-        
+
         txtBrand.setText("");
         txtPrice.setText("");
         sprSize.setValue(1.0);
     }//GEN-LAST:event_btnAddActionPerformed
 
-   
+    private void btnExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseClicked
+        // TODO add your handling code here:
+        FrmAdminChooser frmChoose = new FrmAdminChooser();
+        frmChoose.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnExitMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
