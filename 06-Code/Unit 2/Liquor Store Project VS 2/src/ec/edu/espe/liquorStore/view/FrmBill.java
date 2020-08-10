@@ -30,7 +30,7 @@ public class FrmBill extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        btnGroupPay = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtBillNumber = new javax.swing.JFormattedTextField();
@@ -71,8 +71,16 @@ public class FrmBill extends javax.swing.JFrame {
 
         jLabel2.setText("Client ID/RUC ");
 
+        txtId.setToolTipText("put your id please only numbers");
+        txtId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIdKeyTyped(evt);
+            }
+        });
+
         jLabel3.setText("Name");
 
+        txtName.setToolTipText("");
         txtName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNameKeyTyped(evt);
@@ -94,6 +102,7 @@ public class FrmBill extends javax.swing.JFrame {
 
         jLabel6.setText("Payment");
 
+        btnGroupPay.add(rbtPayCard);
         rbtPayCard.setText("Pay with card");
         rbtPayCard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,6 +110,7 @@ public class FrmBill extends javax.swing.JFrame {
             }
         });
 
+        btnGroupPay.add(rbtPayCash);
         rbtPayCash.setText("Pay with cash ");
 
         jSeparator2.setForeground(new java.awt.Color(153, 102, 255));
@@ -313,10 +323,16 @@ public class FrmBill extends javax.swing.JFrame {
             return;
         }
 
+        if (rbtPayCard.getModel().isSelected()) {
+            FrmCard frmCard = new FrmCard();
+            frmCard.setVisible(true);
+            this.setVisible(false);
+        } else if (rbtPayCash.getModel().isSelected()) {
+            JOptionPane.showMessageDialog(this, "Order Completed , THANKS FOR ALL!");
+            System.exit(0);
+        }
         JsonFile register = new JsonFile();
         register.addToFile(user);
-        JOptionPane.showMessageDialog(this, "Order Completed , THANKS FOR ALL!");
-        System.exit(0);
 
 
     }//GEN-LAST:event_btnConfirmActionPerformed
@@ -331,9 +347,9 @@ public class FrmBill extends javax.swing.JFrame {
 
     private void rbtPayCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtPayCardActionPerformed
         // TODO add your handling code here:
-        FrmCard frmCard = new FrmCard();
+        /*    FrmCard frmCard = new FrmCard();
         frmCard.setVisible(true);
-        this.setVisible(false);
+        this.setVisible(false);*/
     }//GEN-LAST:event_rbtPayCardActionPerformed
 
     private void txtNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyTyped
@@ -343,6 +359,10 @@ public class FrmBill extends javax.swing.JFrame {
             getToolkit().beep();
             evt.consume();
             JOptionPane.showMessageDialog(rootPane, "Enter only letters");
+        }
+        if (evt.getKeyChar() >= 33 && evt.getKeyChar() <= 64) {
+            JOptionPane.showMessageDialog(this, "Please not Special Characters!!!");
+            evt.consume();
         }
     }//GEN-LAST:event_txtNameKeyTyped
 
@@ -354,6 +374,21 @@ public class FrmBill extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Enter only numbers");
         }
     }//GEN-LAST:event_txtPhoneKeyTyped
+
+    private void txtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyTyped
+        // TODO add your handling code here:
+        char letter = evt.getKeyChar();
+        if (Character.isLetter(letter)) {
+            getToolkit().beep();
+            evt.consume();
+
+            JOptionPane.showMessageDialog(this, "Please only numbers!!!");
+
+        }
+        if (txtId.getText().length() >= 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtIdKeyTyped
 
     /**
      * @param args the command line arguments
@@ -393,7 +428,7 @@ public class FrmBill extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnConfirm;
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup btnGroupPay;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package ec.edu.espe.liquorStore.view;
+
 import ec.edu.espe.liquorStore.utils.Validator;
 
 import javax.swing.JOptionPane;
@@ -296,22 +297,21 @@ public class FrmCard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmMouseClicked
-        
-        String creditCard= txtCardId.getText();
+
+        String creditCard = txtCardId.getText();
         if (creditCard.trim().isEmpty()) {
             JOptionPane.showMessageDialog(
-                null, "credit card was wrong", "Error", JOptionPane.ERROR_MESSAGE);
+                    null, "credit card was wrong", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         } else if (!Validator.checkCard(creditCard)) {
             JOptionPane.showMessageDialog(
-                null, "credit card was wrong", "Error", JOptionPane.ERROR_MESSAGE);
+                    null, "credit card was wrong", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
-        FrmBill bill = new FrmBill();
-        bill.setVisible(true);
-        this.setVisible(false);
+        JOptionPane.showMessageDialog(this, "Order Completed , THANKS FOR ALL!");
+        System.exit(0);
     }//GEN-LAST:event_btnConfirmMouseClicked
+
 
     private void btnCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseClicked
         // TODO add your handling code here:
@@ -362,7 +362,8 @@ public class FrmCard extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(this, "Please not numbers!!!");
 
-        }if(evt.getKeyChar() >= 33 && evt.getKeyChar() <= 64){
+        }
+        if (evt.getKeyChar() >= 33 && evt.getKeyChar() <= 64) {
             JOptionPane.showMessageDialog(this, "Please not Special Characters!!!");
         }
     }//GEN-LAST:event_txtOwnerKeyTyped
