@@ -5,12 +5,10 @@
  */
 package ec.edu.espe.liquorStore.view;
 
-import ec.edu.espe.liquorStore.controller.BeverageController;
 import ec.edu.espe.liquorStore.controller.OrderController;
 import ec.edu.espe.liquorStore.model.JsonFile;
 import ec.edu.espe.liquorStore.model.Password;
 import ec.edu.espe.liquorStore.model.User;
-import ec.edu.espe.liquorStore.service.BeverageService;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 

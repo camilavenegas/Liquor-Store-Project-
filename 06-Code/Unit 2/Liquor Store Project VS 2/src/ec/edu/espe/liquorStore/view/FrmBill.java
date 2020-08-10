@@ -5,11 +5,9 @@
  */
 package ec.edu.espe.liquorStore.view;
 
-import ec.edu.espe.liquorStore.model.Bill;
 import ec.edu.espe.liquorStore.model.JsonFile;
 import ec.edu.espe.liquorStore.model.Bill;
 import ec.edu.espe.liquorStore.utils.Validator;
-import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -86,12 +84,6 @@ public class FrmBill extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(153, 102, 255));
         jSeparator1.setForeground(new java.awt.Color(153, 102, 255));
 
-        txtAddress.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtAddressKeyTyped(evt);
-            }
-        });
-
         jLabel5.setText("Phone");
 
         txtPhone.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -133,11 +125,6 @@ public class FrmBill extends javax.swing.JFrame {
         btnCancel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCancelMouseClicked(evt);
-            }
-        });
-        btnCancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelActionPerformed(evt);
             }
         });
 
@@ -305,10 +292,6 @@ public class FrmBill extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-        dispose();
-    }//GEN-LAST:event_btnCancelActionPerformed
-
 
     private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
 
@@ -362,10 +345,6 @@ public class FrmBill extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Enter only letters");
         }
     }//GEN-LAST:event_txtNameKeyTyped
-
-    private void txtAddressKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAddressKeyTyped
-
-    }//GEN-LAST:event_txtAddressKeyTyped
 
     private void txtPhoneKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPhoneKeyTyped
         char validate = evt.getKeyChar();
