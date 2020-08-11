@@ -77,9 +77,11 @@ public class FrmLoginAdmin extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("User :");
 
+        jLabel3.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Password :");
 
@@ -89,6 +91,7 @@ public class FrmLoginAdmin extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Welcome");
 
@@ -114,7 +117,7 @@ public class FrmLoginAdmin extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)))
+                            .addComponent(lblPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(162, 162, 162)
                         .addComponent(jLabel4)))

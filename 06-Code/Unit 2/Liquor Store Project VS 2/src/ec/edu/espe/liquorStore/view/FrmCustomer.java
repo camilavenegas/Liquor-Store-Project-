@@ -62,6 +62,7 @@ public class FrmCustomer extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
         jLabel1.setText("Customer Name");
 
         txtCustomerName.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -73,6 +74,7 @@ public class FrmCustomer extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
         jLabel2.setText("Adress");
 
         txtAdress.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -81,6 +83,7 @@ public class FrmCustomer extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
         jLabel3.setText("ID");
 
         txtId.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -92,6 +95,7 @@ public class FrmCustomer extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
         jLabel4.setText("Age");
 
         txtAge.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -103,6 +107,7 @@ public class FrmCustomer extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
         jLabel5.setText("E-mail");
 
         txtMail.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -128,15 +133,20 @@ public class FrmCustomer extends javax.swing.JFrame {
             }
         });
 
+        lblCustomerName.setFont(new java.awt.Font("MV Boli", 1, 12)); // NOI18N
         lblCustomerName.setForeground(new java.awt.Color(255, 0, 0));
 
+        lblsAdress.setFont(new java.awt.Font("MV Boli", 1, 12)); // NOI18N
         lblsAdress.setForeground(new java.awt.Color(255, 0, 0));
 
         lblId.setBackground(new java.awt.Color(255, 255, 255));
+        lblId.setFont(new java.awt.Font("MV Boli", 1, 12)); // NOI18N
         lblId.setForeground(new java.awt.Color(255, 0, 0));
 
+        lblAge.setFont(new java.awt.Font("MV Boli", 1, 12)); // NOI18N
         lblAge.setForeground(new java.awt.Color(255, 0, 0));
 
+        lblEmail.setFont(new java.awt.Font("MV Boli", 1, 12)); // NOI18N
         lblEmail.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -166,14 +176,14 @@ public class FrmCustomer extends javax.swing.JFrame {
                             .addComponent(txtId)
                             .addComponent(txtAge)
                             .addComponent(txtMail, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblId, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(lblAge, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
-                                .addComponent(lblId, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblCustomerName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                                 .addComponent(lblsAdress, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(lblEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblAge, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -181,10 +191,11 @@ public class FrmCustomer extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
-                    .addComponent(lblCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(lblCustomerName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtCustomerName, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtAdress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -214,7 +225,7 @@ public class FrmCustomer extends javax.swing.JFrame {
                 .addGap(45, 45, 45))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 490, 270));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 490, 270));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
