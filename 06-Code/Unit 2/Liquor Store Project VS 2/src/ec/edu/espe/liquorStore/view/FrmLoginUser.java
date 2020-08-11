@@ -5,12 +5,10 @@
  */
 package ec.edu.espe.liquorStore.view;
 
-import ec.edu.espe.liquorStore.controller.BeverageController;
 import ec.edu.espe.liquorStore.controller.OrderController;
 import ec.edu.espe.liquorStore.model.JsonFile;
 import ec.edu.espe.liquorStore.model.Password;
 import ec.edu.espe.liquorStore.model.User;
-import ec.edu.espe.liquorStore.service.BeverageService;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 
@@ -25,6 +23,27 @@ public class FrmLoginUser extends javax.swing.JFrame {
      */
     public FrmLoginUser() {
         initComponents();
+    }
+
+    public void validateFields() {
+        if (txtUser.getText().isEmpty()) {
+            lblUser.setText("*Obligatory field");
+        } else {
+            lblUser.setText("");
+        }
+        if (pswPassword.getText().isEmpty()) {
+            lblPassword.setText("*Obligatory field");
+        } else {
+            lblPassword.setText("");
+        }
+    }
+
+    public void enableButton() {
+        if (txtUser.getText().isEmpty() || pswPassword.getText().isEmpty()) {
+            btnLogin.setEnabled(false);
+        } else {
+            btnLogin.setEnabled(true);
+        }
     }
 
     /**
@@ -42,6 +61,8 @@ public class FrmLoginUser extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         pswPassword = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
+        lblUser = new javax.swing.JLabel();
+        lblPassword = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnRegister = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
@@ -54,12 +75,10 @@ public class FrmLoginUser extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         txtUser.setToolTipText("Please enter your User");
-        txtUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUserActionPerformed(evt);
-            }
-        });
         txtUser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtUserKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtUserKeyTyped(evt);
             }
@@ -71,14 +90,18 @@ public class FrmLoginUser extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Password :");
 
-        pswPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pswPasswordActionPerformed(evt);
+        pswPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                pswPasswordKeyReleased(evt);
             }
         });
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Welcome");
+
+        lblUser.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblPassword.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -93,12 +116,18 @@ public class FrmLoginUser extends javax.swing.JFrame {
                             .addComponent(jLabel2))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pswPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblUser, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(pswPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(162, 162, 162)
                         .addComponent(jLabel3)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,15 +137,17 @@ public class FrmLoginUser extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblUser, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pswPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(1212, 1212, 1212))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, -1, 190));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 480, 180));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -249,10 +280,6 @@ public class FrmLoginUser extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnRegisterActionPerformed
 
-    private void txtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUserActionPerformed
-
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         FrmMenu frmMain = new FrmMenu();
@@ -260,15 +287,25 @@ public class FrmLoginUser extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void txtUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserKeyReleased
+        // TODO add your handling code here:
+        enableButton();
+        validateFields();
+
+    }//GEN-LAST:event_txtUserKeyReleased
+
+    private void pswPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pswPasswordKeyReleased
+        // TODO add your handling code here:
+        enableButton();
+        validateFields();
+    }//GEN-LAST:event_pswPasswordKeyReleased
+
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(rootPane, "Correct User and Password");
         OrderController orderController = new OrderController();
         orderController.init();
     }//GEN-LAST:event_btnLoginMouseClicked
-
-    private void pswPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pswPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pswPasswordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -315,6 +352,8 @@ public class FrmLoginUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblUser;
     private javax.swing.JPasswordField pswPassword;
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
