@@ -22,6 +22,33 @@ public class FrmCard extends javax.swing.JFrame {
         initComponents();
     }
 
+    public void validateFields() {
+        if (txtCardId.getText().isEmpty()) {
+            lblCardId.setText("*Obligatory field");
+        } else {
+            lblCardId.setText("");
+        }
+        if (txtOwner.getText().isEmpty()) {
+            lblOwnerName.setText("*Obligatory field");
+        } else {
+            lblOwnerName.setText("");
+        }
+        if (txtCode.getText().isEmpty()) {
+            lblCode.setText("*Obligatory field");
+        } else {
+            lblCode.setText("");
+        }
+    }
+
+    public void enableButton() {
+        if (txtCardId.getText().isEmpty() || txtOwner.getText().isEmpty()
+                || txtCode.getText().isEmpty()) {
+            btnConfirm.setEnabled(false);
+        } else {
+            btnConfirm.setEnabled(true);
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,6 +76,9 @@ public class FrmCard extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         cmbMonths = new javax.swing.JComboBox<>();
         cmbYear = new javax.swing.JComboBox<>();
+        lblCardId = new javax.swing.JLabel();
+        lblOwnerName = new javax.swing.JLabel();
+        lblCode = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -65,6 +95,9 @@ public class FrmCard extends javax.swing.JFrame {
 
         txtCardId.setBorder(null);
         txtCardId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCardIdKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtCardIdKeyTyped(evt);
             }
@@ -76,6 +109,9 @@ public class FrmCard extends javax.swing.JFrame {
 
         txtOwner.setBorder(null);
         txtOwner.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtOwnerKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtOwnerKeyTyped(evt);
             }
@@ -87,6 +123,9 @@ public class FrmCard extends javax.swing.JFrame {
 
         txtCode.setBorder(null);
         txtCode.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCodeKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtCodeKeyTyped(evt);
             }
@@ -168,6 +207,12 @@ public class FrmCard extends javax.swing.JFrame {
 
         cmbYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030" }));
 
+        lblCardId.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblOwnerName.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblCode.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -207,7 +252,12 @@ public class FrmCard extends javax.swing.JFrame {
                             .addComponent(btnConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(59, 59, 59)
                             .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblCardId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblOwnerName, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                    .addComponent(lblCode, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,21 +268,26 @@ public class FrmCard extends javax.swing.JFrame {
                         .addComponent(txtCardId, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(lblCardId, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblOwnerName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1)
                     .addComponent(txtOwner, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtCode, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1))
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtCode, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(1, 1, 1))
+                            .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblCode, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -254,11 +309,11 @@ public class FrmCard extends javax.swing.JFrame {
                         .addContainerGap())))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 390, 420));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 480, 420));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/fondo cuerpo.jpg"))); // NOI18N
         jLabel5.setText("jLabel5");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 650, 500));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 670, 500));
 
         jPanel5.setBackground(new java.awt.Color(13, 13, 72));
 
@@ -368,6 +423,24 @@ public class FrmCard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtOwnerKeyTyped
 
+    private void txtCardIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCardIdKeyReleased
+        // TODO add your handling code here:
+        enableButton();
+        validateFields();
+    }//GEN-LAST:event_txtCardIdKeyReleased
+
+    private void txtOwnerKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOwnerKeyReleased
+        // TODO add your handling code here:
+        enableButton();
+        validateFields();
+    }//GEN-LAST:event_txtOwnerKeyReleased
+
+    private void txtCodeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodeKeyReleased
+        // TODO add your handling code here:
+        enableButton();
+        validateFields();
+    }//GEN-LAST:event_txtCodeKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -424,6 +497,9 @@ public class FrmCard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JLabel lblCardId;
+    private javax.swing.JLabel lblCode;
+    private javax.swing.JLabel lblOwnerName;
     private javax.swing.JFormattedTextField txtCardId;
     private javax.swing.JFormattedTextField txtCode;
     private javax.swing.JTextField txtOwner;
