@@ -402,9 +402,6 @@ public class FrmCard extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Please only numbers!!!");
 
         }
-        if (txtCardId.getText().length() >= 10) {
-            evt.consume();
-        }
     }//GEN-LAST:event_txtCardIdKeyTyped
 
     private void txtOwnerKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOwnerKeyTyped
