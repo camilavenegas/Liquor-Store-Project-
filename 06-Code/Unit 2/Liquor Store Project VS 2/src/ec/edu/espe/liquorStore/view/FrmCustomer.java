@@ -46,6 +46,11 @@ public class FrmCustomer extends javax.swing.JFrame {
         txtMail = new javax.swing.JTextField();
         btnAdd = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
+        lblCustomerName = new javax.swing.JLabel();
+        lblsAdress = new javax.swing.JLabel();
+        lblId = new javax.swing.JLabel();
+        lblAge = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -57,28 +62,64 @@ public class FrmCustomer extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
         jLabel1.setText("Customer Name");
 
+        txtCustomerName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCustomerNameKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCustomerNameKeyTyped(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
         jLabel2.setText("Adress");
 
+        txtAdress.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtAdressKeyReleased(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
         jLabel3.setText("ID");
 
+        txtId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtIdKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIdKeyTyped(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
         jLabel4.setText("Age");
 
+        txtAge.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtAgeKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtAgeKeyTyped(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
         jLabel5.setText("E-mail");
 
-        txtMail.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtMailFocusLost(evt);
+        txtMail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtMailKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtMailKeyTyped(evt);
             }
         });
 
         btnAdd.setText("Add");
-        btnAdd.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnAddMouseClicked(evt);
-            }
-        });
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
@@ -92,12 +133,33 @@ public class FrmCustomer extends javax.swing.JFrame {
             }
         });
 
+        lblCustomerName.setFont(new java.awt.Font("MV Boli", 1, 12)); // NOI18N
+        lblCustomerName.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblsAdress.setFont(new java.awt.Font("MV Boli", 1, 12)); // NOI18N
+        lblsAdress.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblId.setBackground(new java.awt.Color(255, 255, 255));
+        lblId.setFont(new java.awt.Font("MV Boli", 1, 12)); // NOI18N
+        lblId.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblAge.setFont(new java.awt.Font("MV Boli", 1, 12)); // NOI18N
+        lblAge.setForeground(new java.awt.Color(255, 0, 0));
+
+        lblEmail.setFont(new java.awt.Font("MV Boli", 1, 12)); // NOI18N
+        lblEmail.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,12 +175,15 @@ public class FrmCustomer extends javax.swing.JFrame {
                             .addComponent(txtAdress)
                             .addComponent(txtId)
                             .addComponent(txtAge)
-                            .addComponent(txtMail, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtMail, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblId, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(lblCustomerName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                                .addComponent(lblsAdress, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(lblEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblAge, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -126,24 +191,33 @@ public class FrmCustomer extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(17, 17, 17)
+                    .addComponent(jLabel1)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(lblCustomerName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtCustomerName, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtAdress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtAdress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblsAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblId, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblAge, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -151,7 +225,7 @@ public class FrmCustomer extends javax.swing.JFrame {
                 .addGap(45, 45, 45))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 340, 270));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 490, 270));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -186,46 +260,67 @@ public class FrmCustomer extends javax.swing.JFrame {
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/fondo cuerpo_1.jpg"))); // NOI18N
         jLabel6.setText("jLabel6");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 430, 440));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 550, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public boolean isEmail(String correo){
-        Pattern pat = null;
-        Matcher mat = null;
-        pat = Pattern.compile("^[\\w\\-\\_\\+]+(\\-\\_]+)*@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$");
-        mat = pat.matcher(correo);
-        if(mat.find()){
-            return true;
-        }else{
-            return false;
+    public void validateFields() {
+        if (txtCustomerName.getText().isEmpty()) {
+            lblCustomerName.setText("*Obligatory field");
+        } else {
+            lblCustomerName.setText("");
+        }
+        if (txtAdress.getText().isEmpty()) {
+            lblsAdress.setText("*Obligatory field");
+        } else {
+            lblsAdress.setText("");
+        }
+        if (txtAge.getText().isEmpty()) {
+            lblAge.setText("*Obligatory field");
+        } else {
+            lblAge.setText("");
+        }
+        if (txtId.getText().isEmpty()) {
+            lblId.setText("*Obligatory field");
+        } else {
+            lblId.setText("");
+        }
+        if (txtMail.getText().isEmpty()) {
+            lblEmail.setText("*Obligatory field");
+        } else if (!txtMail.getText().contains("@")
+                || !txtMail.getText().contains(".")) {
+            lblEmail.setText("*Invalid email");
+        } else {
+            lblEmail.setText("");
         }
     }
-    
-    private void btnAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddMouseClicked
-        // TODO add your handling code here:
-        FrmMenu frmMenu = new FrmMenu();
-        frmMenu.setVisible(true);
-        this.setVisible(false);
-        JOptionPane.showMessageDialog(rootPane, "Data register!");
-    }//GEN-LAST:event_btnAddMouseClicked
 
-    private void txtMailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtMailFocusLost
-        // TODO add your handling code here
-        if(isEmail(txtMail.getText())){
-            
-        }else{
-            JOptionPane.showMessageDialog(null,"Incorrect Email!!","Put a correct", 
-                    JOptionPane.INFORMATION_MESSAGE);
-            txtMail.requestFocus();
-            
+    public void validateEmail(java.awt.event.KeyEvent events) {
+        if (events.getKeyChar() >= 32 && events.getKeyChar() <= 44
+                || events.getKeyChar() == 47
+                || events.getKeyChar() >= 58 && events.getKeyChar() <= 63
+                || events.getKeyChar() >= 91 && events.getKeyChar() <= 94
+                || events.getKeyChar() == 96
+                || events.getKeyChar() >= 123 && events.getKeyChar() <= 255) {
+            JOptionPane.showMessageDialog(this, "Invalid characters");
         }
-    }//GEN-LAST:event_txtMailFocusLost
+    }
+
+    public void enableButton() {
+        if (txtCustomerName.getText().isEmpty() || txtAdress.getText().isEmpty()
+                || txtAge.getText().isEmpty() || txtId.getText().isEmpty()
+                || txtMail.getText().isEmpty()
+                || !lblEmail.getText().isEmpty()) {
+            btnAdd.setEnabled(false);
+        } else {
+            btnAdd.setEnabled(true);
+        }
+    }
 
     private void btnCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseClicked
         // TODO add your handling code here:
-      FrmAdminChooser frmChoose = new FrmAdminChooser();
+        FrmAdminChooser frmChoose = new FrmAdminChooser();
         frmChoose.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelMouseClicked
@@ -240,13 +335,96 @@ public class FrmCustomer extends javax.swing.JFrame {
         Customer user = new Customer(customerName, customerAddress, id, age, mail);
         JsonFile register = new JsonFile();
         register.addToFile(user);
+        FrmMenu frmMenu = new FrmMenu();
+        frmMenu.setVisible(true);
+        this.setVisible(false);
+        JOptionPane.showMessageDialog(rootPane, "Data register!");
 
     }//GEN-LAST:event_btnAddActionPerformed
+
+    private void txtCustomerNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustomerNameKeyTyped
+        // TODO add your handling code here:
+        char validate = evt.getKeyChar();
+        if (Character.isDigit(validate)) {
+            getToolkit().beep();
+            evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Enter only letters");
+        }
+        if (evt.getKeyChar() >= 33 && evt.getKeyChar() <= 64) {
+            JOptionPane.showMessageDialog(this, "Please not Special Characters!!!");
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCustomerNameKeyTyped
+
+    private void txtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyTyped
+        // TODO add your handling code here:
+        char letter = evt.getKeyChar();
+        if (Character.isLetter(letter)) {
+            getToolkit().beep();
+            evt.consume();
+
+            JOptionPane.showMessageDialog(this, "Please only numbers!!!");
+
+        }
+        if (txtId.getText().length() >= 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtIdKeyTyped
+
+    private void txtAgeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgeKeyTyped
+        // TODO add your handling code here:
+        char letter = evt.getKeyChar();
+        if (Character.isLetter(letter)) {
+            getToolkit().beep();
+            evt.consume();
+
+            JOptionPane.showMessageDialog(this, "Please only numbers!!!");
+
+        }
+        if (txtAge.getText().length() >= 2) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtAgeKeyTyped
+
+    private void txtCustomerNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustomerNameKeyReleased
+        // TODO add your handling code here:
+        enableButton();
+        validateFields();
+    }//GEN-LAST:event_txtCustomerNameKeyReleased
+
+    private void txtAdressKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAdressKeyReleased
+        // TODO add your handling code here:
+        enableButton();
+        validateFields();
+    }//GEN-LAST:event_txtAdressKeyReleased
+
+    private void txtIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyReleased
+        // TODO add your handling code here:
+        enableButton();
+        validateFields();
+    }//GEN-LAST:event_txtIdKeyReleased
+
+    private void txtAgeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgeKeyReleased
+        // TODO add your handling code here:
+        enableButton();
+        validateFields();
+    }//GEN-LAST:event_txtAgeKeyReleased
+
+    private void txtMailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMailKeyReleased
+        // TODO add your handling code here:
+        enableButton();
+        validateFields();
+
+    }//GEN-LAST:event_txtMailKeyReleased
+
+    private void txtMailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMailKeyTyped
+        // TODO add your handling code here:
+        validateEmail(evt);
+    }//GEN-LAST:event_txtMailKeyTyped
 
     /**
      * @param args the command line arguments
      */
-
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -292,6 +470,11 @@ public class FrmCustomer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblAge;
+    private javax.swing.JLabel lblCustomerName;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblId;
+    private javax.swing.JLabel lblsAdress;
     private javax.swing.JTextField txtAdress;
     private javax.swing.JFormattedTextField txtAge;
     private javax.swing.JTextField txtCustomerName;

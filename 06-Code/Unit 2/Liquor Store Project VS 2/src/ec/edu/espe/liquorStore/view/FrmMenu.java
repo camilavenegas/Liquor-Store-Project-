@@ -19,7 +19,7 @@ public class FrmMenu extends javax.swing.JFrame {
      */
     public FrmMenu() {
         initComponents();
-          setIconImage(new ImageIcon(getClass().getResource("/ec/edu./espe/liquorStore/icons/iconMenu.png")).getImage());
+          //setIconImage(new ImageIcon(getClass().getResource("/ec/edu./espe/liquorStore/icons/iconMenu.png")).getImage());
     }
 
     /**

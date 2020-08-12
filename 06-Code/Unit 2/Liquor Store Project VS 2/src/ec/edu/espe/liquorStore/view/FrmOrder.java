@@ -193,6 +193,7 @@ public class FrmOrder extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
         jLabel8.setText("COMBOS ");
 
         jScrollPane1.setViewportView(ltsCombo1);
@@ -265,7 +266,7 @@ public class FrmOrder extends javax.swing.JFrame {
                         .addComponent(btnConfirm)
                         .addGap(28, 28, 28)
                         .addComponent(btnCancel)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
