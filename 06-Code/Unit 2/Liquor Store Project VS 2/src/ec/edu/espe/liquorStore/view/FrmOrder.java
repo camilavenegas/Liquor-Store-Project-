@@ -126,8 +126,8 @@ public class FrmOrder extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Yu Gothic Light", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 0, 102));
+        jLabel1.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 0, 255));
         jLabel1.setText("Beverage");
 
         cmbBeverage.addActionListener(new java.awt.event.ActionListener() {
@@ -136,34 +136,42 @@ public class FrmOrder extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("MV Boli", 1, 14)); // NOI18N
         jLabel2.setText("Size ");
 
+        lblSize.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblSize.setText("0");
 
+        jLabel3.setFont(new java.awt.Font("MV Boli", 1, 14)); // NOI18N
         jLabel3.setText("Price:");
 
+        lblPrice.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblPrice.setText("0");
 
-        jLabel4.setFont(new java.awt.Font("Yu Gothic Light", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(51, 0, 102));
+        jLabel4.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(153, 0, 255));
         jLabel4.setText("Snack");
 
-        jLabel5.setText("Bubble Gum ");
+        jLabel5.setFont(new java.awt.Font("MV Boli", 1, 14)); // NOI18N
+        jLabel5.setText("BubbleGum ");
 
         sprBubbleGum.setModel(new javax.swing.SpinnerNumberModel(1, 0, 5, 1));
 
+        jLabel6.setFont(new java.awt.Font("MV Boli", 1, 14)); // NOI18N
         jLabel6.setText("Chips");
 
         sprChips.setModel(new javax.swing.SpinnerNumberModel(1, 0, 5, 1));
 
+        jLabel7.setFont(new java.awt.Font("MV Boli", 1, 14)); // NOI18N
         jLabel7.setText("Peanut");
 
         sprPeanut.setModel(new javax.swing.SpinnerNumberModel(0, 0, 5, 1));
 
+        jSeparator1.setForeground(new java.awt.Color(204, 102, 255));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jLabel12.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(51, 0, 102));
+        jLabel12.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(153, 0, 255));
         jLabel12.setText("Combos");
 
         cmbCombos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Combo1", "Combo 2", "Combo 3", "Combo4", " " }));
@@ -183,6 +191,8 @@ public class FrmOrder extends javax.swing.JFrame {
             }
         });
 
+        jSeparator2.setForeground(new java.awt.Color(204, 0, 204));
+
         btnCancel.setBackground(new java.awt.Color(102, 0, 153));
         btnCancel.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         btnCancel.setForeground(new java.awt.Color(255, 255, 255));
@@ -194,6 +204,7 @@ public class FrmOrder extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(153, 0, 255));
         jLabel8.setText("COMBOS ");
 
         jScrollPane1.setViewportView(ltsCombo1);
@@ -217,9 +228,9 @@ public class FrmOrder extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(16, 16, 16))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -257,16 +268,19 @@ public class FrmOrder extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(27, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnConfirm)
-                        .addGap(28, 28, 28)
-                        .addComponent(btnCancel)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(41, 41, 41)
+                        .addComponent(btnCancel)
+                        .addGap(59, 59, 59))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,9 +300,9 @@ public class FrmOrder extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel3)
                                 .addComponent(lblPrice))
-                            .addGap(34, 34, 34)
-                            .addComponent(jLabel4)
                             .addGap(18, 18, 18)
+                            .addComponent(jLabel4)
+                            .addGap(34, 34, 34)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel5)
                                 .addComponent(sprBubbleGum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -306,15 +320,16 @@ public class FrmOrder extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel12)
                         .addComponent(cmbCombos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(78, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 600, 490));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 600, 450));
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -333,7 +348,7 @@ public class FrmOrder extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(16, Short.MAX_VALUE)
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -353,16 +368,16 @@ public class FrmOrder extends javax.swing.JFrame {
                 .addComponent(jLabel15)
                 .addGap(88, 88, 88)
                 .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
                 .addComponent(btnBackMenu)
                 .addGap(51, 51, 51))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 190, 570));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 190, 560));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/fondo morado mar.jpg"))); // NOI18N
         jLabel14.setText("jLabel14");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 580));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 620, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
