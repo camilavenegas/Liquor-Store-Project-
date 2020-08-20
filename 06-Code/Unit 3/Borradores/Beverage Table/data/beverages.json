@@ -1,0 +1,104 @@
+[
+  {
+    "type": "whisky",
+    "brand": "Jack Daniel´s",
+    "price": 68.7,
+    "size": 3.0
+  },
+  {
+    "type": "classic",
+    "brand": "Switch",
+    "price": 4.0,
+    "size": 3.0
+  },
+  {
+    "type": "beer",
+    "brand": "Corona",
+    "price": 3.0,
+    "size": 3.0
+  },
+  {
+    "type": "whisky",
+    "brand": "Jhonny",
+    "price": 30.0,
+    "size": 1.5
+  },
+  {
+    "type": "beer",
+    "brand": "Heineken",
+    "price": 3.0,
+    "size": 3.0
+  },
+  {
+    "type": "tequila",
+    "brand": "Azteca",
+    "price": 10.0,
+    "size": 1.5
+  },
+  {
+    "type": "classic",
+    "brand": "Jägermeister",
+    "price": 40.0,
+    "size": 0.0
+  },
+  {
+    "type": "ron",
+    "brand": "Ron Abuelo",
+    "price": 22.2,
+    "size": 2.0
+  },
+  {
+    "type": "Vodka",
+    "brand": "Belows",
+    "price": 15.0,
+    "size": 1.5
+  },
+  {
+    "type": "Ginebra",
+    "brand": "Gin",
+    "price": 20.0,
+    "size": 2.0
+  },
+  {
+    "type": " Agua Ardiente",
+    "brand": "Norteño",
+    "price": 4.0,
+    "size": 1.5
+  },
+  {
+    "type": "Agua Ardiente",
+    "brand": "Zhumir",
+    "price": 12.0,
+    "size": 1.5
+  },
+  {
+    "type": "Tequila",
+    "brand": "Charro",
+    "price": 20.0,
+    "size": 2.0
+  },
+  {
+    "type": "Tequila",
+    "brand": "Charro2",
+    "price": 18.0,
+    "size": 1.0
+  },
+  {
+    "type": "Vodka",
+    "brand": "GrayGoose",
+    "price": 100.0,
+    "size": 1.0
+  },
+  {
+    "type": "Beer",
+    "brand": "Corona",
+    "price": 2.2,
+    "size": 1.0
+  },
+  {
+    "type": "Agua Ardiente",
+    "brand": "Rojo",
+    "price": 20.0,
+    "size": 1.5
+  }
+]
