@@ -7,7 +7,7 @@ package ec.edu.espe.liquorStore.view;
 
 import ec.edu.espe.liquorStore.controller.OrderController;
 import ec.edu.espe.liquorStore.model.JsonFile;
-import ec.edu.espe.liquorStore.model.Password;
+import ec.edu.espe.liquorStore.utils.Password;
 import ec.edu.espe.liquorStore.model.User;
 import javax.swing.JOptionPane;
 

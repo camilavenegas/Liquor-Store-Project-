@@ -67,11 +67,7 @@ public class JsonFile {
         }
     }
 
-    /**
-     *
-     * @param nameClass ---> to name the file
-     * @return objects ---> the objects found in the file
-     */
+  
     public static ArrayList<Object> readObjects(String nameClass) {
         JsonParser parser = new JsonParser();
         ArrayList<Object> objects = new ArrayList<>();

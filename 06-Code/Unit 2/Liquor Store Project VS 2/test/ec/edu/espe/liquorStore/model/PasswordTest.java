@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.liquorStore.model;
 
+import ec.edu.espe.liquorStore.utils.Password;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
