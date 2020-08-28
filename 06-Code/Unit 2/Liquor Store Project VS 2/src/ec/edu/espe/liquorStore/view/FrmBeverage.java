@@ -5,7 +5,14 @@
  */
 package ec.edu.espe.liquorStore.view;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.Mongo;
 import ec.edu.espe.liquorStore.service.BeverageService;
+import static ec.edu.espe.liquorStore.view.FrmNewUser.pswNewPassword;
+import static ec.edu.espe.liquorStore.view.FrmNewUser.txtNewUser;
+import java.net.UnknownHostException;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -15,9 +22,19 @@ import javax.swing.JOptionPane;
  */
 public class FrmBeverage extends javax.swing.JFrame {
 
+    DB db;
+    DBCollection tabla;
+
     private final BeverageService service;
 
     public FrmBeverage(BeverageService service) {
+        try {
+            Mongo mongo = new Mongo("localHost", 27017);
+            db = mongo.getDB("Beverages");
+            tabla = db.getCollection("beverage");
+        } catch (UnknownHostException ex) {
+
+        }
         initComponents();
         this.service = service;
 
@@ -26,7 +43,7 @@ public class FrmBeverage extends javax.swing.JFrame {
 
     }
 
-    public void validate(){
+    public void validate() {
         float price = 0.0F;
         String brand = txtBrand.getText();
 
@@ -77,7 +94,6 @@ public class FrmBeverage extends javax.swing.JFrame {
                 JOptionPane.INFORMATION_MESSAGE
         );
 
-        
     }
 
     /**
@@ -271,6 +287,12 @@ public class FrmBeverage extends javax.swing.JFrame {
         txtBrand.setText("");
         txtPrice.setText("");
         sprSize.setValue(1.0);
+        BasicDBObject document = new BasicDBObject();
+        document.put("Brand", "'" + txtBrand.getText() + "'");
+        document.put("Type", "'" + cmbType.getSelectedItem()+ "'");
+        document.put("Size", "'" + sprSize.getSize()+ "'");
+        document.put("Price", "'" + txtPrice.getText()+ "'");
+        tabla.insert(document);
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseClicked

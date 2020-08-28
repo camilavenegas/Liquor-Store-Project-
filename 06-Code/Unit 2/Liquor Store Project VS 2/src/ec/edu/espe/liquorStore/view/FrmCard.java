@@ -10,8 +10,6 @@ import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.Mongo;
 import ec.edu.espe.liquorStore.utils.Validator;
-import static ec.edu.espe.liquorStore.view.FrmNewUser.pswNewPassword;
-import static ec.edu.espe.liquorStore.view.FrmNewUser.txtNewUser;
 import java.net.UnknownHostException;
 
 import javax.swing.JOptionPane;
