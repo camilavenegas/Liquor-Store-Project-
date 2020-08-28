@@ -10,8 +10,8 @@ package ec.edu.espe.liquorStore.utils;
  * @author Camila Venegas DCCO <your.name at your.org>
  */
 public class Validator {
-    
-      public static boolean checkCard(String card) {
+
+    public static boolean checkCard(String card) {
         if (card.length() != 16) {
             return false;
         }
@@ -33,7 +33,8 @@ public class Validator {
             return false;
         }
     }
-public static boolean validateCI(String CI) {
+
+    public static boolean validateCI(String CI) {
         if (CI.length() != 10) {
             return false;
         }
@@ -62,5 +63,5 @@ public static boolean validateCI(String CI) {
         }
         return lastDigit == (higher - total);
     }
-    
+
 }

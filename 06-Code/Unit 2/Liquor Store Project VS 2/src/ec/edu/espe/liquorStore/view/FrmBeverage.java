@@ -26,8 +26,58 @@ public class FrmBeverage extends javax.swing.JFrame {
 
     }
 
-    FrmBeverage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void validate(){
+        float price = 0.0F;
+        String brand = txtBrand.getText();
+
+        if (brand.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Brand is required",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE
+            );
+
+            return;
+        } else if (brand.length() < 3 || brand.length() > 20) {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Brand must have between 3 and 20 characters",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE
+            );
+
+            return;
+        }
+
+        try {
+            price = Float.parseFloat(txtPrice.getText());
+        } catch (Exception e) {
+        }
+
+        if (price == 0) {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Price must be greather than zero",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE
+            );
+            return;
+        }
+
+        String type = (String) cmbType.getSelectedItem();
+        Double size = (Double) sprSize.getValue();
+
+        service.addBeverage(brand, type, price, size.floatValue());
+
+        JOptionPane.showMessageDialog(
+                null,
+                "Product has been stored",
+                "Success",
+                JOptionPane.INFORMATION_MESSAGE
+        );
+
+        
     }
 
     /**
@@ -217,56 +267,7 @@ public class FrmBeverage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        float price = 0.0F;
-        String brand = txtBrand.getText();
-
-        if (brand.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(
-                    null,
-                    "Brand is required",
-                    "Error",
-                    JOptionPane.ERROR_MESSAGE
-            );
-
-            return;
-        } else if (brand.length() < 3 || brand.length() > 20) {
-            JOptionPane.showMessageDialog(
-                    null,
-                    "Brand must have between 3 and 20 characters",
-                    "Error",
-                    JOptionPane.ERROR_MESSAGE
-            );
-
-            return;
-        }
-
-        try {
-            price = Float.parseFloat(txtPrice.getText());
-        } catch (Exception e) {
-        }
-
-        if (price == 0) {
-            JOptionPane.showMessageDialog(
-                    null,
-                    "Price must be greather than zero",
-                    "Error",
-                    JOptionPane.ERROR_MESSAGE
-            );
-            return;
-        }
-
-        String type = (String) cmbType.getSelectedItem();
-        Double size = (Double) sprSize.getValue();
-
-        service.addBeverage(brand, type, price, size.floatValue());
-
-        JOptionPane.showMessageDialog(
-                null,
-                "Product has been stored",
-                "Success",
-                JOptionPane.INFORMATION_MESSAGE
-        );
-
+        validate();
         txtBrand.setText("");
         txtPrice.setText("");
         sprSize.setValue(1.0);
