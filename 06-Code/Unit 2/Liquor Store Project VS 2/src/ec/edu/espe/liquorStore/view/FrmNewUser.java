@@ -5,10 +5,15 @@
  */
 package ec.edu.espe.liquorStore.view;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.Mongo;
 import ec.edu.espe.liquorStore.controller.OrderController;
 import ec.edu.espe.liquorStore.model.JsonFile;
 import ec.edu.espe.liquorStore.model.Password;
 import ec.edu.espe.liquorStore.model.User;
+import java.net.UnknownHostException;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,11 +22,19 @@ import javax.swing.JOptionPane;
  */
 public class FrmNewUser extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrmNewUser
-     */
+    DB db;
+    DBCollection tabla;
+
     public FrmNewUser() {
+        try {
+            Mongo mongo = new Mongo("localHost", 27017);
+            db = mongo.getDB("NewUsers");
+            tabla = db.getCollection("tabla");
+        } catch (UnknownHostException ex) {
+
+        }
         initComponents();
+
     }
 
     public void validateFields() {
@@ -211,8 +224,12 @@ public class FrmNewUser extends javax.swing.JFrame {
         Password ps = new Password();
         String newPaswd = ps.Encrypt(pswNewPassword.getText());
         String newUser = txtNewUser.getText();
-
         boolean val = validateUser(newUser);
+
+        BasicDBObject document = new BasicDBObject();
+        document.put("User", "'" + txtNewUser.getText() + "'");
+        document.put("Password", "'" + pswNewPassword.getText() + "'");
+        tabla.insert(document);
         if (val == false) {
             JOptionPane.showMessageDialog(rootPane, "User incorret, enter only letters!");
             txtNewUser.setText("");
