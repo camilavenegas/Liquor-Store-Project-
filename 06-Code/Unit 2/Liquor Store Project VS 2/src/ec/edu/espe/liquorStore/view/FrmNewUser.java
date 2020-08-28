@@ -29,7 +29,7 @@ public class FrmNewUser extends javax.swing.JFrame {
         try {
             Mongo mongo = new Mongo("localHost", 27017);
             db = mongo.getDB("NewUsers");
-            tabla = db.getCollection("tabla");
+            tabla = db.getCollection("Users");
         } catch (UnknownHostException ex) {
 
         }

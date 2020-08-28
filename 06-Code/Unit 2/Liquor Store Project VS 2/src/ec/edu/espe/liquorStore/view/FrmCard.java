@@ -5,7 +5,14 @@
  */
 package ec.edu.espe.liquorStore.view;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.Mongo;
 import ec.edu.espe.liquorStore.utils.Validator;
+import static ec.edu.espe.liquorStore.view.FrmNewUser.pswNewPassword;
+import static ec.edu.espe.liquorStore.view.FrmNewUser.txtNewUser;
+import java.net.UnknownHostException;
 
 import javax.swing.JOptionPane;
 
@@ -15,10 +22,17 @@ import javax.swing.JOptionPane;
  */
 public class FrmCard extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Bill
-     */
+    DB db;
+    DBCollection tabla;
+
     public FrmCard() {
+        try {
+            Mongo mongo = new Mongo("localHost", 27017);
+            db = mongo.getDB("DataCard");
+            tabla = db.getCollection("Card");
+        } catch (UnknownHostException ex) {
+
+        }
         initComponents();
     }
 
@@ -181,6 +195,11 @@ public class FrmCard extends javax.swing.JFrame {
         btnConfirm.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnConfirmMouseClicked(evt);
+            }
+        });
+        btnConfirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmActionPerformed(evt);
             }
         });
 
@@ -353,18 +372,6 @@ public class FrmCard extends javax.swing.JFrame {
 
     private void btnConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmMouseClicked
 
-        String creditCard = txtCardId.getText();
-        if (creditCard.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(
-                    null, "credit card was wrong", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        } else if (!Validator.checkCard(creditCard)) {
-            JOptionPane.showMessageDialog(
-                    null, "credit card was wrong", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        JOptionPane.showMessageDialog(this, "Order Completed , THANKS FOR ALL!");
-        System.exit(0);
     }//GEN-LAST:event_btnConfirmMouseClicked
 
 
@@ -437,6 +444,27 @@ public class FrmCard extends javax.swing.JFrame {
         enableButton();
         validateFields();
     }//GEN-LAST:event_txtCodeKeyReleased
+
+    private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
+        BasicDBObject document = new BasicDBObject();
+        String creditCard = txtCardId.getText();
+        if (creditCard.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(
+                    null, "credit card was wrong", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else if (!Validator.checkCard(creditCard)) {
+            JOptionPane.showMessageDialog(
+                    null, "credit card was wrong", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        document.put("CardId", "'" + txtCardId.getText() + "'");
+        document.put("Owner Name", "'" + txtOwner.getText() + "'");
+        document.put("Code", "'" + txtCode.getText() + "'");
+        document.put("Valid Date", "'" + cmbMonths.getSelectedItem() + "'" + cmbYear.getSelectedItem() + "'");
+        tabla.insert(document);
+        JOptionPane.showMessageDialog(this, "Order Completed , THANKS FOR ALL!");
+        System.exit(0);
+    }//GEN-LAST:event_btnConfirmActionPerformed
 
     /**
      * @param args the command line arguments
