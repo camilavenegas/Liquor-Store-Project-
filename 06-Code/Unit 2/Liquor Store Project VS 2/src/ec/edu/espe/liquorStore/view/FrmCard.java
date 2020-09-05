@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  *
  * @author Camila Venegas DCCO <your.name at your.org>
  */
-public class FrmCard extends javax.swing.JFrame {
+public class FrmCard extends javax.swing.JFrame{
 
     DB db;
     DBCollection tabla;
@@ -33,7 +33,6 @@ public class FrmCard extends javax.swing.JFrame {
         }
         initComponents();
     }
-
     public void validateFields() {
         if (txtCardId.getText().isEmpty()) {
             lblCardId.setText("*Obligatory field");
@@ -51,7 +50,6 @@ public class FrmCard extends javax.swing.JFrame {
             lblCode.setText("");
         }
     }
-
     public void enableButton() {
         if (txtCardId.getText().isEmpty() || txtOwner.getText().isEmpty()
                 || txtCode.getText().isEmpty()) {

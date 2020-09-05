@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.mongodb.view;
+package ec.edu.espe.liquorStore.view;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
@@ -27,8 +27,8 @@ public class frmFactura extends javax.swing.JFrame {
     public frmFactura() {
         try {
             Mongo mongo = new Mongo("localHost", 27017);
-            db = mongo.getDB("Basededatos");
-            tabla = db.getCollection("tabla");
+            db = mongo.getDB("DataBill");
+            tabla = db.getCollection("Bills");
         } catch (UnknownHostException ex) {
 
         }
@@ -365,7 +365,8 @@ public class frmFactura extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTotalLayout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblIVA, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblIVA, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9)))
                 .addContainerGap())
         );
         pnlTotalLayout.setVerticalGroup(
@@ -375,11 +376,15 @@ public class frmFactura extends javax.swing.JFrame {
                 .addGroup(pnlTotalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblSubTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlTotalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblIVA)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlTotalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlTotalLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTotalLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblIVA)
+                        .addGap(18, 18, 18)))
                 .addGroup(pnlTotalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
@@ -387,18 +392,18 @@ public class frmFactura extends javax.swing.JFrame {
         );
 
         getContentPane().add(pnlTotal);
-        pnlTotal.setBounds(240, 702, 257, 138);
+        pnlTotal.setBounds(240, 702, 257, 140);
 
         pnlSave.setBackground(new java.awt.Color(0, 0, 0));
 
-        btnSaveAll.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/mongodb/icons/save.png"))); // NOI18N
+        btnSaveAll.setText("Save");
         btnSaveAll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveAllActionPerformed(evt);
             }
         });
 
-        btnCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/mongodb/icons/cancel.png"))); // NOI18N
+        btnCancel.setText("Cancel");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelActionPerformed(evt);
@@ -409,14 +414,15 @@ public class frmFactura extends javax.swing.JFrame {
         pnlSave.setLayout(pnlSaveLayout);
         pnlSaveLayout.setHorizontalGroup(
             pnlSaveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSaveLayout.createSequentialGroup()
+            .addGroup(pnlSaveLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlSaveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(pnlSaveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSaveLayout.createSequentialGroup()
+                        .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                        .addGap(37, 37, 37))
                     .addGroup(pnlSaveLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnSaveAll, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(37, 37, 37))
+                        .addComponent(btnSaveAll, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         pnlSaveLayout.setVerticalGroup(
             pnlSaveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -429,12 +435,12 @@ public class frmFactura extends javax.swing.JFrame {
         );
 
         getContentPane().add(pnlSave);
-        pnlSave.setBounds(550, 580, 173, 246);
+        pnlSave.setBounds(760, 720, 173, 110);
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/mongodb/icons/394134.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/blueLabel.jpg"))); // NOI18N
         jLabel9.setMaximumSize(new java.awt.Dimension(200, 1600));
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(-20, -120, 1140, 1210);
+        jLabel9.setBounds(-10, -220, 1140, 1210);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -34,7 +34,6 @@ public class FrmNewUser extends javax.swing.JFrame {
 
         }
         initComponents();
-
     }
 
     public void validateFields() {
