@@ -18,8 +18,11 @@ public class BeverageController {
     
     public void init() {
         FrmBeverage view = new FrmBeverage(beverageService);
-        view.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        view.setVisible(true);
+          view.setVisible(true);
+        //this.setVisible(false)
+      //  view.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        view.setVisible(false);
+      
     }
     
     

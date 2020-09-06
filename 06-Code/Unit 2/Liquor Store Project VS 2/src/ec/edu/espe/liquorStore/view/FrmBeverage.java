@@ -28,13 +28,13 @@ public class FrmBeverage extends javax.swing.JFrame {
     private final BeverageService service;
 
     public FrmBeverage(BeverageService service) {
-        try {
+       /* try {
             Mongo mongo = new Mongo("localHost", 27017);
             db = mongo.getDB("Beverages");
             tabla = db.getCollection("beverage");
         } catch (UnknownHostException ex) {
 
-        }
+        }*/
         initComponents();
         this.service = service;
 
