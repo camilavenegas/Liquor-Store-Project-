@@ -6,6 +6,8 @@
 package ec.edu.espe.liquorStore.view;
 
 import ec.edu.espe.liquorStore.controller.BeverageController;
+import ec.edu.espe.liquorStore.service.BeverageService;
+import javax.swing.JFrame;
 
 /**
  *
@@ -128,8 +130,11 @@ public class FrmAdminChooser extends javax.swing.JFrame {
 
     private void btnBeverageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBeverageMouseClicked
         // TODO add your handling code here:
-        BeverageController beverageController = new BeverageController();
-        beverageController.init();
+       BeverageService beverageService = new BeverageService();
+        FrmBeverage view = new FrmBeverage(beverageService);
+        view.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        view.setVisible(true);
+       
     }//GEN-LAST:event_btnBeverageMouseClicked
 
     private void btnOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOrderMouseClicked

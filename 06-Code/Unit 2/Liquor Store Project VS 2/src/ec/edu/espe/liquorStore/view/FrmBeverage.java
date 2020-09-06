@@ -43,7 +43,7 @@ public class FrmBeverage extends javax.swing.JFrame {
 
     }
 
-    public void validate() {
+    /*public void validate() {
         float price = 0.0F;
         String brand = txtBrand.getText();
 
@@ -94,7 +94,7 @@ public class FrmBeverage extends javax.swing.JFrame {
                 JOptionPane.INFORMATION_MESSAGE
         );
 
-    }
+    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -283,7 +283,7 @@ public class FrmBeverage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        validate();
+        //validate();
         txtBrand.setText("");
         txtPrice.setText("");
         sprSize.setValue(1.0);
@@ -297,9 +297,9 @@ public class FrmBeverage extends javax.swing.JFrame {
 
     private void btnExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseClicked
         // TODO add your handling code here:
-        FrmAdminChooser frmChoose = new FrmAdminChooser();
+        /*FrmAdminChooser frmChoose = new FrmAdminChooser();
         frmChoose.setVisible(true);
-        this.setVisible(false);
+        this.setVisible(false);*/
     }//GEN-LAST:event_btnExitMouseClicked
 
 
