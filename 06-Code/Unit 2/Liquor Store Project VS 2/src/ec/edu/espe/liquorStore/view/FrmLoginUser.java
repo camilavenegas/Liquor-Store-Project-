@@ -244,14 +244,14 @@ public class FrmLoginUser extends javax.swing.JFrame {
     public void createFile() {
         JsonFile fl = new JsonFile();
         //Password psw = new Password();
-        String newPassw; 
+        String newPassw;
         newPassw = pswPassword.getText();
         String encrypt;
         char array[] = newPassw.toCharArray();
-        for(int i = 0; i<array.length; i++){
-            array[i] = (char)(array[i] + (char)2);
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (char) (array[i] + (char) 2);
         }
-        encrypt = String.valueOf(array);             
+        encrypt = String.valueOf(array);
         User user = new User(txtUser.getText(), encrypt);
         fl.addToFile(user);
     }
@@ -263,8 +263,9 @@ public class FrmLoginUser extends javax.swing.JFrame {
         String user = String.valueOf(txtUser.getText());
         if ((valPassword(passwordIn, newPassw)) && ((valUser(user, FrmNewUser.txtNewUser.getText())))) {
             JOptionPane.showMessageDialog(rootPane, "Correct User and Password");
-            OrderController orderController = new OrderController();
-            orderController.init();
+            frmFactura frmBill = new frmFactura();
+            frmBill.setVisible(true);
+            this.setVisible(false);
         } else {
             JOptionPane.showMessageDialog(rootPane, "Incorrect User and Password");
         }
@@ -311,8 +312,10 @@ public class FrmLoginUser extends javax.swing.JFrame {
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(rootPane, "Correct User and Password");
-        OrderController orderController = new OrderController();
-        orderController.init();
+        frmFactura frmBill = new frmFactura();
+        frmBill.setVisible(true);
+        this.setVisible(false);
+
     }//GEN-LAST:event_btnLoginMouseClicked
 
     /**
