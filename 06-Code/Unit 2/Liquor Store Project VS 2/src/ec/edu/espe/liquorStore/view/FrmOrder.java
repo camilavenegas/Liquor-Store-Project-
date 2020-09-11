@@ -174,7 +174,7 @@ public class FrmOrder extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(153, 0, 255));
         jLabel12.setText("Combos");
 
-        cmbCombos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Combo1", "Combo 2", "Combo 3", "Combo4", " " }));
+        cmbCombos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "UNIVERSITY COMBO", "FRIENDS-PARTY-COMBO", "SI NO ME ACUERDO NO PASO ", "BORRACHOS PERO RESPONSABLES" }));
 
         btnConfirm.setBackground(new java.awt.Color(102, 0, 153));
         btnConfirm.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
@@ -275,7 +275,7 @@ public class FrmOrder extends javax.swing.JFrame {
                         .addComponent(btnConfirm)
                         .addGap(41, 41, 41)
                         .addComponent(btnCancel)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

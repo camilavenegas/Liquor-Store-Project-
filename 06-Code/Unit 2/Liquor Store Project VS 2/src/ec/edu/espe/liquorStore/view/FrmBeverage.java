@@ -43,8 +43,13 @@ public class FrmBeverage extends javax.swing.JFrame {
 
     }
 
-    /*public void validate() {
-        float price = 0.0F;
+    public void saveToJson() {
+        
+        String brand= txtBrand.getText();
+        float price=0.0F;
+        price= Float.parseFloat(txtPrice.getText());
+        
+        /*float price = 0.0F;
         String brand = txtBrand.getText();
 
         if (brand.trim().isEmpty()) {
@@ -80,7 +85,7 @@ public class FrmBeverage extends javax.swing.JFrame {
                     JOptionPane.ERROR_MESSAGE
             );
             return;
-        }
+        }*/
 
         String type = (String) cmbType.getSelectedItem();
         Double size = (Double) sprSize.getValue();
@@ -94,7 +99,7 @@ public class FrmBeverage extends javax.swing.JFrame {
                 JOptionPane.INFORMATION_MESSAGE
         );
 
-    }*/
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -283,7 +288,7 @@ public class FrmBeverage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        //validate();
+        saveToJson();
         txtBrand.setText("");
         txtPrice.setText("");
         sprSize.setValue(1.0);

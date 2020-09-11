@@ -90,7 +90,7 @@
                           <Component id="btnCancel" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="17" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -296,12 +296,11 @@
         <Component class="javax.swing.JComboBox" name="cmbCombos">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
-                <StringItem index="0" value="Combo1"/>
-                <StringItem index="1" value="Combo 2"/>
-                <StringItem index="2" value="Combo 3"/>
-                <StringItem index="3" value="Combo4"/>
-                <StringItem index="4" value=" "/>
+              <StringArray count="4">
+                <StringItem index="0" value="UNIVERSITY COMBO"/>
+                <StringItem index="1" value="FRIENDS-PARTY-COMBO"/>
+                <StringItem index="2" value="SI NO ME ACUERDO NO PASO "/>
+                <StringItem index="3" value="BORRACHOS PERO RESPONSABLES"/>
               </StringArray>
             </Property>
           </Properties>
