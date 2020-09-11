@@ -373,7 +373,7 @@ public class FrmCard extends javax.swing.JFrame{
 
     private void btnCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseClicked
         // TODO add your handling code here:
-        frmFactura bill = new frmFactura();
+        frmBills bill = new frmBills();
         bill.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelMouseClicked
