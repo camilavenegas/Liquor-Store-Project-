@@ -238,8 +238,9 @@ public class FrmNewUser extends javax.swing.JFrame {
         JsonFile fl = new JsonFile();
         fl.addToFile(user);
         JOptionPane.showMessageDialog(rootPane, "User register!");
-        OrderController orderController = new OrderController();
-        orderController.init();
+        FrmLoginUser login = new FrmLoginUser();
+        login.setVisible(true);
+        this.setVisible(false);
 
     }//GEN-LAST:event_btnSaveActionPerformed
 

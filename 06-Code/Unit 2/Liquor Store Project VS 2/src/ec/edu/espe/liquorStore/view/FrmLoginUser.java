@@ -263,7 +263,7 @@ public class FrmLoginUser extends javax.swing.JFrame {
         String user = String.valueOf(txtUser.getText());
         if ((valPassword(passwordIn, newPassw)) && ((valUser(user, FrmNewUser.txtNewUser.getText())))) {
             JOptionPane.showMessageDialog(rootPane, "Correct User and Password");
-            frmBills frmBill = new frmBills();
+            FrmBills frmBill = new FrmBills();
             frmBill.setVisible(true);
             this.setVisible(false);
         } else {
@@ -312,7 +312,7 @@ public class FrmLoginUser extends javax.swing.JFrame {
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(rootPane, "Correct User and Password");
-        frmBills frmBill = new frmBills();
+        FrmBills frmBill = new FrmBills();
         frmBill.setVisible(true);
         this.setVisible(false);
 

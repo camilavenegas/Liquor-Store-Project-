@@ -395,7 +395,7 @@ public class FrmOrder extends javax.swing.JFrame {
 
     private void btnConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmMouseClicked
         // TODO add your handling code here:
-        FrmBill bill = new FrmBill();
+        FrmBillNotUse bill = new FrmBillNotUse();
         bill.setVisible(true);
         this.setVisible(false);
         

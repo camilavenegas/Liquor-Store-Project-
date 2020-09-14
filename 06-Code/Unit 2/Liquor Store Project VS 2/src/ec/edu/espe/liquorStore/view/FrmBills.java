@@ -19,13 +19,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Alex Velastegui ESPE-DCCO
  */
-public class frmBills extends javax.swing.JFrame {
+public class FrmBills extends javax.swing.JFrame {
 
     DefaultTableModel model = new DefaultTableModel();
     DB db;
     DBCollection tabla;
 
-    public frmBills() {
+    public FrmBills() {
         try {
             Mongo mongo = new Mongo("localHost", 27017);
             db = mongo.getDB("DataBill");
@@ -138,7 +138,6 @@ public class frmBills extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1000, 900));
         setMinimumSize(new java.awt.Dimension(1000, 850));
         getContentPane().setLayout(null);
 
@@ -301,7 +300,7 @@ public class frmBills extends javax.swing.JFrame {
         );
 
         getContentPane().add(pnlTotal);
-        pnlTotal.setBounds(730, 470, 242, 140);
+        pnlTotal.setBounds(730, 470, 237, 127);
 
         pnlSave.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -327,7 +326,7 @@ public class frmBills extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnlSaveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnSaveAll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
+                    .addComponent(btnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))
                 .addGap(37, 37, 37))
         );
         pnlSaveLayout.setVerticalGroup(
@@ -337,7 +336,7 @@ public class frmBills extends javax.swing.JFrame {
                 .addComponent(btnSaveAll)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCancel)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         getContentPane().add(pnlSave);
@@ -536,7 +535,7 @@ public class frmBills extends javax.swing.JFrame {
                                     .addGroup(pnlDataLayout.createSequentialGroup()
                                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE)))))
-                        .addContainerGap(34, Short.MAX_VALUE))))
+                        .addContainerGap(42, Short.MAX_VALUE))))
         );
         pnlDataLayout.setVerticalGroup(
             pnlDataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -582,7 +581,7 @@ public class frmBills extends javax.swing.JFrame {
                                 .addComponent(jLabel5)
                                 .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel15))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         getContentPane().add(pnlData);
@@ -636,11 +635,11 @@ public class frmBills extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDelete)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         getContentPane().add(pnlBill);
-        pnlBill.setBounds(500, 30, 482, 440);
+        pnlBill.setBounds(500, 30, 472, 440);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/blueLabel.jpg"))); // NOI18N
         jLabel9.setMaximumSize(new java.awt.Dimension(200, 1600));
@@ -982,14 +981,18 @@ public class frmBills extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmBills.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmBills.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmBills.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmBills.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmBills.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmBills.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmBills.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmBills.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -998,7 +1001,7 @@ public class frmBills extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmBills().setVisible(true);
+                new FrmBills().setVisible(true);
             }
         });
     }
