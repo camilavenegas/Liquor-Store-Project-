@@ -10,7 +10,7 @@ import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import ec.edu.espe.liquorStore.model.Beverage;
 import ec.edu.espe.liquorStore.model.Combo1;
-import ec.edu.espe.liquorStore.model.JsonFile;
+import ec.edu.espe.liquorStore.utils.JsonFile;
 import ec.edu.espe.liquorStore.model.Order;
 import ec.edu.espe.liquorStore.service.BeverageService;
 import java.io.BufferedReader;

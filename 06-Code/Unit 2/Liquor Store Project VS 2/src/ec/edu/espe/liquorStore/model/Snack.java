@@ -9,7 +9,8 @@ package ec.edu.espe.liquorStore.model;
  *
  * @author Camila Venegas DCCO <your.name at your.org>
  */
-public class Snack {
+public class Snack extends Product{
+    
     private int Bubblegum;
     private int Peanut;
     private int Chips;
@@ -19,7 +20,7 @@ public class Snack {
         this.Peanut = Peanut;
         this.Chips = Chips;
     }
-
+    
     public int getBubblegum() {
         return Bubblegum;
     }

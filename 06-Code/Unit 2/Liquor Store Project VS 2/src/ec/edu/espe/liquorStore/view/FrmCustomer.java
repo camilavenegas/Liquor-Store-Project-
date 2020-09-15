@@ -10,7 +10,7 @@ import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.Mongo;
 import ec.edu.espe.liquorStore.model.Customer;
-import ec.edu.espe.liquorStore.model.JsonFile;
+import ec.edu.espe.liquorStore.utils.JsonFile;
 import java.net.UnknownHostException;
 import javax.swing.JOptionPane;
 

@@ -5,7 +5,7 @@
  */
 package ec.edu.espe.liquorStore.view;
 
-import ec.edu.espe.liquorStore.model.JsonFile;
+import ec.edu.espe.liquorStore.utils.JsonFile;
 import ec.edu.espe.liquorStore.model.Bill;
 import ec.edu.espe.liquorStore.utils.Validator;
 import java.sql.Connection;
