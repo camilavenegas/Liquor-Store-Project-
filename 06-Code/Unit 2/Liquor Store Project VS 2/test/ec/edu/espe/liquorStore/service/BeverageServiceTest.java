@@ -19,48 +19,62 @@ public class BeverageServiceTest {
     public BeverageServiceTest() {
     }
 
-    /**
-     * Test of getBeverageTypes method, of class BeverageService.
-     */
-    @Test
-    public void testGetBeverageTypes() {
-        System.out.println("getBeverageTypes");
-        BeverageService instance = new BeverageService();
-        List<String> expResult = null;
-        List<String> result = instance.getBeverageTypes();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getAllBeverages method, of class BeverageService.
-     */
-    @Test
-    public void testGetAllBeverages() {
-        System.out.println("getAllBeverages");
-        BeverageService instance = new BeverageService();
-        List<Beverage> expResult = null;
-        List<Beverage> result = instance.getAllBeverages();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of addBeverage method, of class BeverageService.
-     */
+    
     @Test
     public void testAddBeverage() {
-        System.out.println("addBeverage");
+        
         String brand = "";
         String type = "";
         float price = 0.0F;
         float size = 0.0F;
-        BeverageService instance = new BeverageService();
-        instance.addBeverage(brand, type, price, size);
-        // TODO review the generated test code and remove the default call to fail.
+        Beverage bev= new Beverage(type, brand, price, size);
+        
+        String copyBrand= "";
+        String copyType="";
+        float copyPrice=0.0F;
+        float copySize=0.0F;
+        Beverage copyBev= new Beverage(copyType, copyBrand, copyPrice, copySize);
+        
+        assertEquals(bev, copyBev);
         fail("The test case is a prototype.");
     }
     
+    @Test
+     public void testAddBeverage1() {
+          String brand = "Jhonny";
+        String type = "Tequila";
+        float price = 10.0F;
+        float size = 1.0F;
+        Beverage bev= new Beverage(type, brand, price, size);
+        
+        String copyBrand= "Jhonny";
+        String copyType="Tequila";
+        float copyPrice=10.0F;
+        float copySize=1.0F;
+        Beverage copyBev= new Beverage(copyType, copyBrand, copyPrice, copySize);
+        
+        assertEquals(bev, copyBev);
+        fail("The test case is a prototype.");
+         
+      
+    }
+      @Test
+     public void testAddBeverage2() {
+       String brand = "Gin";
+        String type = "Ginebra";
+        float price = 20.0F;
+        float size = 1.5F;
+        Beverage bev= new Beverage(type, brand, price, size);
+        
+        String copyBrand= "Gin";
+        String copyType="Ginebra";
+        float copyPrice=02.0F;
+        float copySize=1.5F;
+        Beverage copyBev= new Beverage(copyType, copyBrand, copyPrice, copySize);
+        
+        assertEquals(bev, copyBev);
+        fail("The test case is a prototype.");
+    }
+     
+     
 }

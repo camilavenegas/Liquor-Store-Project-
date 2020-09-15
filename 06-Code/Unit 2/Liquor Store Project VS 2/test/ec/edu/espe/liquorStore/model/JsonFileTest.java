@@ -26,7 +26,7 @@ public class JsonFileTest {
         System.out.println("addToFile");
         Object object = null;
         JsonFile.addToFile(object);
-        // TODO review the generated test code and remove the default call to fail.
+        
         fail("The test case is a prototype.");
     }
 
@@ -40,7 +40,7 @@ public class JsonFileTest {
         ArrayList<Object> expResult = null;
         ArrayList<Object> result = JsonFile.readObjects(nameClass);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
+        
         fail("The test case is a prototype.");
     }
     

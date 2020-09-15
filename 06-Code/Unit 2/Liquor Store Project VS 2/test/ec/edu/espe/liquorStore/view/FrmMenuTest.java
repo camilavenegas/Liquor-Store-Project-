@@ -17,9 +17,7 @@ public class FrmMenuTest {
     public FrmMenuTest() {
     }
 
-    /**
-     * Test of main method, of class FrmMenu.
-     */
+    
     @Test
     public void testMain() {
         System.out.println("main");
