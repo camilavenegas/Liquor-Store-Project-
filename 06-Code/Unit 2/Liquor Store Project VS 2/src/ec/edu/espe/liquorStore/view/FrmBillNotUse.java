@@ -5,7 +5,7 @@
  */
 package ec.edu.espe.liquorStore.view;
 
-import ec.edu.espe.liquorStore.model.JsonFile;
+import ec.edu.espe.liquorStore.utils.JsonFile;
 import ec.edu.espe.liquorStore.model.Bill;
 import ec.edu.espe.liquorStore.utils.Validator;
 import java.sql.Connection;
@@ -17,11 +17,11 @@ import javax.swing.JOptionPane;
  *
  * @author Camila Venegas DCCO <your.name at your.org>
  */
-public class FrmBill extends javax.swing.JFrame {
+public class FrmBillNotUse extends javax.swing.JFrame {
 
     static Connection con = null;
 
-    public FrmBill() {
+    public FrmBillNotUse() {
         initComponents();
 
     }
@@ -547,20 +547,21 @@ public class FrmBill extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmBill.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmBillNotUse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmBill.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmBillNotUse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmBill.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmBillNotUse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmBill.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmBillNotUse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmBill().setVisible(true);
+                new FrmBillNotUse().setVisible(true);
             }
         });
     }

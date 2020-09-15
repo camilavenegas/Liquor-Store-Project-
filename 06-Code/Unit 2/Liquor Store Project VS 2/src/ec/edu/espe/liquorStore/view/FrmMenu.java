@@ -98,17 +98,14 @@ public class FrmMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMouseClicked
-        // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btnExitMouseClicked
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void itmStartOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itmStartOrderMouseClicked
-        // TODO add your handling code here:
         FrmLoginUser login = new FrmLoginUser();
         login.setVisible(true);
         this.setVisible(false);
@@ -117,14 +114,12 @@ public class FrmMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_itmStartOrderMouseClicked
 
     private void itmStartOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmStartOrderActionPerformed
-        // TODO add your handling code here:
         FrmLoginUser login = new FrmLoginUser();
         login.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_itmStartOrderActionPerformed
 
     private void menuAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAdminMouseClicked
-        // TODO add your handling code here:
         FrmLoginAdmin frmAdmin = new FrmLoginAdmin();
         frmAdmin.setVisible(true);
         this.setVisible(false);

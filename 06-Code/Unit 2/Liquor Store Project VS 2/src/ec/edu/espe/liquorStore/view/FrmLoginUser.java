@@ -6,7 +6,7 @@
 package ec.edu.espe.liquorStore.view;
 
 import ec.edu.espe.liquorStore.controller.OrderController;
-import ec.edu.espe.liquorStore.model.JsonFile;
+import ec.edu.espe.liquorStore.utils.JsonFile;
 import ec.edu.espe.liquorStore.utils.Password;
 import ec.edu.espe.liquorStore.model.User;
 import java.util.Arrays;
@@ -263,7 +263,7 @@ public class FrmLoginUser extends javax.swing.JFrame {
         String user = String.valueOf(txtUser.getText());
         if ((valPassword(passwordIn, newPassw)) && ((valUser(user, FrmNewUser.txtNewUser.getText())))) {
             JOptionPane.showMessageDialog(rootPane, "Correct User and Password");
-            frmFactura frmBill = new frmFactura();
+            FrmBills frmBill = new FrmBills();
             frmBill.setVisible(true);
             this.setVisible(false);
         } else {
@@ -272,7 +272,6 @@ public class FrmLoginUser extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void txtUserKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserKeyTyped
-        // TODO add your handling code here:
         char validate = evt.getKeyChar();
 
         if (Character.isDigit(validate)) {
@@ -283,36 +282,31 @@ public class FrmLoginUser extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUserKeyTyped
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
-        // TODO add your handling code here:
         FrmNewUser frmnewUser = new FrmNewUser();
         frmnewUser.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
         FrmMenu frmMain = new FrmMenu();
         frmMain.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void txtUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserKeyReleased
-        // TODO add your handling code here:
         enableButton();
         validateFields();
 
     }//GEN-LAST:event_txtUserKeyReleased
 
     private void pswPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pswPasswordKeyReleased
-        // TODO add your handling code here:
         enableButton();
         validateFields();
     }//GEN-LAST:event_pswPasswordKeyReleased
 
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
-        // TODO add your handling code here:
         JOptionPane.showMessageDialog(rootPane, "Correct User and Password");
-        frmFactura frmBill = new frmFactura();
+        FrmBills frmBill = new FrmBills();
         frmBill.setVisible(true);
         this.setVisible(false);
 
