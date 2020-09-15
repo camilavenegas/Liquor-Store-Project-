@@ -734,7 +734,7 @@
                   <Font name="MV Boli" size="14" style="0"/>
                 </Property>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="Combo 1&#xa;Cerveza&#xa;Whisky&#xa;1xPeannut&#xa;1xChips&#xa;Combo 2&#xa;Vodka&#xa;Zhumir&#xa;2xChips&#xa;2xBubblegums&#xa;Combo 3&#xa;Ron Pon Pon&#xa;Jack Daniel&#xa;4xChips&#xa;1xBubblegum&#xa;Combo 4&#xa;3xChips&#xa;4xPeannuts"/>
+                <Property name="text" type="java.lang.String" value="Combo 1&#xa;Cerveza&#xa;Whisky&#xa;1xPeannut&#xa;1xChips&#xa;______________________&#xa;Combo 2&#xa;Vodka&#xa;Zhumir&#xa;2xChips&#xa;2xBubblegums&#xa;______________________&#xa;Combo 3&#xa;Ron Pon Pon&#xa;Jack Daniel&#xa;4xChips&#xa;1xBubblegum&#xa;______________________&#xa;Combo 4&#xa;JackDaniel&#xa;RonAbuelo&#xa;3xChips&#xa;4xPeannuts"/>
               </Properties>
             </Component>
           </SubComponents>

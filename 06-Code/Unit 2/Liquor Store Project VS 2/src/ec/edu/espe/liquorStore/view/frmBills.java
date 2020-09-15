@@ -404,7 +404,7 @@ public class frmBills extends javax.swing.JFrame {
         txaCombo.setColumns(20);
         txaCombo.setFont(new java.awt.Font("MV Boli", 0, 14)); // NOI18N
         txaCombo.setRows(5);
-        txaCombo.setText("Combo 1\nCerveza\nWhisky\n1xPeannut\n1xChips\nCombo 2\nVodka\nZhumir\n2xChips\n2xBubblegums\nCombo 3\nRon Pon Pon\nJack Daniel\n4xChips\n1xBubblegum\nCombo 4\n3xChips\n4xPeannuts");
+        txaCombo.setText("Combo 1\nCerveza\nWhisky\n1xPeannut\n1xChips\n______________________\nCombo 2\nVodka\nZhumir\n2xChips\n2xBubblegums\n______________________\nCombo 3\nRon Pon Pon\nJack Daniel\n4xChips\n1xBubblegum\n______________________\nCombo 4\nJackDaniel\nRonAbuelo\n3xChips\n4xPeannuts");
         jScrollPane2.setViewportView(txaCombo);
 
         jLabel4.setFont(new java.awt.Font("MV Boli", 0, 16)); // NOI18N
