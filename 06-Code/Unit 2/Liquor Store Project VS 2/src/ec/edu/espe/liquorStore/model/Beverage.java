@@ -9,21 +9,19 @@ package ec.edu.espe.liquorStore.model;
  *
  * @author Camila Venegas DCCO <your.name at your.org>
  */
-public class Beverage {
+public class Beverage extends Product {
 
     private String type;
-    private String brand;
-    private float price;
-    private float size;
-    
-    public Beverage() {}
+    private float size;   
 
-    public Beverage(String type, String brand, float price, float size) {
+
+    public Beverage(String type, float size, float price, String brand) {
+        super(price, brand);
         this.type = type;
-        this.brand = brand;
-        this.price = price;
         this.size = size;
     }
+
+    public Beverage() {}
 
     public String getType() {
         return type;
@@ -31,22 +29,6 @@ public class Beverage {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
     }
 
     public float getSize() {
@@ -59,9 +41,7 @@ public class Beverage {
 
     @Override
     public String toString() {
-        return "Beverage{" + "type=" + type + ", brand=" + brand + ", price=" + price + ", size=" + size + '}';
+        return "Beverage{" + "type=" + type + ", size=" + size + '}';
     }
-    
-    
-    
+
 }

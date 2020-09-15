@@ -10,7 +10,7 @@ import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import ec.edu.espe.liquorStore.model.Beverage;
 import ec.edu.espe.liquorStore.model.Combo1;
-import ec.edu.espe.liquorStore.model.JsonFile;
+import ec.edu.espe.liquorStore.utils.JsonFile;
 import ec.edu.espe.liquorStore.model.Order;
 import ec.edu.espe.liquorStore.service.BeverageService;
 import java.io.BufferedReader;
@@ -395,7 +395,7 @@ public class FrmOrder extends javax.swing.JFrame {
 
     private void btnConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmMouseClicked
         // TODO add your handling code here:
-        FrmBill bill = new FrmBill();
+        FrmBillNotUse bill = new FrmBillNotUse();
         bill.setVisible(true);
         this.setVisible(false);
         

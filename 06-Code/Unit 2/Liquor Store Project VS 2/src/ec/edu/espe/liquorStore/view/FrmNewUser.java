@@ -10,7 +10,7 @@ import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.Mongo;
 import ec.edu.espe.liquorStore.controller.OrderController;
-import ec.edu.espe.liquorStore.model.JsonFile;
+import ec.edu.espe.liquorStore.utils.JsonFile;
 import ec.edu.espe.liquorStore.utils.Password;
 import ec.edu.espe.liquorStore.model.User;
 import java.net.UnknownHostException;
@@ -238,8 +238,9 @@ public class FrmNewUser extends javax.swing.JFrame {
         JsonFile fl = new JsonFile();
         fl.addToFile(user);
         JOptionPane.showMessageDialog(rootPane, "User register!");
-        OrderController orderController = new OrderController();
-        orderController.init();
+        FrmLoginUser login = new FrmLoginUser();
+        login.setVisible(true);
+        this.setVisible(false);
 
     }//GEN-LAST:event_btnSaveActionPerformed
 

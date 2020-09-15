@@ -8,6 +8,7 @@ package ec.edu.espe.liquorStore.service;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import ec.edu.espe.liquorStore.model.Beverage;
+import ec.edu.espe.liquorStore.model.Product;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -41,6 +42,7 @@ public class BeverageService {
     }
     
     public void addBeverage(String brand, String type, float price, float size) {
+        Product bev = new Beverage(); // ♥
         Beverage beverage = new Beverage();
         beverage.setBrand(brand);
         beverage.setPrice(price);
