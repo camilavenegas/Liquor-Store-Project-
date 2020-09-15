@@ -6,7 +6,7 @@
 package ec.edu.espe.liquorStore.controller;
 
 import ec.edu.espe.liquorStore.service.BeverageService;
-import ec.edu.espe.liquorStore.view.FrmOrder;
+
 import javax.swing.JFrame;
 
 /**
@@ -16,9 +16,5 @@ import javax.swing.JFrame;
 public class OrderController {
     private BeverageService beverageService = new BeverageService();
 
-    public void init() {
-        FrmOrder view = new FrmOrder(beverageService);
-        view.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        view.setVisible(true);
-    }
+   
 }

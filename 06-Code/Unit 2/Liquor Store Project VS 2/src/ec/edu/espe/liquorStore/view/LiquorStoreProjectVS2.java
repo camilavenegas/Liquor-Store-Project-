@@ -19,8 +19,7 @@ public class LiquorStoreProjectVS2 {
         BeverageController beverageController = new BeverageController();
         beverageController.init();
 
-        OrderController orderController = new OrderController();
-        orderController.init();
+        
     }
     
 }
