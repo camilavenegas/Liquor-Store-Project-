@@ -9,7 +9,7 @@ package ec.edu.espe.liquorStore.utils;
  *
  * @author Alex Velastegui ESPE-DCCO
  */
-public class Password {
+public class EncryptPassword {
 
     public String Encrypt(String password) {
         char[] pswChange = new char[password.length()];

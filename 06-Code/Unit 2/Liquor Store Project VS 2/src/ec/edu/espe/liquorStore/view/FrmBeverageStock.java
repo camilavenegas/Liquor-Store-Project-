@@ -7,8 +7,9 @@ package ec.edu.espe.liquorStore.view;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import ec.edu.espe.liquorStore.model.Beverage1;
+
 import ec.edu.espe.filemanagerlibrary.FileManager;
+import ec.edu.espe.liquorStore.model.Beverage;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.print.PageFormat;
@@ -44,7 +45,7 @@ public class FrmBeverageStock extends javax.swing.JFrame implements Printable {
         fillTable();
     }
      private void fillTable(){
-        ArrayList<Beverage1> register= new ArrayList<>();
+        ArrayList<Beverage> register= new ArrayList<>();
         Gson gson= new Gson();
         String json="";
         String filePath="data/beverages.json";
@@ -55,13 +56,16 @@ public class FrmBeverageStock extends javax.swing.JFrame implements Printable {
         }
         
         java.lang.reflect.Type registerOfBeverages;
-        registerOfBeverages= new TypeToken<ArrayList<Beverage1>>(){
+        registerOfBeverages= new TypeToken<ArrayList<Beverage>>(){
         }.getType();
         
         register=gson.fromJson(json, registerOfBeverages);
         
-        for (Beverage1 bev:register){
-            String[] rowBeverage={bev.getType(),bev.getBrand(),bev.getSize(),bev.getPrice()};
+        for (Beverage bev:register){
+            
+           
+            
+            String[] rowBeverage={bev.getType(),bev.getBrand()};
             tableItem.addRow(rowBeverage);
         }
         

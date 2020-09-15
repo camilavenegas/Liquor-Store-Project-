@@ -10,7 +10,7 @@ import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.Mongo;
 import ec.edu.espe.liquorStore.utils.JsonFile;
-import ec.edu.espe.liquorStore.utils.Password;
+import ec.edu.espe.liquorStore.utils.EncryptPassword;
 import ec.edu.espe.liquorStore.model.User;
 import java.io.File;
 import java.io.FileWriter;
@@ -272,7 +272,7 @@ public class FrmNewUser extends javax.swing.JFrame {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
 
-        Password ps = new Password();
+        EncryptPassword ps = new EncryptPassword();
         String newPaswd = ps.Encrypt(pswNewPassword.getText());
         String newUser = txtNewUser.getText();
         boolean val = validateUser(newUser);

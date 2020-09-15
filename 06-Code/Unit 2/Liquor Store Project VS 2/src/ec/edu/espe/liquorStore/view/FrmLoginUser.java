@@ -7,7 +7,7 @@ package ec.edu.espe.liquorStore.view;
 
 import ec.edu.espe.liquorStore.controller.OrderController;
 import ec.edu.espe.liquorStore.utils.JsonFile;
-import ec.edu.espe.liquorStore.utils.Password;
+import ec.edu.espe.liquorStore.utils.EncryptPassword;
 import ec.edu.espe.liquorStore.model.User;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
@@ -229,7 +229,7 @@ public class FrmLoginUser extends javax.swing.JFrame {
 
     public boolean valPassword(char[] passwordIn, String passwordNewUser) {
         boolean good = true;
-        Password psw = new Password();
+        EncryptPassword psw = new EncryptPassword();
         String pss = psw.Decrypt(passwordNewUser);
 
         char[] passwordNew = pss.toCharArray();
@@ -257,7 +257,7 @@ public class FrmLoginUser extends javax.swing.JFrame {
     }
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-        Password psw = new Password();
+        EncryptPassword psw = new EncryptPassword();
         char[] passwordIn = pswPassword.getPassword();
         String newPassw = psw.Encrypt(FrmNewUser.pswNewPassword.getText());
         String user = String.valueOf(txtUser.getText());
