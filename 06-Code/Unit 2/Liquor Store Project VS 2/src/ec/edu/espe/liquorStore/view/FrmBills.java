@@ -10,6 +10,7 @@ import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.Mongo;
 import ec.edu.espe.liquorStore.model.Bill;
+import ec.edu.espe.liquorStore.model.Taxes;
 import ec.edu.espe.liquorStore.utils.Validator;
 import java.net.UnknownHostException;
 import javax.swing.JOptionPane;
@@ -717,20 +718,23 @@ public class FrmBills extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddBvrageActionPerformed
 
     private void calTot() {
-        double S = 0;
-        double igv;
-        double tot;
+        double Subtotal = 0;
+        double iva;
+        double total;
         for (int i = 0; i < tblBill.getRowCount(); i++) {
-            S = S + Double.parseDouble(model.getValueAt(i, 3).toString());
+            Subtotal = Subtotal + Double.parseDouble(model.getValueAt(i, 3).toString());
         }
-        S = redondear(S);
-        lblSubTotal.setText(String.valueOf(S));
-        igv = 0.09 * S;
-        igv = redondear(igv);
-        tot = S * 1.09;
-        tot = redondear(tot);
-        lblIVA.setText(String.valueOf(igv));
-        lblTotal.setText(String.valueOf(tot));
+        Subtotal = redondear(Subtotal);
+        lblSubTotal.setText(String.valueOf(Subtotal));
+        Taxes taxes = new Taxes();
+
+        taxes.calculateTaxes((float) Subtotal);
+        iva = 0.12 * Subtotal;
+        iva = redondear(iva);
+        total =  taxes.calculateTaxes((float) Subtotal);// Subtotal * 1.09;
+        total = redondear(total);
+        lblIVA.setText(String.valueOf(iva));
+        lblTotal.setText(String.valueOf(total));
 
     }
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed

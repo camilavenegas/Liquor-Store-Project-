@@ -10,35 +10,35 @@ package ec.edu.espe.liquorStore.model;
  * @author Wilson Toapanta 6382
  */
 public class Taxes {
+
     private static Taxes instance;
     private float taxPercentage;
-    private Taxes(){
+
+    public Taxes() {
         this.taxPercentage = 12;
     }
-    public static Taxes getInstance(){
-        if(instance == null){
-            instance= new Taxes();
+
+    public static Taxes getInstance() {
+        if (instance == null) {
+            instance = new Taxes();
         }
         return instance;
     }
-    public float getSingeltonData(){
+
+    public float getSingeltonData() {
         return taxPercentage;
     }
-    
-    public float salesTotal(float valuePrice, float percentage){
+
+    public float salesTotal(float valuePrice, float percentage) {
         float totalCost = valuePrice + percentage;
         return totalCost;
     }
-    
-    /* USTax usTax = USTax.getInstance();
-        float price = 10;
-        float parcialPrice = ((price*usTax.getSingeltonData())/100);
 
-        System.out.println("Wilson Toapanta --> 6382");
-        
-        System.out.println("tax percentage -->" + usTax.getSingeltonData());
-        System.out.println("price (tax) --> " + parcialPrice);
-        System.out.println("total price --> " + (usTax.salesTotal(price, parcialPrice)));
+    public float calculateTaxes(float price) {
+        Taxes usTax = Taxes.getInstance();
+        //float price = 10;
+        float parcialPrice = ((price * usTax.getSingeltonData()) / 100);
+        return usTax.salesTotal(price, parcialPrice);
+    }
 
-    */
 }
