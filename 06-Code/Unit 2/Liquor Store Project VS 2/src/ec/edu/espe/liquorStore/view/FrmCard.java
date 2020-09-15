@@ -379,7 +379,7 @@ public class FrmCard extends javax.swing.JFrame{
     }//GEN-LAST:event_btnCancelMouseClicked
 
     private void txtCodeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodeKeyTyped
-        // TODO add your handling code here:
+
         char letter = evt.getKeyChar();
 
         if (Character.isLetter(letter)) {
@@ -395,7 +395,7 @@ public class FrmCard extends javax.swing.JFrame{
     }//GEN-LAST:event_txtCodeKeyTyped
 
     private void txtCardIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCardIdKeyTyped
-        // TODO add your handling code here:
+   
         char letter = evt.getKeyChar();
 
         if (Character.isLetter(letter)) {
@@ -408,7 +408,6 @@ public class FrmCard extends javax.swing.JFrame{
     }//GEN-LAST:event_txtCardIdKeyTyped
 
     private void txtOwnerKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOwnerKeyTyped
-        // TODO add your handling code here:    
         char letter = evt.getKeyChar();
 
         if (Character.isDigit(letter)) {
@@ -424,19 +423,16 @@ public class FrmCard extends javax.swing.JFrame{
     }//GEN-LAST:event_txtOwnerKeyTyped
 
     private void txtCardIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCardIdKeyReleased
-        // TODO add your handling code here:
         enableButton();
         validateFields();
     }//GEN-LAST:event_txtCardIdKeyReleased
 
     private void txtOwnerKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtOwnerKeyReleased
-        // TODO add your handling code here:
         enableButton();
         validateFields();
     }//GEN-LAST:event_txtOwnerKeyReleased
 
     private void txtCodeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodeKeyReleased
-        // TODO add your handling code here:
         enableButton();
         validateFields();
     }//GEN-LAST:event_txtCodeKeyReleased

@@ -7,6 +7,9 @@ package ec.edu.espe.liquorStore.view;
 
 import ec.edu.espe.liquorStore.controller.BeverageController;
 import ec.edu.espe.liquorStore.service.BeverageService;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /**
@@ -20,6 +23,7 @@ public class FrmAdminChooser extends javax.swing.JFrame {
      */
     public FrmAdminChooser() {
         initComponents();
+        
     }
 
     /**
@@ -35,6 +39,7 @@ public class FrmAdminChooser extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btnBeverage = new javax.swing.JButton();
         btnOrder = new javax.swing.JButton();
+        btnStock = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         btnBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -68,28 +73,41 @@ public class FrmAdminChooser extends javax.swing.JFrame {
             }
         });
 
+        btnStock.setBackground(new java.awt.Color(0, 51, 153));
+        btnStock.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnStock.setForeground(new java.awt.Color(255, 255, 255));
+        btnStock.setText("Stock");
+        btnStock.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnStockMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnBeverage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnStock, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOrder)
+                    .addComponent(btnBeverage, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
+                .addContainerGap()
                 .addComponent(btnBeverage, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
+                .addGap(18, 18, 18)
                 .addComponent(btnOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(btnStock, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 320, 270));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 250, 240));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -138,18 +156,26 @@ public class FrmAdminChooser extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBeverageMouseClicked
 
     private void btnOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOrderMouseClicked
-        // TODO add your handling code here:
         FrmCustomer newCustomer = new FrmCustomer();
         newCustomer.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnOrderMouseClicked
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
-        // TODO add your handling code here:
         FrmMenu menu = new FrmMenu();
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnBackMouseClicked
+
+    private void btnStockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnStockMouseClicked
+        try {
+            FrmBeverageStock stock = new FrmBeverageStock();
+            stock.setVisible(true);
+            this.setVisible(false);
+        } catch (IOException ex) {
+            Logger.getLogger(FrmAdminChooser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnStockMouseClicked
 
     /**
      * @param args the command line arguments
@@ -191,6 +217,7 @@ public class FrmAdminChooser extends javax.swing.JFrame {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnBeverage;
     private javax.swing.JButton btnOrder;
+    private javax.swing.JButton btnStock;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;

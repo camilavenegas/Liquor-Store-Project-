@@ -9,11 +9,16 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.Mongo;
-import ec.edu.espe.liquorStore.controller.OrderController;
 import ec.edu.espe.liquorStore.utils.JsonFile;
 import ec.edu.espe.liquorStore.utils.Password;
 import ec.edu.espe.liquorStore.model.User;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.UnknownHostException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -54,6 +59,54 @@ public class FrmNewUser extends javax.swing.JFrame {
             btnSave.setEnabled(false);
         } else {
             btnSave.setEnabled(true);
+        }
+    }
+
+    public void encrypt() {
+        String passwords = pswNewPassword.getText();
+        String User = txtNewUser.getText();
+        String encryptedPassword;
+        File bin;
+        File Topics;
+        FileWriter write;//para escribir en el archivo
+        PrintWriter line;
+        bin = new File("passwords.json");
+        if (!bin.exists()) {
+            try {
+                bin.createNewFile();
+                char password[] = passwords.toCharArray();
+                for (int i = 0; i < password.length; i++) {
+                    password[i] = (char) (password[i] + (char) 1);
+                }
+                encryptedPassword = String.valueOf(password);
+
+                write = new FileWriter(bin, true);
+                line = new PrintWriter(write);
+                line.println(User + ":" + encryptedPassword);
+                line.close();
+                write.close();
+            } catch (IOException ex) {
+
+            }
+
+        } else {
+            try {
+                bin.createNewFile();
+                char password[] = passwords.toCharArray();
+                for (int i = 0; i < password.length; i++) {
+                    password[i] = (char) (password[i] + (char) 1);
+                }
+                encryptedPassword = String.valueOf(password);
+
+                write = new FileWriter(bin, true);
+                line = new PrintWriter(write);
+                line.println(User + ":" + encryptedPassword);
+                line.close();
+                write.close();
+            } catch (IOException ex) {
+
+            }
+
         }
     }
 
@@ -218,7 +271,6 @@ public class FrmNewUser extends javax.swing.JFrame {
     }
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        // TODO add your handling code here:
 
         Password ps = new Password();
         String newPaswd = ps.Encrypt(pswNewPassword.getText());
@@ -245,7 +297,7 @@ public class FrmNewUser extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void txtNewUserKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNewUserKeyTyped
-        // TODO add your handling code here:
+
         char letter = evt.getKeyChar();
 
         if (Character.isDigit(letter)) {
@@ -261,27 +313,26 @@ public class FrmNewUser extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNewUserKeyTyped
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
+
         FrmLoginUser login = new FrmLoginUser();
         login.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSaveMouseClicked
-        // TODO add your handling code here:
-        OrderController orderController = new OrderController();
-        orderController.init();
+        encrypt();
+        FrmBills frmBill = new FrmBills();
+        frmBill.setVisible(true);
+        this.setVisible(false);
 
     }//GEN-LAST:event_btnSaveMouseClicked
 
     private void txtNewUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNewUserKeyReleased
-        // TODO add your handling code here:
         enableButton();
         validateFields();
     }//GEN-LAST:event_txtNewUserKeyReleased
 
     private void pswNewPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pswNewPasswordKeyReleased
-        // TODO add your handling code here:
         enableButton();
         validateFields();
     }//GEN-LAST:event_pswNewPasswordKeyReleased

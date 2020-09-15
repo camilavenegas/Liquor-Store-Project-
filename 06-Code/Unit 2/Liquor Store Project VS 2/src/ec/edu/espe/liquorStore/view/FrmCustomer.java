@@ -443,7 +443,6 @@ public class FrmCustomer extends javax.swing.JFrame {
     }
 
     private void btnCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelMouseClicked
-        // TODO add your handling code here:
         FrmAdminChooser frmChoose = new FrmAdminChooser();
         frmChoose.setVisible(true);
         this.setVisible(false);
@@ -474,7 +473,6 @@ public class FrmCustomer extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void txtCustomerNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustomerNameKeyTyped
-        // TODO add your handling code here:
         char validate = evt.getKeyChar();
         if (Character.isDigit(validate)) {
             getToolkit().beep();
@@ -488,7 +486,6 @@ public class FrmCustomer extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCustomerNameKeyTyped
 
     private void txtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyTyped
-        // TODO add your handling code here:
         char letter = evt.getKeyChar();
         if (Character.isLetter(letter)) {
             getToolkit().beep();
@@ -503,7 +500,6 @@ public class FrmCustomer extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIdKeyTyped
 
     private void txtAgeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgeKeyTyped
-        // TODO add your handling code here:
         char letter = evt.getKeyChar();
         if (Character.isLetter(letter)) {
             getToolkit().beep();
@@ -518,38 +514,32 @@ public class FrmCustomer extends javax.swing.JFrame {
     }//GEN-LAST:event_txtAgeKeyTyped
 
     private void txtCustomerNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustomerNameKeyReleased
-        // TODO add your handling code here:
         enableButton();
         validateFields();
     }//GEN-LAST:event_txtCustomerNameKeyReleased
 
     private void txtAdressKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAdressKeyReleased
-        // TODO add your handling code here:
         enableButton();
         validateFields();
     }//GEN-LAST:event_txtAdressKeyReleased
 
     private void txtIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyReleased
-        // TODO add your handling code here:
         enableButton();
         validateFields();
     }//GEN-LAST:event_txtIdKeyReleased
 
     private void txtAgeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAgeKeyReleased
-        // TODO add your handling code here:
         enableButton();
         validateFields();
     }//GEN-LAST:event_txtAgeKeyReleased
 
     private void txtMailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMailKeyReleased
-        // TODO add your handling code here:
         enableButton();
         validateFields();
 
     }//GEN-LAST:event_txtMailKeyReleased
 
     private void txtMailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMailKeyTyped
-        // TODO add your handling code here:
         validateEmail(evt);
     }//GEN-LAST:event_txtMailKeyTyped
 

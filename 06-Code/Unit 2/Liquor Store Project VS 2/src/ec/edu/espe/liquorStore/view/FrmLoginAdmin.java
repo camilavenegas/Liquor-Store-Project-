@@ -194,7 +194,6 @@ public class FrmLoginAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtUserKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserKeyTyped
-        // TODO add your handling code here:
         char validate = evt.getKeyChar();
 
         if (Character.isDigit(validate)) {
@@ -207,27 +206,23 @@ public class FrmLoginAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUserKeyTyped
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
-        // TODO add your handling code here:
         FrmMenu frmMain = new FrmMenu();
         frmMain.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnBackMouseClicked
 
     private void txtUserKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserKeyReleased
-        // TODO add your handling code here:
         enableButton();
         validateFields();
 
     }//GEN-LAST:event_txtUserKeyReleased
 
     private void pswPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pswPasswordKeyReleased
-        // TODO add your handling code here:
         enableButton();
         validateFields();
     }//GEN-LAST:event_pswPasswordKeyReleased
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        // TODO add your handling code here:
         FrmAdminChooser frmChoose = new FrmAdminChooser();
         frmChoose.setVisible(true);
         this.setVisible(false);

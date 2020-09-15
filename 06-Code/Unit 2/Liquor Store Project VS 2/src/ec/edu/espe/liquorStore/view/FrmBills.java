@@ -49,7 +49,7 @@ public class FrmBills extends javax.swing.JFrame {
         } else {
             lblCustomer.setText("");
         }
-        if (txtRUC.getText().isEmpty()) {
+        if (txtCI.getText().isEmpty()) {
             lblRUC.setText("*Obligatory!");
         } else {
             lblRUC.setText("");
@@ -67,7 +67,7 @@ public class FrmBills extends javax.swing.JFrame {
     }
 
     public void enableButton() {
-        if (txtCustomer.getText().isEmpty() || txtRUC.getText().isEmpty()) {
+        if (txtCustomer.getText().isEmpty() || txtCI.getText().isEmpty()) {
             btnSaveAll.setEnabled(false);
         } else {
             btnSaveAll.setEnabled(true);
@@ -88,7 +88,7 @@ public class FrmBills extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtCustomer = new javax.swing.JTextField();
-        txtRUC = new javax.swing.JTextField();
+        txtCI = new javax.swing.JTextField();
         lblRUC = new javax.swing.JLabel();
         lblCustomer = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -152,7 +152,7 @@ public class FrmBills extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("RUC :");
+        jLabel2.setText("CI :");
         pnlOrder.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 79, -1, -1));
 
         txtCustomer.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
@@ -166,16 +166,16 @@ public class FrmBills extends javax.swing.JFrame {
         });
         pnlOrder.add(txtCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 36, 235, -1));
 
-        txtRUC.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
-        txtRUC.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtCI.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
+        txtCI.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtRUCKeyReleased(evt);
+                txtCIKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtRUCKeyTyped(evt);
+                txtCIKeyTyped(evt);
             }
         });
-        pnlOrder.add(txtRUC, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 79, 235, -1));
+        pnlOrder.add(txtCI, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 79, 235, -1));
 
         lblRUC.setForeground(new java.awt.Color(255, 0, 0));
         pnlOrder.add(lblRUC, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 70, 30));
@@ -301,7 +301,7 @@ public class FrmBills extends javax.swing.JFrame {
         );
 
         getContentPane().add(pnlTotal);
-        pnlTotal.setBounds(730, 470, 237, 127);
+        pnlTotal.setBounds(730, 470, 242, 140);
 
         pnlSave.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -455,11 +455,6 @@ public class FrmBills extends javax.swing.JFrame {
         txtCombo.setBackground(new java.awt.Color(0, 0, 0));
         txtCombo.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
         txtCombo.setForeground(new java.awt.Color(255, 255, 255));
-        txtCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtComboActionPerformed(evt);
-            }
-        });
 
         jLabel18.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
@@ -468,11 +463,6 @@ public class FrmBills extends javax.swing.JFrame {
         txtPrice.setBackground(new java.awt.Color(0, 0, 0));
         txtPrice.setFont(new java.awt.Font("MV Boli", 1, 16)); // NOI18N
         txtPrice.setForeground(new java.awt.Color(255, 255, 255));
-        txtPrice.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPriceActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout pnlDataLayout = new javax.swing.GroupLayout(pnlData);
         pnlData.setLayout(pnlDataLayout);
@@ -582,7 +572,7 @@ public class FrmBills extends javax.swing.JFrame {
                                 .addComponent(jLabel5)
                                 .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel15))))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(pnlData);
@@ -640,7 +630,7 @@ public class FrmBills extends javax.swing.JFrame {
         );
 
         getContentPane().add(pnlBill);
-        pnlBill.setBounds(500, 30, 472, 440);
+        pnlBill.setBounds(500, 30, 482, 440);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/liquorStore/icons/blueLabel.jpg"))); // NOI18N
         jLabel9.setMaximumSize(new java.awt.Dimension(200, 1600));
@@ -651,7 +641,6 @@ public class FrmBills extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbBeverageItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbBeverageItemStateChanged
-        // TODO add your handling code here:
         String pre = "";
         if (cmbBeverage.getSelectedIndex() > 0) {
             switch (cmbBeverage.getSelectedIndex()) {
@@ -705,7 +694,6 @@ public class FrmBills extends javax.swing.JFrame {
         return Math.rint(num * 100) / 100;
     }
     private void btnAddBvrageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddBvrageActionPerformed
-        // TODO add your handling code here:
         String rowData[] = new String[4];
         rowData[0] = cmbBeverage.getSelectedItem().toString();
         rowData[1] = txtPrice.getText();
@@ -731,7 +719,7 @@ public class FrmBills extends javax.swing.JFrame {
         taxes.calculateTaxes((float) Subtotal);
         iva = 0.12 * Subtotal;
         iva = redondear(iva);
-        total =  taxes.calculateTaxes((float) Subtotal);// Subtotal * 1.09;
+        total = taxes.calculateTaxes((float) Subtotal);// Subtotal * 1.09;
         total = redondear(total);
         lblIVA.setText(String.valueOf(iva));
         lblTotal.setText(String.valueOf(total));
@@ -743,7 +731,7 @@ public class FrmBills extends javax.swing.JFrame {
 
     private void btnSaveAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveAllActionPerformed
         BasicDBObject document = new BasicDBObject();
-        String clientId = txtRUC.getText();
+        String clientId = txtCI.getText();
         String name = txtCustomer.getText();
         String adress = txtAddress.getText();
         String phone = txtPhone.getText();
@@ -768,7 +756,7 @@ public class FrmBills extends javax.swing.JFrame {
             System.exit(0);
         }
         document.put("Customer", "'" + txtCustomer.getText() + "'");
-        document.put("RUC", "'" + txtRUC.getText() + "'");
+        document.put("RUC", "'" + txtCI.getText() + "'");
         document.put("Address", "'" + txtAddress.getText() + "'");
         document.put("Phone", "'" + txtPhone.getText() + "'");
 
@@ -777,8 +765,9 @@ public class FrmBills extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveAllActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
+        FrmMenu frmMenu = new FrmMenu();
+        frmMenu.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void txtCustomerKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustomerKeyTyped
@@ -796,7 +785,7 @@ public class FrmBills extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtCustomerKeyTyped
 
-    private void txtRUCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRUCKeyTyped
+    private void txtCIKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCIKeyTyped
 
         char letter = evt.getKeyChar();
         if (Character.isLetter(letter)) {
@@ -806,20 +795,20 @@ public class FrmBills extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Please only numbers!!!");
 
         }
-        if (txtRUC.getText().length() >= 10) {
+        if (txtCI.getText().length() >= 10) {
             evt.consume();
         }
-    }//GEN-LAST:event_txtRUCKeyTyped
+    }//GEN-LAST:event_txtCIKeyTyped
 
     private void txtCustomerKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustomerKeyReleased
         enableButton();
         validateFields();
     }//GEN-LAST:event_txtCustomerKeyReleased
 
-    private void txtRUCKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRUCKeyReleased
+    private void txtCIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCIKeyReleased
         enableButton();
         validateFields();
-    }//GEN-LAST:event_txtRUCKeyReleased
+    }//GEN-LAST:event_txtCIKeyReleased
 
     private void txtQuantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQuantityKeyTyped
         if (txtQuantity.getText().length() >= 2) {
@@ -834,9 +823,6 @@ public class FrmBills extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Please only numbers!!!");
 
         }
-        /*    if(txtQuantity.get){
-            
-        }*/
     }//GEN-LAST:event_txtQuantityKeyTyped
 
     private void cmbComboItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbComboItemStateChanged
@@ -945,14 +931,6 @@ public class FrmBills extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtPhoneKeyTyped
 
-    private void txtComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtComboActionPerformed
-
-    private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPriceActionPerformed
-
     private void eliminar() {
         int fil;
         if (model.getRowCount() > 0) {
@@ -1058,12 +1036,12 @@ public class FrmBills extends javax.swing.JFrame {
     private javax.swing.JTable tblBill;
     private javax.swing.JTextArea txaCombo;
     private javax.swing.JTextField txtAddress;
+    private javax.swing.JTextField txtCI;
     private javax.swing.JTextField txtCombo;
     private javax.swing.JTextField txtCustomer;
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtPrice;
     private javax.swing.JTextField txtQuantity;
-    private javax.swing.JTextField txtRUC;
     private javax.swing.JTextField txtSnack;
     // End of variables declaration//GEN-END:variables
 }
